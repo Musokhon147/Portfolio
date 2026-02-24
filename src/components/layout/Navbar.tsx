@@ -4,6 +4,7 @@ import { useTranslations } from "next-intl";
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import LanguageSwitcher from "@/components/ui/LanguageSwitcher";
+import ThemeToggle from "@/components/ui/ThemeToggle";
 import { HiMenu, HiX } from "react-icons/hi";
 
 const navLinks = ["about", "skills", "projects", "contact"] as const;
@@ -43,7 +44,7 @@ export default function Navbar() {
       transition={{ duration: 0.6, ease: [0.25, 0.4, 0.25, 1] }}
       className={`fixed top-0 z-50 w-full transition-all duration-500 ${
         scrolled
-          ? "border-b border-border/30 bg-base/80 backdrop-blur-xl shadow-[0_4px_30px_rgba(0,0,0,0.3)]"
+          ? "border-b border-border/30 bg-base/80 backdrop-blur-xl shadow-[var(--navbar-shadow)]"
           : "bg-transparent"
       }`}
     >
@@ -78,13 +79,15 @@ export default function Navbar() {
               />
             </a>
           ))}
-          <div className="ml-4">
+          <div className="ml-4 flex items-center gap-2">
+            <ThemeToggle />
             <LanguageSwitcher />
           </div>
         </div>
 
         {/* Mobile */}
-        <div className="flex items-center gap-3 md:hidden">
+        <div className="flex items-center gap-2 md:hidden">
+          <ThemeToggle />
           <LanguageSwitcher />
           <button
             onClick={() => setMobileOpen(!mobileOpen)}

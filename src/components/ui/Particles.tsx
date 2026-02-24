@@ -13,6 +13,12 @@ interface Particle {
   pulseSpeed: number;
 }
 
+function getParticleRgb(): string {
+  return getComputedStyle(document.documentElement)
+    .getPropertyValue("--particle-rgb")
+    .trim() || "6, 182, 212";
+}
+
 export default function Particles({ count = 60 }: { count?: number }) {
   const canvasRef = useRef<HTMLCanvasElement>(null);
 
@@ -25,6 +31,16 @@ export default function Particles({ count = 60 }: { count?: number }) {
 
     let animationId: number;
     let particles: Particle[] = [];
+    let rgb = getParticleRgb();
+
+    // Watch for theme changes on <html> class
+    const observer = new MutationObserver(() => {
+      rgb = getParticleRgb();
+    });
+    observer.observe(document.documentElement, {
+      attributes: true,
+      attributeFilter: ["class"],
+    });
 
     const resize = () => {
       canvas.width = canvas.offsetWidth * window.devicePixelRatio;
@@ -65,13 +81,13 @@ export default function Particles({ count = 60 }: { count?: number }) {
         // Glow
         ctx.beginPath();
         ctx.arc(p.x, p.y, p.size * 3, 0, Math.PI * 2);
-        ctx.fillStyle = `rgba(6, 182, 212, ${currentOpacity * 0.15})`;
+        ctx.fillStyle = `rgba(${rgb}, ${currentOpacity * 0.15})`;
         ctx.fill();
 
         // Core
         ctx.beginPath();
         ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
-        ctx.fillStyle = `rgba(6, 182, 212, ${currentOpacity})`;
+        ctx.fillStyle = `rgba(${rgb}, ${currentOpacity})`;
         ctx.fill();
       }
 
@@ -86,7 +102,7 @@ export default function Particles({ count = 60 }: { count?: number }) {
             ctx.beginPath();
             ctx.moveTo(particles[i].x, particles[i].y);
             ctx.lineTo(particles[j].x, particles[j].y);
-            ctx.strokeStyle = `rgba(6, 182, 212, ${0.06 * (1 - dist / 120)})`;
+            ctx.strokeStyle = `rgba(${rgb}, ${0.06 * (1 - dist / 120)})`;
             ctx.lineWidth = 0.5;
             ctx.stroke();
           }
@@ -103,6 +119,7 @@ export default function Particles({ count = 60 }: { count?: number }) {
     return () => {
       window.removeEventListener("resize", resize);
       cancelAnimationFrame(animationId);
+      observer.disconnect();
     };
   }, [count]);
 

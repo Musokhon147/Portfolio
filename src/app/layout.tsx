@@ -60,10 +60,17 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
-    <html className="scroll-smooth">
+    <html className="scroll-smooth" suppressHydrationWarning>
       <body
+        suppressHydrationWarning
         className={`${syne.variable} ${dmSans.variable} font-[family-name:var(--font-dm)] antialiased`}
       >
+        <script
+          suppressHydrationWarning
+          dangerouslySetInnerHTML={{
+            __html: `(function(){try{var t=localStorage.getItem("theme");if(t==="light"||(t!=="dark"&&window.matchMedia("(prefers-color-scheme:light)").matches)){document.documentElement.classList.add("light")}}catch(e){}})()`,
+          }}
+        />
         {children}
       </body>
     </html>

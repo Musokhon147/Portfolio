@@ -26,24 +26,21 @@ export default function Hero() {
         <div
           className="absolute left-[10%] top-[20%] h-[250px] w-[250px] rounded-full opacity-30 blur-[80px] sm:h-[350px] sm:w-[350px] sm:blur-[100px] md:h-[500px] md:w-[500px] md:blur-[120px]"
           style={{
-            background:
-              "radial-gradient(circle, rgba(6,182,212,0.4) 0%, transparent 70%)",
+            background: "var(--orb-cyan)",
             animation: "float 12s ease-in-out infinite",
           }}
         />
         <div
           className="absolute bottom-[10%] right-[5%] h-[200px] w-[200px] rounded-full opacity-25 blur-[60px] sm:h-[300px] sm:w-[300px] sm:blur-[80px] md:h-[400px] md:w-[400px] md:blur-[100px]"
           style={{
-            background:
-              "radial-gradient(circle, rgba(245,158,11,0.35) 0%, transparent 70%)",
+            background: "var(--orb-amber)",
             animation: "float-slow 15s ease-in-out infinite",
           }}
         />
         <div
           className="absolute left-[60%] top-[60%] hidden h-[300px] w-[300px] rounded-full opacity-20 blur-[80px] sm:block"
           style={{
-            background:
-              "radial-gradient(circle, rgba(139,92,246,0.3) 0%, transparent 70%)",
+            background: "var(--orb-purple)",
             animation: "float 18s ease-in-out infinite reverse",
           }}
         />
@@ -54,7 +51,7 @@ export default function Hero() {
         className="pointer-events-none absolute inset-0 opacity-[0.03]"
         style={{
           backgroundImage:
-            "linear-gradient(rgba(6,182,212,0.3) 1px, transparent 1px), linear-gradient(90deg, rgba(6,182,212,0.3) 1px, transparent 1px)",
+            `linear-gradient(var(--grid-line) 1px, transparent 1px), linear-gradient(90deg, var(--grid-line) 1px, transparent 1px)`,
           backgroundSize: "60px 60px",
         }}
       />
@@ -109,7 +106,7 @@ export default function Hero() {
             href="#projects"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.97 }}
-            className="group relative inline-flex items-center gap-2 overflow-hidden rounded-full bg-cyan px-6 py-3 text-xs font-bold text-base transition-all hover:shadow-[0_0_30px_rgba(6,182,212,0.4)] sm:px-8 sm:py-3.5 sm:text-sm"
+            className="group relative inline-flex items-center gap-2 overflow-hidden rounded-full bg-cyan px-6 py-3 text-xs font-bold text-white transition-all hover:shadow-[0_0_30px_rgba(6,182,212,0.4)] sm:px-8 sm:py-3.5 sm:text-sm"
           >
             <span className="relative z-10">{t("cta")}</span>
             <svg

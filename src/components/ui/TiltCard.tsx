@@ -54,7 +54,7 @@ export default function TiltCard({ children, className = "" }: TiltCardProps) {
           background: useTransform(
             [shineX, shineY],
             ([x, y]) =>
-              `radial-gradient(circle at ${x}% ${y}%, rgba(6,182,212,0.08) 0%, transparent 60%)`
+              `radial-gradient(circle at ${x}% ${y}%, var(--tilt-shine) 0%, transparent 60%)`
           ),
         }}
       />

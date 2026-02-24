@@ -10,16 +10,14 @@ export default function NotFound() {
         <div
           className="absolute left-[20%] top-[30%] h-[400px] w-[400px] rounded-full opacity-20 blur-[120px]"
           style={{
-            background:
-              "radial-gradient(circle, rgba(6,182,212,0.4) 0%, transparent 70%)",
+            background: "var(--orb-cyan)",
             animation: "float 12s ease-in-out infinite",
           }}
         />
         <div
           className="absolute bottom-[20%] right-[20%] h-[300px] w-[300px] rounded-full opacity-15 blur-[100px]"
           style={{
-            background:
-              "radial-gradient(circle, rgba(245,158,11,0.35) 0%, transparent 70%)",
+            background: "var(--orb-amber)",
             animation: "float-slow 15s ease-in-out infinite",
           }}
         />
@@ -58,7 +56,7 @@ export default function NotFound() {
           transition={{ duration: 0.5, delay: 0.4 }}
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.97 }}
-          className="group relative inline-flex items-center gap-2 overflow-hidden rounded-full bg-cyan px-8 py-3.5 text-sm font-bold text-base transition-all hover:shadow-[0_0_30px_rgba(6,182,212,0.4)]"
+          className="group relative inline-flex items-center gap-2 overflow-hidden rounded-full bg-cyan px-8 py-3.5 text-sm font-bold text-white transition-all hover:shadow-[0_0_30px_rgba(6,182,212,0.4)]"
         >
           <svg
             className="relative z-10 h-4 w-4 transition-transform group-hover:-translate-x-1"

@@ -23,8 +23,7 @@ export default function Preloader() {
           <div
             className="absolute h-[180px] w-[180px] rounded-full opacity-40 blur-[60px] sm:h-[300px] sm:w-[300px] sm:blur-[80px]"
             style={{
-              background:
-                "radial-gradient(circle, rgba(6,182,212,0.5) 0%, transparent 70%)",
+              background: "var(--orb-cyan)",
               animation: "pulse-glow 2s ease-in-out infinite",
             }}
           />

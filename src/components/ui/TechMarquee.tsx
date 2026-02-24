@@ -1,5 +1,6 @@
 "use client";
 
+import { useEffect, useState } from "react";
 import {
   SiReact,
   SiNextdotjs,
@@ -19,9 +20,9 @@ import {
 
 const techs = [
   { icon: SiReact, name: "React", color: "#61DAFB" },
-  { icon: SiNextdotjs, name: "Next.js", color: "#ffffff" },
+  { icon: SiNextdotjs, name: "Next.js", color: "#ffffff", lightColor: "#000000" },
   { icon: SiTypescript, name: "TypeScript", color: "#3178C6" },
-  { icon: SiUnity, name: "Unity", color: "#ffffff" },
+  { icon: SiUnity, name: "Unity", color: "#ffffff", lightColor: "#000000" },
   { icon: SiSharp, name: "C#", color: "#68217A" },
   { icon: SiNodedotjs, name: "Node.js", color: "#339933" },
   { icon: SiPython, name: "Python", color: "#3776AB" },
@@ -38,6 +39,20 @@ const techs = [
 const items = [...techs, ...techs];
 
 export default function TechMarquee() {
+  const [isLight, setIsLight] = useState(false);
+
+  useEffect(() => {
+    setIsLight(document.documentElement.classList.contains("light"));
+    const observer = new MutationObserver(() => {
+      setIsLight(document.documentElement.classList.contains("light"));
+    });
+    observer.observe(document.documentElement, {
+      attributes: true,
+      attributeFilter: ["class"],
+    });
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <div className="relative overflow-hidden py-8 sm:py-12">
       {/* Fade edges */}
@@ -45,21 +60,24 @@ export default function TechMarquee() {
       <div className="pointer-events-none absolute right-0 top-0 z-10 h-full w-10 bg-gradient-to-l from-base to-transparent sm:w-24" />
 
       <div className="flex animate-[marquee_30s_linear_infinite] gap-4 hover:[animation-play-state:paused] sm:gap-8">
-        {items.map(({ icon: Icon, name, color }, i) => (
-          <div
-            key={`${name}-${i}`}
-            className="group flex shrink-0 items-center gap-2 rounded-lg border border-border/30 bg-surface/40 px-3 py-2 transition-all duration-300 hover:border-cyan/20 hover:bg-elevated/60 sm:gap-3 sm:rounded-xl sm:px-5 sm:py-3"
-          >
-            <Icon
-              size={18}
-              className="transition-all duration-300 group-hover:drop-shadow-[0_0_8px_var(--glow)] sm:[font-size:22px]"
-              style={{ color, "--glow": color } as React.CSSProperties}
-            />
-            <span className="text-xs font-medium text-text-muted transition-colors group-hover:text-text-dim sm:text-sm">
-              {name}
-            </span>
-          </div>
-        ))}
+        {items.map(({ icon: Icon, name, color, lightColor }, i) => {
+          const resolvedColor = isLight && lightColor ? lightColor : color;
+          return (
+            <div
+              key={`${name}-${i}`}
+              className="group flex shrink-0 items-center gap-2 rounded-lg border border-border/30 bg-surface/40 px-3 py-2 transition-all duration-300 hover:border-cyan/20 hover:bg-elevated/60 sm:gap-3 sm:rounded-xl sm:px-5 sm:py-3"
+            >
+              <Icon
+                size={18}
+                className="transition-all duration-300 group-hover:drop-shadow-[0_0_8px_var(--glow)] sm:[font-size:22px]"
+                style={{ color: resolvedColor, "--glow": resolvedColor } as React.CSSProperties}
+              />
+              <span className="text-xs font-medium text-text-muted transition-colors group-hover:text-text-dim sm:text-sm">
+                {name}
+              </span>
+            </div>
+          );
+        })}
       </div>
     </div>
   );
