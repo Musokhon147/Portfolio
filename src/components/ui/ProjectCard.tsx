@@ -1,0 +1,91 @@
+"use client";
+
+import { useTranslations } from "next-intl";
+import { motion } from "framer-motion";
+import { HiOutlineExternalLink, HiOutlineCode } from "react-icons/hi";
+import TiltCard from "@/components/ui/TiltCard";
+
+interface ProjectCardProps {
+  titleKey: string;
+  descKey: string;
+  tags: string[];
+  liveUrl?: string;
+  codeUrl?: string;
+  index: number;
+}
+
+export default function ProjectCard({
+  titleKey,
+  descKey,
+  tags,
+  liveUrl,
+  codeUrl,
+  index,
+}: ProjectCardProps) {
+  const t = useTranslations("Projects");
+
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 40 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: "-60px" }}
+      transition={{
+        duration: 0.5,
+        delay: index * 0.12,
+        ease: [0.25, 0.4, 0.25, 1],
+      }}
+    >
+      <TiltCard className="group h-full">
+        <div className="glass glass-hover relative flex h-full flex-col overflow-hidden rounded-2xl">
+          {/* Top gradient bar */}
+          <div className="h-1 w-full bg-gradient-to-r from-cyan via-cyan-light to-amber opacity-60 transition-opacity group-hover:opacity-100" />
+
+          <div className="flex flex-1 flex-col p-6">
+            <div className="mb-3 flex items-start justify-between">
+              <h3 className="font-[family-name:var(--font-syne)] text-lg font-bold tracking-tight text-text">
+                {t(titleKey)}
+              </h3>
+              <div className="flex gap-1">
+                {liveUrl && (
+                  <a
+                    href={liveUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="rounded-lg p-2 text-text-muted transition-all hover:bg-cyan/10 hover:text-cyan hover:shadow-[0_0_10px_rgba(6,182,212,0.15)]"
+                  >
+                    <HiOutlineExternalLink size={16} />
+                  </a>
+                )}
+                {codeUrl && (
+                  <a
+                    href={codeUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="rounded-lg p-2 text-text-muted transition-all hover:bg-cyan/10 hover:text-cyan hover:shadow-[0_0_10px_rgba(6,182,212,0.15)]"
+                  >
+                    <HiOutlineCode size={16} />
+                  </a>
+                )}
+              </div>
+            </div>
+
+            <p className="mb-5 flex-1 text-sm leading-relaxed text-text-muted">
+              {t(descKey)}
+            </p>
+
+            <div className="flex flex-wrap gap-2">
+              {tags.map((tag) => (
+                <span
+                  key={tag}
+                  className="rounded-full border border-border/50 bg-elevated/50 px-3 py-1 text-xs font-medium text-text-dim transition-colors group-hover:border-cyan/20 group-hover:text-text-dim"
+                >
+                  {tag}
+                </span>
+              ))}
+            </div>
+          </div>
+        </div>
+      </TiltCard>
+    </motion.div>
+  );
+}

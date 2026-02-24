@@ -1,0 +1,18 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(node:*)",
+      "WebSearch",
+      "WebFetch(domain:next-intl.dev)",
+      "WebFetch(domain:github.com)",
+      "Bash(cd /c/Users/musok/OneDrive/Desktop/Portfolio && npx create-next-app@latest . --typescript --tailwind --eslint --app --src-dir --no-turbopack --import-alias \"@/*\" --use-npm 2>&1)",
+      "Bash(cd /c/Users/musok/OneDrive/Desktop && echo \"no\" | npx create-next-app@latest portfolio-temp --typescript --tailwind --eslint --app --src-dir --no-turbopack --import-alias \"@/*\" --use-npm 2>&1)",
+      "Bash(cp:*)",
+      "Bash(cd /c/Users/musok/OneDrive/Desktop/Portfolio && npm run build 2>&1)",
+      "Bash(cd /c/Users/musok/OneDrive/Desktop/Portfolio && npm install framer-motion 2>&1)",
+      "Bash(npx kill-port:*)",
+      "Bash(cd /c/Users/musok/OneDrive/Desktop/Portfolio && npm run dev 2>&1)",
+      "Bash(cd:*)"
+    ]
+  }
+}

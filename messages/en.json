@@ -1,0 +1,136 @@
+{
+  "Navbar": {
+    "about": "About",
+    "skills": "Skills",
+    "projects": "Projects",
+    "contact": "Contact"
+  },
+  "Hero": {
+    "greeting": "Hello, welcome!",
+    "tagline": "I build apps, websites, games, and anything in between.",
+    "description": "Full-spectrum developer turning ideas into reality — from web apps to VR experiences.",
+    "cta": "See My Work",
+    "typewriter1": "websites",
+    "typewriter2": "mobile apps",
+    "typewriter3": "VR experiences",
+    "typewriter4": "games",
+    "typewriter5": "anything"
+  },
+  "About": {
+    "title": "About Me",
+    "p1": "I am a versatile developer passionate about building things that live on screens — and sometimes beyond them. Whether it's a sleek website, a powerful backend, an immersive game, or a VR experience, I bring ideas to life with code.",
+    "p2": "My toolkit spans across frontend and backend development, Unity game development, virtual reality, and hardware projects. I believe every challenge has a technical solution, and I enjoy finding it.",
+    "p3": "If it can be built with a laptop, I can build it."
+  },
+  "Skills": {
+    "title": "What I Do",
+    "frontend": {
+      "title": "Frontend Development",
+      "desc": "Modern, responsive web interfaces with React, Next.js, and TypeScript."
+    },
+    "backend": {
+      "title": "Backend Development",
+      "desc": "Scalable server-side solutions, APIs, and database architecture."
+    },
+    "gamedev": {
+      "title": "Game Development",
+      "desc": "Interactive experiences and games built with Unity and C#."
+    },
+    "vr": {
+      "title": "VR Development",
+      "desc": "Immersive virtual reality applications and environments."
+    },
+    "hardware": {
+      "title": "Hardware Projects",
+      "desc": "Physical computing, IoT, and embedded systems."
+    },
+    "more": {
+      "title": "And More...",
+      "desc": "Mobile apps, automation, tools — anything that can be built with technology."
+    }
+  },
+  "Projects": {
+    "title": "Projects",
+    "viewProject": "View Project",
+    "viewCode": "Source Code",
+    "project1": {
+      "title": "E-Commerce Platform",
+      "desc": "A full-stack e-commerce web application with payment integration and admin dashboard."
+    },
+    "project2": {
+      "title": "VR Training Simulator",
+      "desc": "An immersive virtual reality training environment built with Unity for industrial use."
+    },
+    "project3": {
+      "title": "IoT Smart Home System",
+      "desc": "Hardware-based smart home controller with mobile app and real-time monitoring."
+    },
+    "project4": {
+      "title": "2D Platformer Game",
+      "desc": "A side-scrolling platformer game with custom physics and level editor, built in Unity."
+    }
+  },
+  "Contact": {
+    "title": "Get In Touch",
+    "description": "Interested in working together? Feel free to reach out.",
+    "nameLabel": "Name",
+    "emailLabel": "Email",
+    "messageLabel": "Message",
+    "send": "Send Message",
+    "namePlaceholder": "Your name",
+    "emailPlaceholder": "your@email.com",
+    "messagePlaceholder": "Tell me about your project...",
+    "successTitle": "Message Sent!",
+    "successDesc": "Thank you for reaching out. I'll get back to you soon."
+  },
+  "Testimonials": {
+    "title": "What People Say",
+    "t1": {
+      "quote": "One of the most versatile developers I've worked with. Delivered a complex web platform ahead of schedule with exceptional quality.",
+      "name": "Alex Johnson",
+      "role": "Product Manager, TechCorp"
+    },
+    "t2": {
+      "quote": "Built our VR training simulator from scratch. The attention to detail and immersive experience exceeded all expectations.",
+      "name": "Sarah Chen",
+      "role": "CTO, InnoVR Labs"
+    },
+    "t3": {
+      "quote": "Impressive full-stack skills. From the backend architecture to the polished frontend, everything was production-ready from day one.",
+      "name": "Michael Torres",
+      "role": "Lead Developer, StartupX"
+    }
+  },
+  "Timeline": {
+    "title": "My Journey",
+    "e1": {
+      "year": "2018",
+      "title": "Started Coding",
+      "desc": "Wrote my first lines of code and fell in love with building things. Started with web development and quickly expanded to other areas."
+    },
+    "e2": {
+      "year": "2020",
+      "title": "Dove Into Game Dev & VR",
+      "desc": "Discovered Unity and virtual reality development. Built my first game and VR experience, opening a whole new dimension of creation."
+    },
+    "e3": {
+      "year": "2022",
+      "title": "Hardware & IoT Projects",
+      "desc": "Extended beyond screens into physical computing. Started working with Arduino, sensors, and building IoT systems."
+    },
+    "e4": {
+      "year": "2024 — Present",
+      "title": "Full-Spectrum Developer",
+      "desc": "Combining all skills to deliver complete solutions. From web apps to VR experiences, from mobile apps to hardware — building without limits."
+    }
+  },
+  "Stats": {
+    "projects": "Projects",
+    "technologies": "Technologies",
+    "experience": "Years Exp.",
+    "coffee": "Cups of Coffee"
+  },
+  "Footer": {
+    "rights": "All rights reserved."
+  }
+}

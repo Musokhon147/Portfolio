@@ -1,0 +1,136 @@
+{
+  "Navbar": {
+    "about": "Men haqimda",
+    "skills": "Ko'nikmalar",
+    "projects": "Loyihalar",
+    "contact": "Aloqa"
+  },
+  "Hero": {
+    "greeting": "Salom, xush kelibsiz!",
+    "tagline": "Men ilovalar, veb-saytlar, o'yinlar va boshqa ko'p narsalarni yarataman.",
+    "description": "Universal dasturchi — g'oyalarni haqiqatga aylantiraman, veb-ilovalardan VR tajribalargacha.",
+    "cta": "Ishlarimni ko'rish",
+    "typewriter1": "veb-saytlar",
+    "typewriter2": "mobil ilovalar",
+    "typewriter3": "VR tajribalar",
+    "typewriter4": "o'yinlar",
+    "typewriter5": "har narsa"
+  },
+  "About": {
+    "title": "Men haqimda",
+    "p1": "Men ekranlarda — va ba'zan ulardan tashqarida yashaydigan narsalarni yaratishga ishtiyoqmand, ko'p qirrali dasturchiman. Zamonaviy veb-sayt, kuchli backend, immersiv o'yin yoki VR tajriba bo'lsin — men g'oyalarni kod bilan hayotga tatbiq etaman.",
+    "p2": "Mening asboblar to'plamim frontend va backend dasturlash, Unity o'yin ishlab chiqish, virtual reallik va apparat loyihalarini qamrab oladi. Men har bir muammoning texnik yechimi borligiga ishonaman va uni topishdan zavqlanaman.",
+    "p3": "Agar uni noutbuk bilan yaratish mumkin bo'lsa, men uni yarata olaman."
+  },
+  "Skills": {
+    "title": "Nima qila olaman",
+    "frontend": {
+      "title": "Frontend dasturlash",
+      "desc": "React, Next.js va TypeScript bilan zamonaviy, moslashuvchan veb-interfeyslar."
+    },
+    "backend": {
+      "title": "Backend dasturlash",
+      "desc": "Masshtablanadigan server yechimlari, API-lar va ma'lumotlar bazasi arxitekturasi."
+    },
+    "gamedev": {
+      "title": "O'yin yaratish",
+      "desc": "Unity va C# bilan interaktiv tajribalar va o'yinlar."
+    },
+    "vr": {
+      "title": "VR dasturlash",
+      "desc": "Immersiv virtual reallik ilovalari va muhitlari."
+    },
+    "hardware": {
+      "title": "Apparat loyihalari",
+      "desc": "Fizik hisoblash, IoT va o'rnatilgan tizimlar."
+    },
+    "more": {
+      "title": "Va yana...",
+      "desc": "Mobil ilovalar, avtomatlashtirish, vositalar — texnologiya bilan yaratish mumkin bo'lgan har narsa."
+    }
+  },
+  "Projects": {
+    "title": "Loyihalar",
+    "viewProject": "Loyihani ko'rish",
+    "viewCode": "Manba kodi",
+    "project1": {
+      "title": "E-Commerce platformasi",
+      "desc": "To'lov integratsiyasi va admin paneli bilan to'liq e-commerce veb-ilova."
+    },
+    "project2": {
+      "title": "VR trening simulyatori",
+      "desc": "Sanoat uchun Unity bilan yaratilgan immersiv virtual reallik trening muhiti."
+    },
+    "project3": {
+      "title": "IoT aqlli uy tizimi",
+      "desc": "Mobil ilova va real vaqt monitoringi bilan apparat asosidagi aqlli uy boshqaruvchisi."
+    },
+    "project4": {
+      "title": "2D platformer o'yin",
+      "desc": "Unity da yaratilgan maxsus fizika va daraja muharriri bilan yon-skrolli platformer o'yini."
+    }
+  },
+  "Contact": {
+    "title": "Bog'lanish",
+    "description": "Hamkorlik qilishni xohlaysizmi? Bemalol murojaat qiling.",
+    "nameLabel": "Ism",
+    "emailLabel": "Email",
+    "messageLabel": "Xabar",
+    "send": "Xabar yuborish",
+    "namePlaceholder": "Ismingiz",
+    "emailPlaceholder": "sizning@email.com",
+    "messagePlaceholder": "Loyihangiz haqida aytib bering...",
+    "successTitle": "Xabar yuborildi!",
+    "successDesc": "Murojaat uchun rahmat. Tez orada javob beraman."
+  },
+  "Testimonials": {
+    "title": "Odamlar nima deydi",
+    "t1": {
+      "quote": "Men ishlagan eng ko'p qirrali dasturchlardan biri. Murakkab veb-platformani muddatdan oldin ajoyib sifat bilan topshirdi.",
+      "name": "Alex Johnson",
+      "role": "Mahsulot menejeri, TechCorp"
+    },
+    "t2": {
+      "quote": "VR trening simulyatorimizni noldan yaratdi. Tafsilotlarga e'tibor va immersiv tajriba barcha kutishlardan oshdi.",
+      "name": "Sarah Chen",
+      "role": "CTO, InnoVR Labs"
+    },
+    "t3": {
+      "quote": "Ta'sirli full-stack ko'nikmalari. Backend arxitekturasidan tortib sayqallangan frontendgacha, hamma narsa birinchi kundan ishga tayyor edi.",
+      "name": "Michael Torres",
+      "role": "Bosh dasturchi, StartupX"
+    }
+  },
+  "Timeline": {
+    "title": "Mening yo'lim",
+    "e1": {
+      "year": "2018",
+      "title": "Kodlashni boshladim",
+      "desc": "Birinchi kod satrlarini yozdim va narsalarni yaratishni sevib qoldim. Veb-dasturlashdan boshladim va tezda boshqa sohalarga kengaydim."
+    },
+    "e2": {
+      "year": "2020",
+      "title": "O'yin va VR dasturlash",
+      "desc": "Unity va virtual reallik dasturlashni kashf etdim. Birinchi o'yinim va VR tajribamni yaratdim, yaratishning yangi o'lchamini ochdim."
+    },
+    "e3": {
+      "year": "2022",
+      "title": "Apparat va IoT loyihalari",
+      "desc": "Ekranlardan tashqariga fizik hisoblashga kengaydim. Arduino, sensorlar bilan ishlashni va IoT tizimlarini qurishni boshladim."
+    },
+    "e4": {
+      "year": "2024 — Hozir",
+      "title": "Universal dasturchi",
+      "desc": "Barcha ko'nikmalarni to'liq yechimlar yaratish uchun birlashtiryapman. Veb-ilovalardan VR tajribalargacha, mobil ilovalardan apparatgacha — chegarasiz yaratish."
+    }
+  },
+  "Stats": {
+    "projects": "Loyihalar",
+    "technologies": "Texnologiyalar",
+    "experience": "Yillik tajriba",
+    "coffee": "Piyola kofe"
+  },
+  "Footer": {
+    "rights": "Barcha huquqlar himoyalangan."
+  }
+}
