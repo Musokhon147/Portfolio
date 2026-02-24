@@ -36,21 +36,21 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="relative py-24 md:py-32">
+    <section id="contact" className="relative py-16 sm:py-20 md:py-32">
       <div className="section-divider mx-auto max-w-4xl" />
 
-      <div className="pointer-events-none absolute bottom-0 right-1/4 h-[300px] w-[300px] rounded-full bg-amber/5 blur-[100px]" />
+      <div className="pointer-events-none absolute bottom-0 right-1/4 h-[200px] w-[200px] rounded-full bg-amber/5 blur-[80px] sm:h-[300px] sm:w-[300px] sm:blur-[100px]" />
 
-      <div className="relative mx-auto max-w-2xl px-5 pt-24 md:px-8">
+      <div className="relative mx-auto max-w-2xl px-4 pt-16 sm:px-5 sm:pt-20 md:px-8 md:pt-24">
         <ScrollReveal>
-          <h2 className="mb-4 text-center font-[family-name:var(--font-syne)] text-3xl font-bold tracking-tight md:text-5xl">
+          <h2 className="mb-4 text-center font-[family-name:var(--font-syne)] text-2xl font-bold tracking-tight sm:text-3xl md:text-5xl">
             <span className="gradient-text">{t("title")}</span>
           </h2>
         </ScrollReveal>
 
         <ScrollReveal delay={0.1}>
-          <p className="mb-4 text-center text-text-dim">{t("description")}</p>
-          <div className="mx-auto mb-12 h-1 w-12 rounded-full bg-gradient-to-r from-cyan to-amber" />
+          <p className="mb-4 text-center text-sm text-text-dim sm:text-base">{t("description")}</p>
+          <div className="mx-auto mb-8 h-1 w-12 rounded-full bg-gradient-to-r from-cyan to-amber sm:mb-12" />
         </ScrollReveal>
 
         <ScrollReveal delay={0.2}>
@@ -71,7 +71,7 @@ export default function Contact() {
           ) : (
             <form
               onSubmit={handleSubmit}
-              className="glass glow-cyan space-y-5 rounded-2xl p-6 md:p-8"
+              className="glass glow-cyan space-y-4 rounded-xl p-4 sm:space-y-5 sm:rounded-2xl sm:p-6 md:p-8"
             >
               {/*
                 Replace YOUR_ACCESS_KEY with your Web3Forms key.

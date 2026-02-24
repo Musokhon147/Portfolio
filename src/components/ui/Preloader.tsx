@@ -21,7 +21,7 @@ export default function Preloader() {
         >
           {/* Animated orb behind logo */}
           <div
-            className="absolute h-[300px] w-[300px] rounded-full opacity-40 blur-[80px]"
+            className="absolute h-[180px] w-[180px] rounded-full opacity-40 blur-[60px] sm:h-[300px] sm:w-[300px] sm:blur-[80px]"
             style={{
               background:
                 "radial-gradient(circle, rgba(6,182,212,0.5) 0%, transparent 70%)",
@@ -34,14 +34,14 @@ export default function Preloader() {
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.5 }}
-            className="relative font-[family-name:var(--font-syne)] text-4xl font-bold tracking-tight md:text-5xl"
+            className="relative font-[family-name:var(--font-syne)] text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl"
           >
             <span className="gradient-text">Port</span>
             <span className="text-text">folio</span>
           </motion.div>
 
           {/* Loading bar */}
-          <div className="relative mt-8 h-[2px] w-48 overflow-hidden rounded-full bg-border/30">
+          <div className="relative mt-6 h-[2px] w-36 overflow-hidden rounded-full bg-border/30 sm:mt-8 sm:w-48">
             <motion.div
               initial={{ x: "-100%" }}
               animate={{ x: "0%" }}

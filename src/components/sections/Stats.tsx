@@ -53,29 +53,29 @@ export default function Stats() {
   const t = useTranslations("Stats");
 
   return (
-    <section className="relative py-20 md:py-24">
+    <section className="relative py-12 sm:py-16 md:py-24">
       {/* Background glow */}
       <div className="pointer-events-none absolute inset-0 flex items-center justify-center">
-        <div className="h-[300px] w-[600px] rounded-full bg-cyan/5 blur-[120px]" />
+        <div className="h-[200px] w-[300px] rounded-full bg-cyan/5 blur-[80px] sm:h-[300px] sm:w-[600px] sm:blur-[120px]" />
       </div>
 
-      <div className="relative mx-auto max-w-5xl px-5 md:px-8">
-        <div className="glass glow-cyan overflow-hidden rounded-3xl">
+      <div className="relative mx-auto max-w-5xl px-4 sm:px-5 md:px-8">
+        <div className="glass glow-cyan overflow-hidden rounded-2xl sm:rounded-3xl">
           {/* Top gradient bar */}
           <div className="h-px w-full bg-gradient-to-r from-transparent via-cyan/50 to-transparent" />
 
           <div className="grid grid-cols-2 divide-x divide-border/30 md:grid-cols-4">
             {stats.map(({ key, value, suffix }, index) => (
               <ScrollReveal key={key} delay={index * 0.1}>
-                <div className="group px-4 py-8 text-center md:px-8 md:py-12">
+                <div className="group px-2 py-5 text-center sm:px-4 sm:py-8 md:px-8 md:py-12">
                   <motion.div
                     whileHover={{ scale: 1.05 }}
                     transition={{ type: "spring", stiffness: 300 }}
                   >
-                    <div className="mb-2 font-[family-name:var(--font-syne)] text-3xl font-bold text-cyan md:text-5xl">
+                    <div className="mb-1 font-[family-name:var(--font-syne)] text-2xl font-bold text-cyan sm:mb-2 sm:text-3xl md:text-5xl">
                       <AnimatedCounter target={value} suffix={suffix} />
                     </div>
-                    <div className="text-sm font-medium uppercase tracking-widest text-text-muted">
+                    <div className="text-[10px] font-medium uppercase tracking-widest text-text-muted sm:text-xs md:text-sm">
                       {t(key)}
                     </div>
                   </motion.div>

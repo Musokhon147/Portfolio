@@ -40,9 +40,9 @@ export default function ProjectCard({
           {/* Top gradient bar */}
           <div className="h-1 w-full bg-gradient-to-r from-cyan via-cyan-light to-amber opacity-60 transition-opacity group-hover:opacity-100" />
 
-          <div className="flex flex-1 flex-col p-6">
-            <div className="mb-3 flex items-start justify-between">
-              <h3 className="font-[family-name:var(--font-syne)] text-lg font-bold tracking-tight text-text">
+          <div className="flex flex-1 flex-col p-4 sm:p-6">
+            <div className="mb-2 flex items-start justify-between sm:mb-3">
+              <h3 className="font-[family-name:var(--font-syne)] text-base font-bold tracking-tight text-text sm:text-lg">
                 {t(titleKey)}
               </h3>
               <div className="flex gap-1">
@@ -69,15 +69,15 @@ export default function ProjectCard({
               </div>
             </div>
 
-            <p className="mb-5 flex-1 text-sm leading-relaxed text-text-muted">
+            <p className="mb-4 flex-1 text-xs leading-relaxed text-text-muted sm:mb-5 sm:text-sm">
               {t(descKey)}
             </p>
 
-            <div className="flex flex-wrap gap-2">
+            <div className="flex flex-wrap gap-1.5 sm:gap-2">
               {tags.map((tag) => (
                 <span
                   key={tag}
-                  className="rounded-full border border-border/50 bg-elevated/50 px-3 py-1 text-xs font-medium text-text-dim transition-colors group-hover:border-cyan/20 group-hover:text-text-dim"
+                  className="rounded-full border border-border/50 bg-elevated/50 px-2 py-0.5 text-[10px] font-medium text-text-dim transition-colors group-hover:border-cyan/20 group-hover:text-text-dim sm:px-3 sm:py-1 sm:text-xs"
                 >
                   {tag}
                 </span>

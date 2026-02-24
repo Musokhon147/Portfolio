@@ -13,8 +13,8 @@ export default function Footer() {
   const t = useTranslations("Footer");
 
   return (
-    <footer className="border-t border-border/30 py-10">
-      <div className="mx-auto flex max-w-6xl flex-col items-center gap-6 px-5 md:flex-row md:justify-between md:px-8">
+    <footer className="border-t border-border/30 py-6 sm:py-10">
+      <div className="mx-auto flex max-w-6xl flex-col items-center gap-4 px-4 sm:gap-6 sm:px-5 md:flex-row md:justify-between md:px-8">
         <a
           href="#"
           className="font-[family-name:var(--font-syne)] text-lg font-bold tracking-tight"
@@ -23,7 +23,7 @@ export default function Footer() {
           <span className="text-text">folio</span>
         </a>
 
-        <p className="text-sm text-text-muted">
+        <p className="text-xs text-text-muted sm:text-sm">
           &copy; {new Date().getFullYear()} Portfolio. {t("rights")}
         </p>
 

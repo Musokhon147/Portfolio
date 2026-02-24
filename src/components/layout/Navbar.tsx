@@ -47,10 +47,10 @@ export default function Navbar() {
           : "bg-transparent"
       }`}
     >
-      <nav className="mx-auto flex h-16 max-w-6xl items-center justify-between px-5 md:px-8">
+      <nav className="mx-auto flex h-14 max-w-6xl items-center justify-between px-4 sm:h-16 sm:px-5 md:px-8">
         <a
           href="#"
-          className="font-[family-name:var(--font-syne)] text-xl font-bold tracking-tight"
+          className="font-[family-name:var(--font-syne)] text-lg font-bold tracking-tight sm:text-xl"
         >
           <span className="gradient-text">Port</span>
           <span className="text-text">folio</span>
@@ -106,7 +106,7 @@ export default function Navbar() {
             transition={{ duration: 0.3 }}
             className="overflow-hidden border-t border-border/30 bg-base/95 backdrop-blur-xl md:hidden"
           >
-            <div className="px-5 py-3">
+            <div className="px-4 py-2 sm:px-5 sm:py-3">
               {navLinks.map((key, i) => (
                 <motion.a
                   key={key}

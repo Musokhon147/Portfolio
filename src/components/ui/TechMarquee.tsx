@@ -39,23 +39,23 @@ const items = [...techs, ...techs];
 
 export default function TechMarquee() {
   return (
-    <div className="relative overflow-hidden py-12">
+    <div className="relative overflow-hidden py-8 sm:py-12">
       {/* Fade edges */}
-      <div className="pointer-events-none absolute left-0 top-0 z-10 h-full w-24 bg-gradient-to-r from-base to-transparent" />
-      <div className="pointer-events-none absolute right-0 top-0 z-10 h-full w-24 bg-gradient-to-l from-base to-transparent" />
+      <div className="pointer-events-none absolute left-0 top-0 z-10 h-full w-10 bg-gradient-to-r from-base to-transparent sm:w-24" />
+      <div className="pointer-events-none absolute right-0 top-0 z-10 h-full w-10 bg-gradient-to-l from-base to-transparent sm:w-24" />
 
-      <div className="flex animate-[marquee_30s_linear_infinite] gap-8 hover:[animation-play-state:paused]">
+      <div className="flex animate-[marquee_30s_linear_infinite] gap-4 hover:[animation-play-state:paused] sm:gap-8">
         {items.map(({ icon: Icon, name, color }, i) => (
           <div
             key={`${name}-${i}`}
-            className="group flex shrink-0 items-center gap-3 rounded-xl border border-border/30 bg-surface/40 px-5 py-3 transition-all duration-300 hover:border-cyan/20 hover:bg-elevated/60"
+            className="group flex shrink-0 items-center gap-2 rounded-lg border border-border/30 bg-surface/40 px-3 py-2 transition-all duration-300 hover:border-cyan/20 hover:bg-elevated/60 sm:gap-3 sm:rounded-xl sm:px-5 sm:py-3"
           >
             <Icon
-              size={22}
-              className="transition-all duration-300 group-hover:drop-shadow-[0_0_8px_var(--glow)]"
+              size={18}
+              className="transition-all duration-300 group-hover:drop-shadow-[0_0_8px_var(--glow)] sm:[font-size:22px]"
               style={{ color, "--glow": color } as React.CSSProperties}
             />
-            <span className="text-sm font-medium text-text-muted transition-colors group-hover:text-text-dim">
+            <span className="text-xs font-medium text-text-muted transition-colors group-hover:text-text-dim sm:text-sm">
               {name}
             </span>
           </div>

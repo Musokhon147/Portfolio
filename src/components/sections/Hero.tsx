@@ -21,10 +21,10 @@ export default function Hero() {
       {/* Particles background */}
       <Particles count={70} />
 
-      {/* Animated gradient orbs */}
+      {/* Animated gradient orbs - responsive sizes */}
       <div className="pointer-events-none absolute inset-0">
         <div
-          className="absolute left-[15%] top-[20%] h-[500px] w-[500px] rounded-full opacity-30 blur-[120px]"
+          className="absolute left-[10%] top-[20%] h-[250px] w-[250px] rounded-full opacity-30 blur-[80px] sm:h-[350px] sm:w-[350px] sm:blur-[100px] md:h-[500px] md:w-[500px] md:blur-[120px]"
           style={{
             background:
               "radial-gradient(circle, rgba(6,182,212,0.4) 0%, transparent 70%)",
@@ -32,7 +32,7 @@ export default function Hero() {
           }}
         />
         <div
-          className="absolute bottom-[10%] right-[10%] h-[400px] w-[400px] rounded-full opacity-25 blur-[100px]"
+          className="absolute bottom-[10%] right-[5%] h-[200px] w-[200px] rounded-full opacity-25 blur-[60px] sm:h-[300px] sm:w-[300px] sm:blur-[80px] md:h-[400px] md:w-[400px] md:blur-[100px]"
           style={{
             background:
               "radial-gradient(circle, rgba(245,158,11,0.35) 0%, transparent 70%)",
@@ -40,7 +40,7 @@ export default function Hero() {
           }}
         />
         <div
-          className="absolute left-[60%] top-[60%] h-[300px] w-[300px] rounded-full opacity-20 blur-[80px]"
+          className="absolute left-[60%] top-[60%] hidden h-[300px] w-[300px] rounded-full opacity-20 blur-[80px] sm:block"
           style={{
             background:
               "radial-gradient(circle, rgba(139,92,246,0.3) 0%, transparent 70%)",
@@ -64,13 +64,13 @@ export default function Hero() {
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.5, delay: 0.2 }}
-          className="mb-6 inline-flex items-center gap-2 rounded-full border border-cyan/20 bg-cyan-glow px-4 py-1.5"
+          className="mb-4 inline-flex items-center gap-2 rounded-full border border-cyan/20 bg-cyan-glow px-3 py-1 sm:mb-6 sm:px-4 sm:py-1.5"
         >
           <span
-            className="h-2 w-2 rounded-full bg-cyan shadow-[0_0_8px_rgba(6,182,212,0.6)]"
+            className="h-1.5 w-1.5 rounded-full bg-cyan shadow-[0_0_8px_rgba(6,182,212,0.6)] sm:h-2 sm:w-2"
             style={{ animation: "pulse-glow 2s ease-in-out infinite" }}
           />
-          <span className="text-sm font-medium text-cyan-light">
+          <span className="text-xs font-medium text-cyan-light sm:text-sm">
             {t("greeting")}
           </span>
         </motion.div>
@@ -79,7 +79,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.4 }}
-          className="mb-8 font-[family-name:var(--font-syne)] text-4xl font-bold leading-[1.1] tracking-tight md:text-6xl lg:text-7xl"
+          className="mb-6 font-[family-name:var(--font-syne)] text-2xl font-bold leading-[1.1] tracking-tight sm:text-3xl md:mb-8 md:text-5xl lg:text-7xl"
         >
           <span className="text-text">
             {t("tagline").split(",")[0]},
@@ -94,7 +94,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.6 }}
-          className="mx-auto mb-12 max-w-2xl text-lg leading-relaxed text-text-dim md:text-xl"
+          className="mx-auto mb-8 max-w-2xl text-sm leading-relaxed text-text-dim sm:text-base md:mb-12 md:text-xl"
         >
           {t("description")}
         </motion.p>
@@ -103,17 +103,17 @@ export default function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.8 }}
-          className="flex flex-col items-center gap-4 sm:flex-row sm:justify-center"
+          className="flex flex-col items-center gap-3 sm:flex-row sm:justify-center sm:gap-4"
         >
           <motion.a
             href="#projects"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.97 }}
-            className="group relative inline-flex items-center gap-2 overflow-hidden rounded-full bg-cyan px-8 py-3.5 text-sm font-bold text-base transition-all hover:shadow-[0_0_30px_rgba(6,182,212,0.4)]"
+            className="group relative inline-flex items-center gap-2 overflow-hidden rounded-full bg-cyan px-6 py-3 text-xs font-bold text-base transition-all hover:shadow-[0_0_30px_rgba(6,182,212,0.4)] sm:px-8 sm:py-3.5 sm:text-sm"
           >
             <span className="relative z-10">{t("cta")}</span>
             <svg
-              className="relative z-10 h-4 w-4 transition-transform group-hover:translate-y-0.5"
+              className="relative z-10 h-3.5 w-3.5 transition-transform group-hover:translate-y-0.5 sm:h-4 sm:w-4"
               fill="none"
               viewBox="0 0 24 24"
               stroke="currentColor"
@@ -131,7 +131,7 @@ export default function Hero() {
             href="#about"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.97 }}
-            className="inline-flex items-center gap-2 rounded-full border border-border px-8 py-3.5 text-sm font-semibold text-text-dim transition-all hover:border-cyan/30 hover:text-text hover:shadow-[0_0_20px_rgba(6,182,212,0.1)]"
+            className="inline-flex items-center gap-2 rounded-full border border-border px-6 py-3 text-xs font-semibold text-text-dim transition-all hover:border-cyan/30 hover:text-text hover:shadow-[0_0_20px_rgba(6,182,212,0.1)] sm:px-8 sm:py-3.5 sm:text-sm"
           >
             {t("greeting")}
           </motion.a>
@@ -143,7 +143,7 @@ export default function Hero() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1.5, duration: 1 }}
-        className="absolute bottom-8 left-1/2 -translate-x-1/2"
+        className="absolute bottom-4 left-1/2 -translate-x-1/2 md:bottom-8"
       >
         <motion.div
           animate={{ y: [0, 8, 0] }}
