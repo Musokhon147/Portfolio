@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import type { ReactNode } from "react";
-import { Syne, DM_Sans } from "next/font/google";
+import { Syne, DM_Sans, Playfair_Display, Bebas_Neue, Inter } from "next/font/google";
 import "./globals.css";
 
 const syne = Syne({
@@ -12,6 +12,25 @@ const syne = Syne({
 const dmSans = DM_Sans({
   subsets: ["latin", "latin-ext"],
   variable: "--font-dm",
+  display: "swap",
+});
+
+const playfair = Playfair_Display({
+  subsets: ["latin"],
+  variable: "--font-playfair",
+  display: "swap",
+});
+
+const bebas = Bebas_Neue({
+  weight: "400",
+  subsets: ["latin"],
+  variable: "--font-bebas",
+  display: "swap",
+});
+
+const inter = Inter({
+  subsets: ["latin"],
+  variable: "--font-inter",
   display: "swap",
 });
 
@@ -63,7 +82,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
     <html className="scroll-smooth" suppressHydrationWarning>
       <body
         suppressHydrationWarning
-        className={`${syne.variable} ${dmSans.variable} font-[family-name:var(--font-dm)] antialiased`}
+        className={`${syne.variable} ${dmSans.variable} ${playfair.variable} ${bebas.variable} ${inter.variable} font-[family-name:var(--font-dm)] antialiased`}
       >
         <script
           suppressHydrationWarning

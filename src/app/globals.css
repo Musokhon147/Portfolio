@@ -731,3 +731,338 @@ input:focus, textarea:focus {
     0 2px 6px rgba(0, 0, 0, 0.08);
   }
 }
+
+/* ====== BAKERY SITE-SPECIFIC STYLES ====== */
+
+.bakery-card {
+  background: #ffffff;
+  border-radius: 20px;
+  border: none;
+  box-shadow:
+    0 1px 3px rgba(0, 0, 0, 0.04),
+    0 4px 12px rgba(0, 0, 0, 0.06),
+    0 12px 32px rgba(0, 0, 0, 0.04);
+  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s ease;
+}
+.bakery-card:hover {
+  transform: translateY(-6px);
+  box-shadow:
+    0 2px 6px rgba(0, 0, 0, 0.05),
+    0 8px 24px rgba(0, 0, 0, 0.08),
+    0 20px 48px rgba(0, 0, 0, 0.06);
+}
+
+.bakery-btn {
+  background: linear-gradient(135deg, #ec4899 0%, #f472b6 100%);
+  color: #ffffff;
+  border: none;
+  border-radius: 9999px;
+  padding: 12px 32px;
+  font-weight: 700;
+  font-size: 0.9rem;
+  cursor: pointer;
+  box-shadow: 0 4px 14px rgba(236, 72, 153, 0.3);
+  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s ease;
+}
+.bakery-btn:hover {
+  transform: translateY(-2px) scale(1.03);
+  box-shadow: 0 6px 20px rgba(236, 72, 153, 0.4);
+}
+.bakery-btn:active {
+  transform: scale(0.97);
+}
+
+.bakery-btn-outline {
+  background: #ffffff;
+  color: #ec4899;
+  border: 2px solid #f9a8d4;
+  border-radius: 9999px;
+  padding: 11px 32px;
+  font-weight: 700;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.bakery-btn-outline:hover {
+  background: #fff0f5;
+  border-color: #ec4899;
+}
+
+/* ====== GYM SITE-SPECIFIC STYLES ====== */
+
+.gym-card {
+  background: #111111;
+  border: 1px solid #222222;
+  border-left: 4px solid #f97316;
+  border-radius: 8px;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+.gym-card:hover {
+  border-left-color: #fb923c;
+  box-shadow: 0 0 20px rgba(249, 115, 22, 0.15), inset 0 0 0 1px rgba(249, 115, 22, 0.1);
+}
+
+.gym-btn {
+  background: linear-gradient(180deg, #fb923c 0%, #f97316 50%, #ea580c 100%);
+  color: #ffffff;
+  border: none;
+  border-radius: 0;
+  padding: 14px 36px;
+  font-weight: 900;
+  font-size: 0.85rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  cursor: pointer;
+  box-shadow: 0 4px 16px rgba(249, 115, 22, 0.35);
+  transition: transform 0.15s ease, box-shadow 0.2s ease;
+}
+.gym-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 24px rgba(249, 115, 22, 0.5), 0 0 40px rgba(249, 115, 22, 0.15);
+}
+.gym-btn:active {
+  transform: translateY(1px);
+  box-shadow: 0 2px 8px rgba(249, 115, 22, 0.3);
+}
+
+.gym-btn-outline {
+  background: transparent;
+  color: #f97316;
+  border: 2px solid #f97316;
+  border-radius: 0;
+  padding: 13px 36px;
+  font-weight: 900;
+  font-size: 0.85rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+.gym-btn-outline:hover {
+  background: rgba(249, 115, 22, 0.1);
+  border-color: #fb923c;
+  box-shadow: 0 0 20px rgba(249, 115, 22, 0.15);
+}
+
+/* ====== NOVATECH SITE-SPECIFIC STYLES ====== */
+
+.nova-card {
+  background: #111113;
+  border: 1px solid #1e1e24;
+  border-radius: 12px;
+  transition: border-color 0.4s ease, box-shadow 0.4s ease;
+}
+.nova-card:hover {
+  border-color: rgba(139, 92, 246, 0.4);
+  box-shadow: 0 0 0 1px rgba(139, 92, 246, 0.1);
+}
+
+.nova-btn {
+  background: #8b5cf6;
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  padding: 12px 28px;
+  font-weight: 600;
+  font-size: 0.875rem;
+  cursor: pointer;
+  transition: background 0.2s ease, box-shadow 0.2s ease;
+}
+.nova-btn:hover {
+  background: #7c3aed;
+  box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.15);
+}
+.nova-btn:active {
+  background: #6d28d9;
+}
+
+.nova-btn-outline {
+  background: transparent;
+  color: #a78bfa;
+  border: 1px solid #2e2e3a;
+  border-radius: 8px;
+  padding: 11px 28px;
+  font-weight: 600;
+  font-size: 0.875rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+.nova-btn-outline:hover {
+  border-color: rgba(139, 92, 246, 0.5);
+  color: #c4b5fd;
+}
+
+/* ====== BAKERY AMBER BUTTON ====== */
+.bakery-btn-amber {
+  background: linear-gradient(135deg, #ff6f00 0%, #ff8f00 100%);
+  color: #ffffff;
+  border: none;
+  border-radius: 9999px;
+  padding: 14px 36px;
+  font-weight: 700;
+  font-size: 0.9rem;
+  cursor: pointer;
+  box-shadow: 0 4px 14px rgba(255, 111, 0, 0.35);
+  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s ease;
+}
+.bakery-btn-amber:hover {
+  transform: translateY(-2px) scale(1.03);
+  box-shadow: 0 6px 20px rgba(255, 111, 0, 0.45);
+}
+
+/* ====== NOVATECH GRADIENT BORDER ====== */
+.nova-gradient-border {
+  background: linear-gradient(135deg, #8b5cf6, #06b6d4);
+  padding: 1px;
+  border-radius: 16px;
+  background-size: 200% 200%;
+  animation: nova-border-shift 4s ease infinite;
+}
+
+@keyframes nova-screenshot-glow {
+  0%, 100% { box-shadow: 0 0 80px rgba(139,92,246,0.12), 0 0 40px rgba(139,92,246,0.08), 0 25px 50px rgba(0,0,0,0.4); }
+  50% { box-shadow: 0 0 100px rgba(139,92,246,0.2), 0 0 60px rgba(139,92,246,0.14), 0 25px 50px rgba(0,0,0,0.4); }
+}
+
+@keyframes nova-border-shift {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+/* ====== MINI-WEBSITE ACCENT COLOR OVERRIDES ====== */
+
+/* Sweet Delights Bakery: Pink/rose */
+[data-accent="pink"] {
+  --color-cyan: #ec4899;
+  --color-cyan-light: #f472b6;
+  --color-cyan-glow: rgba(236, 72, 153, 0.15);
+  --color-amber: #f9a8d4;
+  --color-amber-glow: rgba(249, 168, 212, 0.15);
+  --orb-cyan: radial-gradient(circle, rgba(236, 72, 153, 0.4) 0%, transparent 70%);
+  --orb-amber: radial-gradient(circle, rgba(249, 168, 212, 0.35) 0%, transparent 70%);
+  --orb-purple: radial-gradient(circle, rgba(244, 114, 182, 0.3) 0%, transparent 70%);
+  --grid-line: rgba(236, 72, 153, 0.3);
+  --particle-rgb: 236, 72, 153;
+}
+
+/* IronForge Gym: Bold orange */
+[data-accent="orange"] {
+  --color-cyan: #f97316;
+  --color-cyan-light: #fb923c;
+  --color-cyan-glow: rgba(249, 115, 22, 0.15);
+  --color-amber: #ea580c;
+  --color-amber-glow: rgba(234, 88, 12, 0.15);
+  --orb-cyan: radial-gradient(circle, rgba(249, 115, 22, 0.4) 0%, transparent 70%);
+  --orb-amber: radial-gradient(circle, rgba(234, 88, 12, 0.35) 0%, transparent 70%);
+  --orb-purple: radial-gradient(circle, rgba(251, 146, 60, 0.3) 0%, transparent 70%);
+  --grid-line: rgba(249, 115, 22, 0.3);
+  --particle-rgb: 249, 115, 22;
+}
+
+/* NovaTech: Sleek violet */
+[data-accent="violet"] {
+  --color-cyan: #8b5cf6;
+  --color-cyan-light: #a78bfa;
+  --color-cyan-glow: rgba(139, 92, 246, 0.15);
+  --color-amber: #c084fc;
+  --color-amber-glow: rgba(192, 132, 252, 0.15);
+  --orb-cyan: radial-gradient(circle, rgba(139, 92, 246, 0.4) 0%, transparent 70%);
+  --orb-amber: radial-gradient(circle, rgba(192, 132, 252, 0.35) 0%, transparent 70%);
+  --orb-purple: radial-gradient(circle, rgba(167, 139, 250, 0.3) 0%, transparent 70%);
+  --grid-line: rgba(139, 92, 246, 0.3);
+  --particle-rgb: 139, 92, 246;
+}
+
+/* Light mode accent overrides */
+.light [data-accent="pink"] {
+  --color-cyan: #db2777;
+  --color-cyan-light: #ec4899;
+  --color-cyan-glow: rgba(219, 39, 119, 0.12);
+  --color-amber: #f472b6;
+  --color-amber-glow: rgba(244, 114, 182, 0.12);
+  --orb-cyan: radial-gradient(circle, rgba(219, 39, 119, 0.18) 0%, transparent 70%);
+  --orb-amber: radial-gradient(circle, rgba(244, 114, 182, 0.15) 0%, transparent 70%);
+  --grid-line: rgba(219, 39, 119, 0.12);
+  --particle-rgb: 219, 39, 119;
+}
+
+.light [data-accent="orange"] {
+  --color-cyan: #ea580c;
+  --color-cyan-light: #f97316;
+  --color-cyan-glow: rgba(234, 88, 12, 0.12);
+  --color-amber: #c2410c;
+  --color-amber-glow: rgba(194, 65, 12, 0.12);
+  --orb-cyan: radial-gradient(circle, rgba(234, 88, 12, 0.18) 0%, transparent 70%);
+  --orb-amber: radial-gradient(circle, rgba(194, 65, 12, 0.15) 0%, transparent 70%);
+  --grid-line: rgba(234, 88, 12, 0.12);
+  --particle-rgb: 234, 88, 12;
+}
+
+.light [data-accent="violet"] {
+  --color-cyan: #7c3aed;
+  --color-cyan-light: #8b5cf6;
+  --color-cyan-glow: rgba(124, 58, 237, 0.12);
+  --color-amber: #a855f7;
+  --color-amber-glow: rgba(168, 85, 247, 0.12);
+  --orb-cyan: radial-gradient(circle, rgba(124, 58, 237, 0.18) 0%, transparent 70%);
+  --orb-amber: radial-gradient(circle, rgba(168, 85, 247, 0.15) 0%, transparent 70%);
+  --grid-line: rgba(124, 58, 237, 0.12);
+  --particle-rgb: 124, 58, 237;
+}
+
+/* ====== BAKERY FOOTER INPUT ====== */
+.bakery-input {
+  background: rgba(250, 245, 240, 0.08);
+  border: 1px solid rgba(250, 245, 240, 0.2);
+  border-radius: 9999px;
+  padding: 10px 20px;
+  color: #faf5f0;
+  font-size: 0.875rem;
+  transition: border-color 0.3s ease;
+}
+.bakery-input:focus {
+  outline: none;
+  border-color: #c2185b;
+  box-shadow: 0 0 0 2px rgba(194, 24, 91, 0.15);
+}
+.bakery-input::placeholder {
+  color: rgba(250, 245, 240, 0.4);
+}
+
+/* ====== GYM FOOTER INPUT ====== */
+.gym-input {
+  background: #111111;
+  border: 2px solid #222222;
+  border-radius: 0;
+  padding: 12px 16px;
+  color: #ffffff;
+  font-size: 0.875rem;
+  transition: border-color 0.2s ease;
+}
+.gym-input:focus {
+  outline: none;
+  border-color: #f97316;
+  box-shadow: 0 0 15px rgba(249, 115, 22, 0.1);
+}
+.gym-input::placeholder {
+  color: #555555;
+}
+
+/* ====== NOVATECH FOOTER INPUT ====== */
+.nova-input {
+  background: #18181b;
+  border: 1px solid #27272a;
+  border-radius: 8px;
+  padding: 10px 16px;
+  color: #fafafa;
+  font-size: 0.875rem;
+  transition: border-color 0.3s ease;
+}
+.nova-input:focus {
+  outline: none;
+  border-color: #8b5cf6;
+  box-shadow: 0 0 0 2px rgba(139, 92, 246, 0.15);
+}
+.nova-input::placeholder {
+  color: #52525b;
+}

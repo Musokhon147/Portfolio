@@ -54,20 +54,16 @@
     "viewProject": "View Project",
     "viewCode": "Source Code",
     "project1": {
-      "title": "E-Commerce Platform",
-      "desc": "A full-stack e-commerce web application with payment integration and admin dashboard."
+      "title": "Sweet Delights Bakery",
+      "desc": "A playful bakery website with online ordering, menu showcase, and a warm cake-themed design."
     },
     "project2": {
-      "title": "VR Training Simulator",
-      "desc": "An immersive virtual reality training environment built with Unity for industrial use."
+      "title": "IronForge Gym",
+      "desc": "A bold fitness website with class schedules, membership plans, and a powerful gym-themed experience."
     },
     "project3": {
-      "title": "IoT Smart Home System",
-      "desc": "Hardware-based smart home controller with mobile app and real-time monitoring."
-    },
-    "project4": {
-      "title": "2D Platformer Game",
-      "desc": "A side-scrolling platformer game with custom physics and level editor, built in Unity."
+      "title": "NovaTech Solutions",
+      "desc": "A sleek SaaS startup landing page with product features, pricing plans, and modern tech aesthetics."
     }
   },
   "Contact": {
@@ -132,5 +128,296 @@
   },
   "Footer": {
     "rights": "All rights reserved."
+  },
+  "ProjectPages": {
+    "backToPortfolio": "Back to Portfolio"
+  },
+  "SweetDelights": {
+    "brand": "Sweet Delights",
+    "hero": {
+      "tagline": "Life Is Sweet, One Bite at a Time",
+      "description": "Handcrafted cakes, pastries, and desserts made with love. From birthday celebrations to cozy afternoon treats — we bake happiness.",
+      "cta": "Order Now",
+      "ctaSecondary": "See Menu"
+    },
+    "products": {
+      "title": "Our Bestsellers",
+      "p1": { "name": "Strawberry Dream Cake", "price": "589 000 so'm" },
+      "p2": { "name": "Chocolate Lava Bliss", "price": "499 000 so'm" },
+      "p3": { "name": "Vanilla Cloud Cupcakes", "price": "319 000 so'm" },
+      "p4": { "name": "Red Velvet Royale", "price": "679 000 so'm" },
+      "p5": { "name": "Lemon Zest Tart", "price": "385 000 so'm" },
+      "p6": { "name": "Caramel Macaron Box", "price": "255 000 so'm" },
+      "addToCart": "Add to Cart"
+    },
+    "features": {
+      "title": "Why Sweet Delights?",
+      "f1": { "title": "Baked Fresh Daily", "desc": "Every cake and pastry is made fresh each morning with premium ingredients." },
+      "f2": { "title": "Custom Designs", "desc": "Dream it, we bake it. Custom cakes for any occasion, any size." },
+      "f3": { "title": "Same-Day Delivery", "desc": "Order before noon and get your treats delivered the same day." },
+      "f4": { "title": "Allergy Friendly", "desc": "Gluten-free, vegan, and nut-free options available for everyone." }
+    },
+    "cta": {
+      "title": "Craving Something Sweet?",
+      "description": "Order your favorite treats online and we'll deliver the sweetness to your door.",
+      "button": "Browse Menu",
+      "buttonSecondary": "Gift Cards"
+    },
+    "nav": {
+      "home": "Home",
+      "menu": "Menu",
+      "about": "Our Story",
+      "gallery": "Gallery",
+      "contact": "Contact",
+      "cta": "Order Now"
+    },
+    "story": {
+      "label": "Our Story",
+      "title": "Baked With Love Since 2018",
+      "p1": "What started as a passion project in a tiny home kitchen has grown into Tashkent's most loved bakery. Our founder, Malika, turned her grandmother's recipes into works of art.",
+      "p2": "Every morning at 4 AM, our bakers begin the ritual of crafting each pastry by hand. We source organic flour, farm-fresh eggs, and real Belgian chocolate — because shortcuts have no place in our kitchen.",
+      "stat1Value": "7",
+      "stat1Label": "Years Baking",
+      "stat2Value": "50K",
+      "stat2Label": "Happy Customers",
+      "stat3Value": "200",
+      "stat3Label": "Unique Recipes"
+    },
+    "gallery": {
+      "title": "From Our Kitchen to Your Heart",
+      "subtitle": "Follow us @sweetdelights"
+    },
+    "testimonials": {
+      "title": "What Our Customers Say",
+      "t1": { "quote": "The best cakes in Tashkent, hands down. Their strawberry dream cake was the star of my daughter's birthday party.", "name": "Dilnoza Karimova", "role": "Loyal Customer" },
+      "t2": { "quote": "I order from Sweet Delights every week. The macarons are perfectly crafted and the delivery is always on time.", "name": "Akmal Rakhimov", "role": "Weekly Subscriber" },
+      "t3": { "quote": "They made our wedding cake and it was absolutely stunning. Tasted even better than it looked!", "name": "Sofia & Timur", "role": "Wedding Clients" }
+    },
+    "footer": {
+      "description": "Handcrafted cakes and pastries baked fresh daily with love in Tashkent.",
+      "menuTitle": "Menu",
+      "cakes": "Cakes",
+      "pastries": "Pastries",
+      "custom": "Custom Orders",
+      "catering": "Catering",
+      "companyTitle": "Company",
+      "about": "Our Story",
+      "delivery": "Delivery",
+      "careers": "Careers",
+      "faq": "FAQ",
+      "newsletter": "Get sweet updates",
+      "emailPlaceholder": "your@email.com",
+      "subscribe": "Subscribe",
+      "copyright": "Sweet Delights. All rights reserved.",
+      "address": "12 Amir Temur St, Tashkent",
+      "phone": "+998 71 200 00 00"
+    }
+  },
+  "IronForge": {
+    "brand": "IronForge",
+    "hero": {
+      "tagline": "Forge Your Strongest Self",
+      "description": "Premium fitness facility with world-class equipment, expert trainers, and a community that pushes you to be your best.",
+      "cta": "Start Free Trial",
+      "ctaSecondary": "View Classes"
+    },
+    "features": {
+      "title": "Why IronForge",
+      "f1": { "title": "Elite Equipment", "desc": "State-of-the-art machines and free weights from the world's top fitness brands." },
+      "f2": { "title": "Expert Trainers", "desc": "Certified personal trainers to guide your journey and maximize your results." },
+      "f3": { "title": "Group Classes", "desc": "From HIIT to yoga, 50+ classes weekly to keep your workouts fresh and fun." }
+    },
+    "stats": {
+      "title": "The Numbers Speak",
+      "s1": { "value": "5000", "suffix": "+", "label": "Members" },
+      "s2": { "value": "50", "suffix": "+", "label": "Classes Weekly" },
+      "s3": { "value": "24", "suffix": "/7", "label": "Open Hours" },
+      "s4": { "value": "15", "suffix": "+", "label": "Expert Trainers" }
+    },
+    "cta": {
+      "title": "Ready to Transform?",
+      "description": "Join IronForge today and get your first month free. No contracts, no excuses.",
+      "button": "Join Now",
+      "buttonSecondary": "See Pricing"
+    },
+    "nav": {
+      "home": "Home",
+      "programs": "Programs",
+      "pricing": "Pricing",
+      "trainers": "Trainers",
+      "contact": "Contact",
+      "cta": "Join Now"
+    },
+    "pricing": {
+      "label": "Membership Plans",
+      "title": "Choose Your Path",
+      "tier1": {
+        "name": "Starter",
+        "price": "299 000",
+        "period": "so'm/mo",
+        "f1": "Full gym access",
+        "f2": "Locker room & showers",
+        "f3": "Basic fitness assessment",
+        "f4": "Mobile app access",
+        "cta": "Get Started"
+      },
+      "tier2": {
+        "name": "Pro",
+        "price": "499 000",
+        "period": "so'm/mo",
+        "badge": "Most Popular",
+        "f1": "Everything in Starter",
+        "f2": "Unlimited group classes",
+        "f3": "1 personal training / month",
+        "f4": "Nutrition consultation",
+        "f5": "Guest pass (2/month)",
+        "cta": "Go Pro"
+      },
+      "tier3": {
+        "name": "Elite",
+        "price": "899 000",
+        "period": "so'm/mo",
+        "f1": "Everything in Pro",
+        "f2": "Unlimited personal training",
+        "f3": "Pool & sauna access",
+        "f4": "Priority class booking",
+        "f5": "Free merchandise quarterly",
+        "cta": "Go Elite"
+      }
+    },
+    "testimonials": {
+      "title": "Real Results. Real People.",
+      "t1": { "quote": "I lost 15kg in 6 months at IronForge. The trainers pushed me beyond what I thought was possible.", "name": "Rustam Aliev", "role": "Member for 2 years" },
+      "t2": { "quote": "Best gym in the city. The equipment is top-notch and the atmosphere is pure motivation.", "name": "Diana Yusupova", "role": "Pro Member" },
+      "t3": { "quote": "The group classes changed my life. I went from couch potato to running 10K in just 4 months.", "name": "Jasur Nazarov", "role": "Elite Member" }
+    },
+    "footer": {
+      "description": "Premium fitness facility. Forge your strongest self.",
+      "programsTitle": "Programs",
+      "strength": "Strength Training",
+      "cardio": "Cardio & HIIT",
+      "yoga": "Yoga & Flexibility",
+      "boxing": "Boxing",
+      "companyTitle": "Company",
+      "about": "About Us",
+      "careers": "Careers",
+      "blog": "Blog",
+      "faq": "FAQ",
+      "newsletter": "Get training tips",
+      "emailPlaceholder": "your@email.com",
+      "subscribe": "Subscribe",
+      "copyright": "IronForge Gym. All rights reserved.",
+      "address": "45 Mustaqillik Ave, Tashkent",
+      "phone": "+998 71 300 00 00",
+      "hours": "Open 24/7"
+    }
+  },
+  "NovaTech": {
+    "brand": "NovaTech",
+    "hero": {
+      "tagline": "Build the Future, Ship It Faster",
+      "description": "An all-in-one platform for modern teams. Manage projects, automate workflows, and ship products 10x faster with AI-powered tools.",
+      "cta": "Get Started Free",
+      "ctaSecondary": "Watch Demo"
+    },
+    "features": {
+      "title": "Powerful Features",
+      "f1": { "title": "AI Workflows", "desc": "Automate repetitive tasks with intelligent AI that learns how your team works." },
+      "f2": { "title": "Real-Time Collaboration", "desc": "Work together seamlessly with live editing, comments, and instant sync." },
+      "f3": { "title": "Advanced Analytics", "desc": "Track every metric that matters. Beautiful dashboards, actionable insights." }
+    },
+    "stats": {
+      "title": "Trusted by Teams Worldwide",
+      "s1": { "value": "10", "suffix": "K+", "label": "Active Teams" },
+      "s2": { "value": "99.9", "suffix": "%", "label": "Uptime" },
+      "s3": { "value": "50", "suffix": "M+", "label": "Tasks Completed" },
+      "s4": { "value": "4.9", "suffix": "/5", "label": "User Rating" }
+    },
+    "cta": {
+      "title": "Ready to Ship Faster?",
+      "description": "Join thousands of teams already building the future with NovaTech.",
+      "button": "Start Free Trial",
+      "buttonSecondary": "See Pricing"
+    },
+    "nav": {
+      "home": "Home",
+      "features": "Features",
+      "pricing": "Pricing",
+      "docs": "Docs",
+      "blog": "Blog",
+      "cta": "Get Started"
+    },
+    "pricing": {
+      "label": "Simple, Transparent Pricing",
+      "title": "Choose the Right Plan",
+      "tier1": {
+        "name": "Free",
+        "price": "0",
+        "period": "/month",
+        "desc": "For individuals and small projects",
+        "f1": "Up to 5 projects",
+        "f2": "Basic analytics",
+        "f3": "Community support",
+        "f4": "1 GB storage",
+        "cta": "Get Started Free"
+      },
+      "tier2": {
+        "name": "Pro",
+        "price": "29",
+        "period": "/month",
+        "badge": "Most Popular",
+        "desc": "For growing teams",
+        "f1": "Unlimited projects",
+        "f2": "Advanced analytics",
+        "f3": "Priority support",
+        "f4": "50 GB storage",
+        "f5": "AI workflows",
+        "f6": "Custom integrations",
+        "cta": "Start Free Trial"
+      },
+      "tier3": {
+        "name": "Enterprise",
+        "price": "Custom",
+        "period": "",
+        "desc": "For large organizations",
+        "f1": "Everything in Pro",
+        "f2": "Dedicated account manager",
+        "f3": "SSO & SAML",
+        "f4": "Unlimited storage",
+        "f5": "Custom SLA",
+        "f6": "On-premise option",
+        "cta": "Contact Sales"
+      }
+    },
+    "testimonials": {
+      "title": "Loved by Teams Everywhere",
+      "t1": { "quote": "NovaTech replaced 4 tools for us. Our team ships 3x faster now and the AI workflows save hours every week.", "name": "Emily Chen", "role": "VP Engineering, Streamline" },
+      "t2": { "quote": "The best project management tool we've used. Clean interface, powerful features, and the analytics are incredible.", "name": "Marcus Johnson", "role": "CTO, BuildRight" },
+      "t3": { "quote": "Switched from Jira and never looked back. NovaTech is what modern teams actually need.", "name": "Aiko Tanaka", "role": "Product Lead, LaunchPad" }
+    },
+    "footer": {
+      "productTitle": "Product",
+      "features": "Features",
+      "pricing": "Pricing",
+      "integrations": "Integrations",
+      "changelog": "Changelog",
+      "companyTitle": "Company",
+      "about": "About",
+      "blog": "Blog",
+      "careers": "Careers",
+      "press": "Press",
+      "resourcesTitle": "Resources",
+      "docs": "Documentation",
+      "api": "API Reference",
+      "community": "Community",
+      "support": "Support",
+      "newsletter": "Stay up to date",
+      "emailPlaceholder": "your@email.com",
+      "subscribe": "Subscribe",
+      "copyright": "NovaTech, Inc. All rights reserved.",
+      "terms": "Terms",
+      "privacy": "Privacy",
+      "security": "Security"
+    }
   }
 }

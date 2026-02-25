@@ -18,7 +18,7 @@
   },
   "About": {
     "title": "Biz haqimizda",
-    "p1": "Biz ekranlarda — va ba'zan ulardan tashqarida yashaydigan narsalarni yaratishga ishtiyoqmand, ko'p qirrali dasturchilarmiз. Zamonaviy veb-sayt, kuchli backend, immersiv o'yin yoki VR tajriba bo'lsin — biz g'oyalarni kod bilan hayotga tatbiq etamiz.",
+    "p1": "Biz ekranlarda — va ba'zan ulardan tashqarida yashaydigan narsalarni yaratishga ishtiyoqmand, ko'p qirrali dasturchilarmiz. Zamonaviy veb-sayt, kuchli backend, immersiv o'yin yoki VR tajriba bo'lsin — biz g'oyalarni kod bilan hayotga tatbiq etamiz.",
     "p2": "Bizning asboblar to'plamimiz frontend va backend dasturlash, Unity o'yin ishlab chiqish, virtual reallik va apparat loyihalarini qamrab oladi. Biz har bir muammoning texnik yechimi borligiga ishonamiz va uni topishdan zavqlanamiz.",
     "p3": "Agar uni noutbuk bilan yaratish mumkin bo'lsa, biz uni yarata olamiz."
   },
@@ -54,20 +54,16 @@
     "viewProject": "Loyihani ko'rish",
     "viewCode": "Manba kodi",
     "project1": {
-      "title": "E-Commerce platformasi",
-      "desc": "To'lov integratsiyasi va admin paneli bilan to'liq e-commerce veb-ilova."
+      "title": "Sweet Delights pishiriqxonasi",
+      "desc": "Onlayn buyurtma, menyu vitrinasi va issiq tort mavzusidagi dizaynga ega quvnoq pishiriqxona veb-sayti."
     },
     "project2": {
-      "title": "VR trening simulyatori",
-      "desc": "Sanoat uchun Unity bilan yaratilgan immersiv virtual reallik trening muhiti."
+      "title": "IronForge sport zali",
+      "desc": "Mashg'ulot jadvallari, a'zolik rejalari va kuchli sport zali tajribasiga ega jasur fitness veb-sayti."
     },
     "project3": {
-      "title": "IoT aqlli uy tizimi",
-      "desc": "Mobil ilova va real vaqt monitoringi bilan apparat asosidagi aqlli uy boshqaruvchisi."
-    },
-    "project4": {
-      "title": "2D platformer o'yin",
-      "desc": "Unity da yaratilgan maxsus fizika va daraja muharriri bilan yon-skrolli platformer o'yini."
+      "title": "NovaTech yechimlari",
+      "desc": "Mahsulot xususiyatlari, narx rejalari va zamonaviy texnologik estetikaga ega zamonaviy SaaS sahifasi."
     }
   },
   "Contact": {
@@ -132,5 +128,296 @@
   },
   "Footer": {
     "rights": "Barcha huquqlar himoyalangan."
+  },
+  "ProjectPages": {
+    "backToPortfolio": "Portfolioga qaytish"
+  },
+  "SweetDelights": {
+    "brand": "Sweet Delights",
+    "hero": {
+      "tagline": "Hayot shirin, har bir tishlashda",
+      "description": "Sevgi bilan tayyorlangan qo'l ishi tortlar, pirojniylar va shirinliklar. Tug'ilgan kundan tortib qulay kechki taomgacha.",
+      "cta": "Buyurtma berish",
+      "ctaSecondary": "Menyu ko'rish"
+    },
+    "products": {
+      "title": "Eng mashhurlar",
+      "p1": { "name": "Qulupnayli orzular torti", "price": "589 000 so'm" },
+      "p2": { "name": "Shokoladli lava torti", "price": "499 000 so'm" },
+      "p3": { "name": "Vanilli bulutli kapkeyklar", "price": "319 000 so'm" },
+      "p4": { "name": "Qizil baxmal torti", "price": "679 000 so'm" },
+      "p5": { "name": "Limonli tart", "price": "385 000 so'm" },
+      "p6": { "name": "Karamelli makaron qutisi", "price": "255 000 so'm" },
+      "addToCart": "Savatga qo'shish"
+    },
+    "features": {
+      "title": "Nima uchun Sweet Delights?",
+      "f1": { "title": "Har kuni yangi pishiriladi", "desc": "Har bir tort va pirojniy har kuni ertalab premium ingredientlar bilan tayyorlanadi." },
+      "f2": { "title": "Maxsus dizaynlar", "desc": "Xayol qiling, biz pishiramiz. Har qanday bayram uchun maxsus tortlar." },
+      "f3": { "title": "Bir kunda yetkazib berish", "desc": "Tushdan oldin buyurtma bering va shirinliklaringiz shu kuni yetkaziladi." },
+      "f4": { "title": "Allergiya do'stona", "desc": "Glutensiz, vegan va yong'oqsiz variantlar hamma uchun mavjud." }
+    },
+    "cta": {
+      "title": "Shirin narsaga ishtahangiz bormi?",
+      "description": "Sevimli shirinliklaringizni onlayn buyurtma qiling va biz shirinlikni eshigingizga yetkazamiz.",
+      "button": "Menyuni ko'rish",
+      "buttonSecondary": "Sovg'a kartalari"
+    },
+    "nav": {
+      "home": "Bosh sahifa",
+      "menu": "Menyu",
+      "about": "Bizning hikoya",
+      "gallery": "Galereya",
+      "contact": "Aloqa",
+      "cta": "Buyurtma berish"
+    },
+    "story": {
+      "label": "Bizning hikoya",
+      "title": "2018-yildan beri sevgi bilan pishiramiz",
+      "p1": "Kichkina uy oshxonasida ehtirosli loyiha sifatida boshlangan narsa Toshkentning eng sevimli pishiriqxonasiga aylandi. Bizning asoschimiz Malika buvisining retseptlarini san'at asariga aylantirdi.",
+      "p2": "Har kuni ertalab soat 4 da novvoylarimiz har bir pirojniyni qo'lda tayyorlash marosimini boshlaydi. Biz organik un, yangi tuxum va haqiqiy Belgiya shokoladidan foydalanamiz — chunki bizning oshxonamizda qisqa yo'l yo'q.",
+      "stat1Value": "7",
+      "stat1Label": "Yillik tajriba",
+      "stat2Value": "50K",
+      "stat2Label": "Mamnun mijozlar",
+      "stat3Value": "200",
+      "stat3Label": "Noyob retseptlar"
+    },
+    "gallery": {
+      "title": "Oshxonamizdan — qalbingizga",
+      "subtitle": "Bizni kuzating @sweetdelights"
+    },
+    "testimonials": {
+      "title": "Mijozlarimiz nima deydi",
+      "t1": { "quote": "Toshkentdagi eng yaxshi tortlar, shubhasiz. Ularning qulupnayli orzular torti qizimning tug'ilgan kuni bayramining yulduzi bo'ldi.", "name": "Dilnoza Karimova", "role": "Sodiq mijoz" },
+      "t2": { "quote": "Men har hafta Sweet Delights dan buyurtma beraman. Makaronlar mukammal tayyorlangan va yetkazib berish doimo o'z vaqtida.", "name": "Akmal Rakhimov", "role": "Haftalik obunachi" },
+      "t3": { "quote": "Ular bizning to'y tortimizni tayyorlashdi va u hayratlanarli darajada chiroyli edi. Ta'mi ko'rinishidan ham yaxshi edi!", "name": "Sofia va Timur", "role": "To'y mijozlari" }
+    },
+    "footer": {
+      "description": "Toshkentda har kuni sevgi bilan yangi pishiriladigan qo'l ishi tortlar va pirojniylar.",
+      "menuTitle": "Menyu",
+      "cakes": "Tortlar",
+      "pastries": "Pirojniylar",
+      "custom": "Maxsus buyurtmalar",
+      "catering": "Ketering",
+      "companyTitle": "Kompaniya",
+      "about": "Bizning hikoya",
+      "delivery": "Yetkazib berish",
+      "careers": "Karyera",
+      "faq": "Ko'p beriladigan savollar",
+      "newsletter": "Shirin yangiliklar oling",
+      "emailPlaceholder": "sizning@email.com",
+      "subscribe": "Obuna bo'lish",
+      "copyright": "Sweet Delights. Barcha huquqlar himoyalangan.",
+      "address": "Amir Temur ko'chasi 12, Toshkent",
+      "phone": "+998 71 200 00 00"
+    }
+  },
+  "IronForge": {
+    "brand": "IronForge",
+    "hero": {
+      "tagline": "Eng kuchli o'zingizni yarating",
+      "description": "Dunyo darajasidagi jihozlar, tajribali murabbiylar va sizni eng yaxshingizga undaydigan jamoa bilan premium fitness markazi.",
+      "cta": "Bepul sinov boshlash",
+      "ctaSecondary": "Mashg'ulotlarni ko'rish"
+    },
+    "features": {
+      "title": "Nima uchun IronForge",
+      "f1": { "title": "Elit jihozlar", "desc": "Dunyoning eng yaxshi fitness brendlaridan zamonaviy mashinalar va erkin og'irliklar." },
+      "f2": { "title": "Tajribali murabbiylar", "desc": "Sertifikatlangan shaxsiy murabbiylar sayohatingizni yo'naltiradi." },
+      "f3": { "title": "Guruh mashg'ulotlari", "desc": "HIIT dan yogagacha, haftada 50+ mashg'ulot." }
+    },
+    "stats": {
+      "title": "Raqamlar gapiradi",
+      "s1": { "value": "5000", "suffix": "+", "label": "A'zolar" },
+      "s2": { "value": "50", "suffix": "+", "label": "Haftalik mashg'ulotlar" },
+      "s3": { "value": "24", "suffix": "/7", "label": "Ish soatlari" },
+      "s4": { "value": "15", "suffix": "+", "label": "Murabbiylar" }
+    },
+    "cta": {
+      "title": "O'zgarishga tayyormisiz?",
+      "description": "Bugun IronForge ga qo'shiling va birinchi oyingizni bepul oling.",
+      "button": "Hozir qo'shiling",
+      "buttonSecondary": "Narxlarni ko'rish"
+    },
+    "nav": {
+      "home": "Bosh sahifa",
+      "programs": "Dasturlar",
+      "pricing": "Narxlar",
+      "trainers": "Murabbiylar",
+      "contact": "Aloqa",
+      "cta": "Hozir qo'shiling"
+    },
+    "pricing": {
+      "label": "A'zolik rejalari",
+      "title": "O'z yo'lingizni tanlang",
+      "tier1": {
+        "name": "Boshlang'ich",
+        "price": "299 000",
+        "period": "so'm/oy",
+        "f1": "To'liq sport zali kirish",
+        "f2": "Kiyinish xonasi va dush",
+        "f3": "Asosiy fitness baholash",
+        "f4": "Mobil ilova kirish",
+        "cta": "Boshlash"
+      },
+      "tier2": {
+        "name": "Pro",
+        "price": "499 000",
+        "period": "so'm/oy",
+        "badge": "Eng mashhur",
+        "f1": "Boshlang'ichdagi hamma narsa",
+        "f2": "Cheksiz guruh mashg'ulotlari",
+        "f3": "Oyiga 1 shaxsiy mashg'ulot",
+        "f4": "Ovqatlanish maslahati",
+        "f5": "Mehmon ruxsatnomasi (oyiga 2)",
+        "cta": "Pro tanlash"
+      },
+      "tier3": {
+        "name": "Elit",
+        "price": "899 000",
+        "period": "so'm/oy",
+        "f1": "Pro dagi hamma narsa",
+        "f2": "Cheksiz shaxsiy mashg'ulotlar",
+        "f3": "Hovuz va sauna kirish",
+        "f4": "Ustuvor joy band qilish",
+        "f5": "Har chorakda bepul atributika",
+        "cta": "Elit tanlash"
+      }
+    },
+    "testimonials": {
+      "title": "Haqiqiy natijalar. Haqiqiy odamlar.",
+      "t1": { "quote": "IronForge da 6 oyda 15 kg tashladim. Murabbiylar meni o'zim imkonsiz deb o'ylagan narsadan ham oshirishdi.", "name": "Rustam Aliyev", "role": "2 yillik a'zo" },
+      "t2": { "quote": "Shahardagi eng yaxshi sport zali. Jihozlar yuqori darajada va muhit sof motivatsiya.", "name": "Diana Yusupova", "role": "Pro a'zo" },
+      "t3": { "quote": "Guruh mashg'ulotlari hayotimni o'zgartirdi. Atigi 4 oyda divandan 10K yugurgunga aylandim.", "name": "Jasur Nazarov", "role": "Elit a'zo" }
+    },
+    "footer": {
+      "description": "Premium fitness markazi. Eng kuchli o'zingizni yarating.",
+      "programsTitle": "Dasturlar",
+      "strength": "Kuch mashqlari",
+      "cardio": "Kardio va HIIT",
+      "yoga": "Yoga va moslashuvchanlik",
+      "boxing": "Boks",
+      "companyTitle": "Kompaniya",
+      "about": "Biz haqimizda",
+      "careers": "Karyera",
+      "blog": "Blog",
+      "faq": "Ko'p beriladigan savollar",
+      "newsletter": "Mashq maslahatlari oling",
+      "emailPlaceholder": "sizning@email.com",
+      "subscribe": "Obuna bo'lish",
+      "copyright": "IronForge Gym. Barcha huquqlar himoyalangan.",
+      "address": "Mustaqillik xiyoboni 45, Toshkent",
+      "phone": "+998 71 300 00 00",
+      "hours": "24/7 ochiq"
+    }
+  },
+  "NovaTech": {
+    "brand": "NovaTech",
+    "hero": {
+      "tagline": "Kelajakni yarating, tezroq yetkazing",
+      "description": "Zamonaviy jamoalar uchun yagona platforma. Loyihalarni boshqaring, jarayonlarni avtomatlashtiring va AI vositalari bilan 10 baravar tezroq yetkazing.",
+      "cta": "Bepul boshlang",
+      "ctaSecondary": "Demo ko'rish"
+    },
+    "features": {
+      "title": "Kuchli imkoniyatlar",
+      "f1": { "title": "AI jarayonlari", "desc": "Jamoangiz qanday ishlashini o'rganadigan aqlli AI bilan takroriy vazifalarni avtomatlashtiring." },
+      "f2": { "title": "Real vaqt hamkorligi", "desc": "Jonli tahrirlash, izohlar va tezkor sinxronizatsiya bilan muammosiz hamkorlik." },
+      "f3": { "title": "Ilg'or tahlillar", "desc": "Har bir muhim ko'rsatkichni kuzating. Chiroyli panellar, amaliy tushunchalar." }
+    },
+    "stats": {
+      "title": "Dunyo bo'ylab jamoalar ishonadi",
+      "s1": { "value": "10", "suffix": "K+", "label": "Faol jamoalar" },
+      "s2": { "value": "99.9", "suffix": "%", "label": "Ishlash vaqti" },
+      "s3": { "value": "50", "suffix": "M+", "label": "Bajarilgan vazifalar" },
+      "s4": { "value": "4.9", "suffix": "/5", "label": "Foydalanuvchi bahosi" }
+    },
+    "cta": {
+      "title": "Tezroq yetkazishga tayyormisiz?",
+      "description": "NovaTech bilan kelajakni qurayotgan minglab jamoalarga qo'shiling.",
+      "button": "Bepul sinov boshlash",
+      "buttonSecondary": "Narxlarni ko'rish"
+    },
+    "nav": {
+      "home": "Bosh sahifa",
+      "features": "Imkoniyatlar",
+      "pricing": "Narxlar",
+      "docs": "Hujjatlar",
+      "blog": "Blog",
+      "cta": "Boshlash"
+    },
+    "pricing": {
+      "label": "Oddiy, shaffof narxlar",
+      "title": "To'g'ri rejani tanlang",
+      "tier1": {
+        "name": "Bepul",
+        "price": "0",
+        "period": "/oy",
+        "desc": "Shaxsiy foydalanish va kichik loyihalar uchun",
+        "f1": "5 tagacha loyiha",
+        "f2": "Asosiy tahlillar",
+        "f3": "Jamiyat yordami",
+        "f4": "1 GB xotira",
+        "cta": "Bepul boshlash"
+      },
+      "tier2": {
+        "name": "Pro",
+        "price": "29",
+        "period": "/oy",
+        "badge": "Eng mashhur",
+        "desc": "O'sib borayotgan jamoalar uchun",
+        "f1": "Cheksiz loyihalar",
+        "f2": "Ilg'or tahlillar",
+        "f3": "Ustuvor yordam",
+        "f4": "50 GB xotira",
+        "f5": "AI jarayonlari",
+        "f6": "Maxsus integratsiyalar",
+        "cta": "Bepul sinov boshlash"
+      },
+      "tier3": {
+        "name": "Korporativ",
+        "price": "Kelishuv",
+        "period": "",
+        "desc": "Yirik tashkilotlar uchun",
+        "f1": "Pro dagi hamma narsa",
+        "f2": "Shaxsiy hisob menejeri",
+        "f3": "SSO va SAML",
+        "f4": "Cheksiz xotira",
+        "f5": "Maxsus SLA",
+        "f6": "Lokal o'rnatish imkoniyati",
+        "cta": "Savdo bo'limiga murojaat"
+      }
+    },
+    "testimonials": {
+      "title": "Hamma joyda jamoalar tomonidan sevilgan",
+      "t1": { "quote": "NovaTech biz uchun 4 ta vositani almshtirdi. Jamoamiz endi 3 baravar tezroq ishlaydi va AI jarayonlari har hafta soatlab vaqt tejaydi.", "name": "Emily Chen", "role": "Muhandislik vitse-prezidenti, Streamline" },
+      "t2": { "quote": "Biz foydalangan eng yaxshi loyiha boshqaruv vositasi. Toza interfeys, kuchli imkoniyatlar va tahlillar ajoyib.", "name": "Marcus Johnson", "role": "CTO, BuildRight" },
+      "t3": { "quote": "Jira dan o'tdik va ortga qaramadik. NovaTech — zamonaviy jamoalarga haqiqatan ham kerakli narsa.", "name": "Aiko Tanaka", "role": "Mahsulot rahbari, LaunchPad" }
+    },
+    "footer": {
+      "productTitle": "Mahsulot",
+      "features": "Imkoniyatlar",
+      "pricing": "Narxlar",
+      "integrations": "Integratsiyalar",
+      "changelog": "O'zgarishlar jurnali",
+      "companyTitle": "Kompaniya",
+      "about": "Biz haqimizda",
+      "blog": "Blog",
+      "careers": "Karyera",
+      "press": "Matbuot",
+      "resourcesTitle": "Resurslar",
+      "docs": "Hujjatlar",
+      "api": "API ma'lumotnomasi",
+      "community": "Jamiyat",
+      "support": "Yordam",
+      "newsletter": "Yangiliklardan xabardor bo'ling",
+      "emailPlaceholder": "sizning@email.com",
+      "subscribe": "Obuna bo'lish",
+      "copyright": "NovaTech, Inc. Barcha huquqlar himoyalangan.",
+      "terms": "Shartlar",
+      "privacy": "Maxfiylik",
+      "security": "Xavfsizlik"
+    }
   }
 }
