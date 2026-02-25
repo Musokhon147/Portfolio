@@ -91,7 +91,7 @@ export default function Navbar() {
           <LanguageSwitcher />
           <button
             onClick={() => setMobileOpen(!mobileOpen)}
-            className="text-text-dim transition-colors hover:text-text"
+            className="liquid-glass-icon rounded-lg p-1.5 text-text-dim transition-all hover:text-text"
             aria-label="Toggle menu"
           >
             {mobileOpen ? <HiX size={22} /> : <HiMenu size={22} />}

@@ -41,7 +41,7 @@ export default function Typewriter({ words, className = "" }: TypewriterProps) {
     <span className={className}>
       {displayText}
       <span
-        className="inline-block w-[3px] -mb-1 ml-0.5 h-[1em] bg-cyan animate-[blink_1s_step-end_infinite]"
+        className="inline-block w-[3px] ml-0.5 h-[1.2em] align-baseline bg-cyan animate-[blink_1s_step-end_infinite]"
       />
     </span>
   );

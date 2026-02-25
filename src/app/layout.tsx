@@ -43,14 +43,14 @@ export const metadata: Metadata = {
     locale: "en_US",
     title: "Portfolio — Full-Spectrum Developer",
     description:
-      "I build apps, websites, games, VR experiences, and anything in between. Full-spectrum developer turning ideas into reality.",
+      "We build apps, websites, games, VR experiences, and anything in between. Full-spectrum developers turning ideas into reality.",
     siteName: "Portfolio",
   },
   twitter: {
     card: "summary_large_image",
     title: "Portfolio — Full-Spectrum Developer",
     description:
-      "I build apps, websites, games, VR experiences, and anything in between.",
+      "We build apps, websites, games, VR experiences, and anything in between.",
   },
   robots: {
     index: true,

@@ -35,7 +35,7 @@ export default function Footer() {
               target="_blank"
               rel="noopener noreferrer"
               aria-label={label}
-              className="rounded-lg border border-border/30 bg-elevated/30 p-2.5 text-text-muted transition-all hover:border-cyan/30 hover:text-cyan hover:shadow-[0_0_15px_rgba(6,182,212,0.15)]"
+              className="liquid-glass-icon rounded-lg p-2.5 text-text-muted transition-all hover:text-cyan"
             >
               <Icon size={18} />
             </a>

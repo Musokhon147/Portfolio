@@ -56,7 +56,7 @@ export default function NotFound() {
           transition={{ duration: 0.5, delay: 0.4 }}
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.97 }}
-          className="group relative inline-flex items-center gap-2 overflow-hidden rounded-full bg-cyan px-8 py-3.5 text-sm font-bold text-white transition-all hover:shadow-[0_0_30px_rgba(6,182,212,0.4)]"
+          className="liquid-glass group inline-flex items-center gap-2 rounded-full px-8 py-3.5 text-sm font-bold text-text transition-all"
         >
           <svg
             className="relative z-10 h-4 w-4 transition-transform group-hover:-translate-x-1"
@@ -72,7 +72,6 @@ export default function NotFound() {
             />
           </svg>
           <span className="relative z-10">Go Home</span>
-          <div className="absolute inset-0 bg-gradient-to-r from-cyan to-cyan-light opacity-0 transition-opacity group-hover:opacity-100" />
         </motion.a>
       </div>
     </div>

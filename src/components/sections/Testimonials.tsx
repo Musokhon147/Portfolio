@@ -75,7 +75,7 @@ export default function Testimonials() {
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.9 }}
               onClick={prev}
-              className="rounded-full border border-border/30 bg-surface/50 p-2.5 text-text-muted transition-all hover:border-cyan/30 hover:text-cyan"
+              className="liquid-glass-icon rounded-full p-2.5 text-text-muted transition-all hover:text-cyan"
             >
               <HiChevronLeft size={20} />
             </motion.button>
@@ -98,7 +98,7 @@ export default function Testimonials() {
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.9 }}
               onClick={next}
-              className="rounded-full border border-border/30 bg-surface/50 p-2.5 text-text-muted transition-all hover:border-cyan/30 hover:text-cyan"
+              className="liquid-glass-icon rounded-full p-2.5 text-text-muted transition-all hover:text-cyan"
             >
               <HiChevronRight size={20} />
             </motion.button>

@@ -136,12 +136,11 @@ export default function Contact() {
                 disabled={submitting}
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
-                className="group relative w-full overflow-hidden rounded-xl bg-cyan py-3.5 text-sm font-bold text-white transition-all hover:shadow-[0_0_30px_rgba(6,182,212,0.3)] disabled:opacity-60"
+                className="liquid-glass w-full rounded-2xl py-3.5 text-sm font-bold text-text transition-all disabled:opacity-60"
               >
                 <span className="relative z-10">
                   {submitting ? "..." : t("send")}
                 </span>
-                <div className="absolute inset-0 bg-gradient-to-r from-cyan to-cyan-light opacity-0 transition-opacity group-hover:opacity-100" />
               </motion.button>
             </form>
           )}

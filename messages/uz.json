@@ -1,29 +1,29 @@
 {
   "Navbar": {
-    "about": "Men haqimda",
+    "about": "Biz haqimizda",
     "skills": "Ko'nikmalar",
     "projects": "Loyihalar",
     "contact": "Aloqa"
   },
   "Hero": {
     "greeting": "Salom, xush kelibsiz!",
-    "tagline": "Men ilovalar, veb-saytlar, o'yinlar va boshqa ko'p narsalarni yarataman.",
-    "description": "Universal dasturchi — g'oyalarni haqiqatga aylantiraman, veb-ilovalardan VR tajribalargacha.",
-    "cta": "Ishlarimni ko'rish",
+    "tagline": "Biz ilovalar, veb-saytlar, o'yinlar va boshqa ko'p narsalarni yaratamiz.",
+    "description": "Universal dasturchilar — g'oyalarni haqiqatga aylantiramiz, veb-ilovalardan VR tajribalargacha.",
+    "cta": "Ishlarimizni ko'rish",
     "typewriter1": "veb-saytlar",
     "typewriter2": "mobil ilovalar",
     "typewriter3": "VR tajribalar",
-    "typewriter4": "o'yinlar",
+    "typewriter4": "O'yinlar",
     "typewriter5": "har narsa"
   },
   "About": {
-    "title": "Men haqimda",
-    "p1": "Men ekranlarda — va ba'zan ulardan tashqarida yashaydigan narsalarni yaratishga ishtiyoqmand, ko'p qirrali dasturchiman. Zamonaviy veb-sayt, kuchli backend, immersiv o'yin yoki VR tajriba bo'lsin — men g'oyalarni kod bilan hayotga tatbiq etaman.",
-    "p2": "Mening asboblar to'plamim frontend va backend dasturlash, Unity o'yin ishlab chiqish, virtual reallik va apparat loyihalarini qamrab oladi. Men har bir muammoning texnik yechimi borligiga ishonaman va uni topishdan zavqlanaman.",
-    "p3": "Agar uni noutbuk bilan yaratish mumkin bo'lsa, men uni yarata olaman."
+    "title": "Biz haqimizda",
+    "p1": "Biz ekranlarda — va ba'zan ulardan tashqarida yashaydigan narsalarni yaratishga ishtiyoqmand, ko'p qirrali dasturchilarmiз. Zamonaviy veb-sayt, kuchli backend, immersiv o'yin yoki VR tajriba bo'lsin — biz g'oyalarni kod bilan hayotga tatbiq etamiz.",
+    "p2": "Bizning asboblar to'plamimiz frontend va backend dasturlash, Unity o'yin ishlab chiqish, virtual reallik va apparat loyihalarini qamrab oladi. Biz har bir muammoning texnik yechimi borligiga ishonamiz va uni topishdan zavqlanamiz.",
+    "p3": "Agar uni noutbuk bilan yaratish mumkin bo'lsa, biz uni yarata olamiz."
   },
   "Skills": {
-    "title": "Nima qila olaman",
+    "title": "Nima qila olamiz",
     "frontend": {
       "title": "Frontend dasturlash",
       "desc": "React, Next.js va TypeScript bilan zamonaviy, moslashuvchan veb-interfeyslar."
@@ -79,14 +79,14 @@
     "send": "Xabar yuborish",
     "namePlaceholder": "Ismingiz",
     "emailPlaceholder": "sizning@email.com",
-    "messagePlaceholder": "Loyihangiz haqida aytib bering...",
+    "messagePlaceholder": "Loyihangiz haqida bizga aytib bering...",
     "successTitle": "Xabar yuborildi!",
-    "successDesc": "Murojaat uchun rahmat. Tez orada javob beraman."
+    "successDesc": "Murojaat uchun rahmat. Tez orada javob beramiz."
   },
   "Testimonials": {
     "title": "Odamlar nima deydi",
     "t1": {
-      "quote": "Men ishlagan eng ko'p qirrali dasturchlardan biri. Murakkab veb-platformani muddatdan oldin ajoyib sifat bilan topshirdi.",
+      "quote": "Biz ishlagan eng ko'p qirrali jamoalardan biri. Murakkab veb-platformani muddatdan oldin ajoyib sifat bilan topshirdi.",
       "name": "Alex Johnson",
       "role": "Mahsulot menejeri, TechCorp"
     },
@@ -102,26 +102,26 @@
     }
   },
   "Timeline": {
-    "title": "Mening yo'lim",
+    "title": "Bizning yo'limiz",
     "e1": {
       "year": "2018",
-      "title": "Kodlashni boshladim",
-      "desc": "Birinchi kod satrlarini yozdim va narsalarni yaratishni sevib qoldim. Veb-dasturlashdan boshladim va tezda boshqa sohalarga kengaydim."
+      "title": "Kodlashni boshladik",
+      "desc": "Birinchi kod satrlarini yozdik va narsalarni yaratishni sevib qoldik. Veb-dasturlashdan boshladik va tezda boshqa sohalarga kengaydik."
     },
     "e2": {
       "year": "2020",
       "title": "O'yin va VR dasturlash",
-      "desc": "Unity va virtual reallik dasturlashni kashf etdim. Birinchi o'yinim va VR tajribamni yaratdim, yaratishning yangi o'lchamini ochdim."
+      "desc": "Unity va virtual reallik dasturlashni kashf etdik. Birinchi o'yinimiz va VR tajribamizni yaratdik, yaratishning yangi o'lchamini ochdik."
     },
     "e3": {
       "year": "2022",
       "title": "Apparat va IoT loyihalari",
-      "desc": "Ekranlardan tashqariga fizik hisoblashga kengaydim. Arduino, sensorlar bilan ishlashni va IoT tizimlarini qurishni boshladim."
+      "desc": "Ekranlardan tashqariga fizik hisoblashga kengaydik. Arduino, sensorlar bilan ishlashni va IoT tizimlarini qurishni boshladik."
     },
     "e4": {
       "year": "2024 — Hozir",
-      "title": "Universal dasturchi",
-      "desc": "Barcha ko'nikmalarni to'liq yechimlar yaratish uchun birlashtiryapman. Veb-ilovalardan VR tajribalargacha, mobil ilovalardan apparatgacha — chegarasiz yaratish."
+      "title": "Universal dasturchilar",
+      "desc": "Barcha ko'nikmalarni to'liq yechimlar yaratish uchun birlashtiryapmiz. Veb-ilovalardan VR tajribalargacha, mobil ilovalardan apparatgacha — chegarasiz yaratish."
     }
   },
   "Stats": {

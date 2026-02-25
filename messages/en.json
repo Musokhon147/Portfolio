@@ -7,23 +7,23 @@
   },
   "Hero": {
     "greeting": "Hello, welcome!",
-    "tagline": "I build apps, websites, games, and anything in between.",
-    "description": "Full-spectrum developer turning ideas into reality — from web apps to VR experiences.",
-    "cta": "See My Work",
+    "tagline": "We build apps, websites, games, and anything in between.",
+    "description": "Full-spectrum developers turning ideas into reality — from web apps to VR experiences.",
+    "cta": "See Our Work",
     "typewriter1": "websites",
     "typewriter2": "mobile apps",
     "typewriter3": "VR experiences",
-    "typewriter4": "games",
+    "typewriter4": "Games",
     "typewriter5": "anything"
   },
   "About": {
-    "title": "About Me",
-    "p1": "I am a versatile developer passionate about building things that live on screens — and sometimes beyond them. Whether it's a sleek website, a powerful backend, an immersive game, or a VR experience, I bring ideas to life with code.",
-    "p2": "My toolkit spans across frontend and backend development, Unity game development, virtual reality, and hardware projects. I believe every challenge has a technical solution, and I enjoy finding it.",
-    "p3": "If it can be built with a laptop, I can build it."
+    "title": "About Us",
+    "p1": "We are versatile developers passionate about building things that live on screens — and sometimes beyond them. Whether it's a sleek website, a powerful backend, an immersive game, or a VR experience, we bring ideas to life with code.",
+    "p2": "Our toolkit spans across frontend and backend development, Unity game development, virtual reality, and hardware projects. We believe every challenge has a technical solution, and we enjoy finding it.",
+    "p3": "If it can be built with a laptop, we can build it."
   },
   "Skills": {
-    "title": "What I Do",
+    "title": "What We Do",
     "frontend": {
       "title": "Frontend Development",
       "desc": "Modern, responsive web interfaces with React, Next.js, and TypeScript."
@@ -79,14 +79,14 @@
     "send": "Send Message",
     "namePlaceholder": "Your name",
     "emailPlaceholder": "your@email.com",
-    "messagePlaceholder": "Tell me about your project...",
+    "messagePlaceholder": "Tell us about your project...",
     "successTitle": "Message Sent!",
-    "successDesc": "Thank you for reaching out. I'll get back to you soon."
+    "successDesc": "Thank you for reaching out. We'll get back to you soon."
   },
   "Testimonials": {
     "title": "What People Say",
     "t1": {
-      "quote": "One of the most versatile developers I've worked with. Delivered a complex web platform ahead of schedule with exceptional quality.",
+      "quote": "One of the most versatile teams I've worked with. Delivered a complex web platform ahead of schedule with exceptional quality.",
       "name": "Alex Johnson",
       "role": "Product Manager, TechCorp"
     },
@@ -102,16 +102,16 @@
     }
   },
   "Timeline": {
-    "title": "My Journey",
+    "title": "Our Journey",
     "e1": {
       "year": "2018",
       "title": "Started Coding",
-      "desc": "Wrote my first lines of code and fell in love with building things. Started with web development and quickly expanded to other areas."
+      "desc": "Wrote our first lines of code and fell in love with building things. Started with web development and quickly expanded to other areas."
     },
     "e2": {
       "year": "2020",
       "title": "Dove Into Game Dev & VR",
-      "desc": "Discovered Unity and virtual reality development. Built my first game and VR experience, opening a whole new dimension of creation."
+      "desc": "Discovered Unity and virtual reality development. Built our first game and VR experience, opening a whole new dimension of creation."
     },
     "e3": {
       "year": "2022",
@@ -120,7 +120,7 @@
     },
     "e4": {
       "year": "2024 — Present",
-      "title": "Full-Spectrum Developer",
+      "title": "Full-Spectrum Developers",
       "desc": "Combining all skills to deliver complete solutions. From web apps to VR experiences, from mobile apps to hardware — building without limits."
     }
   },

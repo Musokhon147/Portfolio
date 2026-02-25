@@ -17,7 +17,7 @@ export default function Hero() {
   ];
 
   return (
-    <section className="relative flex min-h-screen items-center justify-center overflow-hidden px-4">
+    <section className="relative flex min-h-screen items-center justify-center overflow-x-clip px-4">
       {/* Particles background */}
       <Particles count={70} />
 
@@ -76,7 +76,8 @@ export default function Hero() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.4 }}
-          className="mb-6 font-[family-name:var(--font-syne)] text-2xl font-bold leading-[1.1] tracking-tight sm:text-3xl md:mb-8 md:text-5xl lg:text-7xl"
+          className="mb-6 overflow-visible font-[family-name:var(--font-syne)] text-2xl font-bold tracking-tight sm:text-3xl md:mb-8 md:text-5xl lg:text-7xl"
+          style={{ overflow: "visible", lineHeight: 1.3 }}
         >
           <span className="text-text">
             {t("tagline").split(",")[0]},
@@ -91,7 +92,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.6 }}
-          className="mx-auto mb-8 max-w-2xl text-sm leading-relaxed text-text-dim sm:text-base md:mb-12 md:text-xl"
+          className="relative z-20 mx-auto mb-8 max-w-2xl text-base leading-relaxed text-text-dim sm:text-lg md:mb-12 md:text-xl"
         >
           {t("description")}
         </motion.p>
@@ -106,7 +107,7 @@ export default function Hero() {
             href="#projects"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.97 }}
-            className="group relative inline-flex items-center gap-2 overflow-hidden rounded-full bg-cyan px-6 py-3 text-xs font-bold text-white transition-all hover:shadow-[0_0_30px_rgba(6,182,212,0.4)] sm:px-8 sm:py-3.5 sm:text-sm"
+            className="liquid-glass inline-flex items-center gap-2 rounded-full px-6 py-3 text-xs font-bold text-text transition-all sm:px-8 sm:py-3.5 sm:text-sm"
           >
             <span className="relative z-10">{t("cta")}</span>
             <svg
@@ -122,13 +123,12 @@ export default function Hero() {
                 d="M19 9l-7 7-7-7"
               />
             </svg>
-            <div className="absolute inset-0 bg-gradient-to-r from-cyan to-cyan-light opacity-0 transition-opacity group-hover:opacity-100" />
           </motion.a>
           <motion.a
             href="#about"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.97 }}
-            className="inline-flex items-center gap-2 rounded-full border border-border px-6 py-3 text-xs font-semibold text-text-dim transition-all hover:border-cyan/30 hover:text-text hover:shadow-[0_0_20px_rgba(6,182,212,0.1)] sm:px-8 sm:py-3.5 sm:text-sm"
+            className="liquid-glass-subtle inline-flex items-center gap-2 rounded-full px-6 py-3 text-xs font-semibold text-text-dim transition-all sm:px-8 sm:py-3.5 sm:text-sm"
           >
             {t("greeting")}
           </motion.a>
