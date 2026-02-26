@@ -7,6 +7,11 @@ import { HiStar } from "react-icons/hi";
 const ease = [0.16, 1, 0.3, 1] as const;
 const testimonialKeys = ["t1", "t2", "t3"] as const;
 const avatarColors = ["#8b5cf6", "#06b6d4", "#a78bfa"];
+const avatarPhotos = [
+  "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=80&q=80&auto=format&fit=crop&crop=face",
+  "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=80&q=80&auto=format&fit=crop&crop=face",
+  "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=80&q=80&auto=format&fit=crop&crop=face",
+];
 
 const containerVariants = {
   hidden: {},
@@ -19,6 +24,20 @@ const cardVariants = {
     opacity: 1,
     y: 0,
     transition: { duration: 0.6, ease },
+  },
+};
+
+const starContainerVariants = {
+  hidden: {},
+  visible: { transition: { staggerChildren: 0.06 } },
+};
+
+const starVariants = {
+  hidden: { scale: 0, opacity: 0 },
+  visible: {
+    scale: 1,
+    opacity: 1,
+    transition: { type: "spring" as const, stiffness: 400, damping: 15 },
   },
 };
 
@@ -64,36 +83,56 @@ export default function SmartHomeTestimonials() {
               <motion.div
                 key={key}
                 variants={cardVariants}
-                className="rounded-xl p-8 transition-all duration-400 hover:border-violet-500/30"
-                style={{
-                  backgroundColor: "#18181b",
-                  border: "1px solid #27272a",
-                }}
+                whileHover={{ y: -8, transition: { type: "spring", stiffness: 300, damping: 20 } }}
+                className="nova-card-premium p-8 holographic-hover"
               >
-                {/* Stars */}
-                <div className="mb-4 flex gap-1">
+                {/* Stars — staggered sequence */}
+                <motion.div
+                  variants={starContainerVariants}
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={{ once: true }}
+                  className="mb-4 flex gap-1"
+                >
                   {Array.from({ length: 5 }).map((_, j) => (
-                    <HiStar key={j} className="h-4 w-4" style={{ color: "#8b5cf6" }} />
+                    <motion.span key={j} variants={starVariants} className="inline-flex">
+                      <HiStar className="h-4 w-4" style={{ color: "#8b5cf6" }} />
+                    </motion.span>
                   ))}
-                </div>
+                </motion.div>
 
-                {/* Quote */}
-                <p
+                {/* Quote — delayed after stars */}
+                <motion.p
+                  initial={{ opacity: 0, y: 10 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: 0.15, ease }}
                   className="text-base leading-relaxed"
                   style={{ color: "#a1a1aa" }}
                 >
                   &ldquo;{t(`testimonials.${key}.quote`)}&rdquo;
-                </p>
+                </motion.p>
 
                 {/* Author */}
                 <div className="mt-6 flex items-center gap-3">
-                  {/* Avatar circle with initials */}
-                  <div
-                    className="flex h-10 w-10 items-center justify-center rounded-full text-xs font-bold text-white"
-                    style={{ backgroundColor: avatarColors[i] }}
+                  {/* Avatar photo — spring entrance with glow */}
+                  <motion.div
+                    initial={{ scale: 0 }}
+                    whileInView={{ scale: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ type: "spring", stiffness: 300, damping: 20, delay: 0.2 }}
+                    whileHover={{ boxShadow: `0 0 15px ${avatarColors[i]}40` }}
+                    className="shrink-0"
                   >
-                    {initials}
-                  </div>
+                    <img
+                      src={avatarPhotos[i]}
+                      alt={name}
+                      className="h-10 w-10 rounded-full object-cover"
+                      style={{ border: `2px solid ${avatarColors[i]}` }}
+                      loading="lazy"
+                      decoding="async"
+                    />
+                  </motion.div>
                   <div>
                     <p className="text-sm font-semibold" style={{ color: "#fafafa" }}>
                       {name}

@@ -96,23 +96,30 @@ export default function SmartHomeDevices() {
           </motion.div>
 
           {/* Bento grid — mixed sizes */}
-          <div className="grid grid-cols-1 gap-5 sm:grid-cols-6 sm:gap-6">
-            {/* Feature 1 — Large cell (4 cols) with image */}
+          <div className="grid grid-cols-1 gap-5 sm:grid-cols-6 sm:gap-6" style={{ perspective: 800 }}>
+            {/* Feature 1 — Large cell (4 cols) — wave delay 0 */}
             <motion.div
-              initial={{ opacity: 0, y: 25 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0, y: 40, rotateX: 4, scale: 0.95 }}
+              whileInView={{ opacity: 1, y: 0, rotateX: 0, scale: 1 }}
               viewport={{ once: true, margin: "-60px" }}
-              transition={{ duration: 0.6, ease }}
-              className="group overflow-hidden rounded-xl transition-all duration-400 hover:border-violet-500/30 sm:col-span-4"
-              style={{ backgroundColor: "#18181b", border: "1px solid #27272a" }}
+              transition={{ duration: 0.7, delay: 0, ease }}
+              whileHover={{ boxShadow: "0 0 40px rgba(139,92,246,0.12), 0 20px 60px rgba(0,0,0,0.3)" }}
+              className="nova-card-premium group overflow-hidden holographic-hover sm:col-span-4"
             >
               <div className="p-7 sm:p-8">
-                <div
-                  className="mb-5 flex h-11 w-11 items-center justify-center rounded-lg"
-                  style={{ backgroundColor: "rgba(139,92,246,0.08)" }}
+                <motion.div
+                  initial={{ scale: 0 }}
+                  whileInView={{ scale: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ type: "spring", stiffness: 300, damping: 20, delay: 0.1 }}
                 >
-                  <HiOutlineLightningBolt className="h-5 w-5" style={{ color: "#8b5cf6" }} />
-                </div>
+                  <div
+                    className="mb-5 flex h-11 w-11 items-center justify-center rounded-lg transition-transform duration-300 group-hover:scale-110"
+                    style={{ backgroundColor: "rgba(139,92,246,0.08)" }}
+                  >
+                    <HiOutlineLightningBolt className="h-5 w-5" style={{ color: "#8b5cf6" }} />
+                  </div>
+                </motion.div>
                 <h3
                   className="mb-2 font-[family-name:var(--font-inter)] text-lg font-semibold"
                   style={{ color: "#fafafa" }}
@@ -123,37 +130,52 @@ export default function SmartHomeDevices() {
                   {t("features.f1.desc")}
                 </p>
               </div>
-              <div className="relative overflow-hidden">
+              {/* Image clip-path reveal */}
+              <motion.div
+                initial={{ clipPath: "inset(0 100% 0 0)" }}
+                whileInView={{ clipPath: "inset(0 0% 0 0)" }}
+                viewport={{ once: true, margin: "-60px" }}
+                transition={{ duration: 0.8, ease }}
+                className="relative overflow-hidden"
+              >
                 <img
-                  src="/images/novatech/analytics.jpg"
+                  src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1200&q=80&auto=format&fit=crop"
                   alt="NovaTech Analytics"
-                  className="h-44 w-full object-cover transition-transform duration-500 group-hover:scale-105 sm:h-52"
+                  className="h-48 w-full object-cover transition-transform duration-500 group-hover:scale-105 sm:h-56"
                   style={{ border: "1px solid rgba(139,92,246,0.08)" }}
                   loading="lazy"
+                  decoding="async"
                 />
                 <div
                   className="absolute inset-0"
                   style={{ background: "linear-gradient(to top, #18181b 0%, transparent 40%)" }}
                 />
-              </div>
+              </motion.div>
             </motion.div>
 
-            {/* Feature 2 — Tall narrow cell (2 cols) */}
+            {/* Feature 2 — Tall narrow cell (2 cols) — wave delay 0.15 */}
             <motion.div
-              initial={{ opacity: 0, y: 25 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0, y: 40, rotateX: 4, scale: 0.95 }}
+              whileInView={{ opacity: 1, y: 0, rotateX: 0, scale: 1 }}
               viewport={{ once: true, margin: "-60px" }}
-              transition={{ duration: 0.6, delay: 0.1, ease }}
-              className="group flex flex-col justify-between rounded-xl p-7 transition-all duration-400 hover:border-violet-500/30 sm:col-span-2 sm:p-8"
-              style={{ backgroundColor: "#18181b", border: "1px solid #27272a" }}
+              transition={{ duration: 0.7, delay: 0.15, ease }}
+              whileHover={{ boxShadow: "0 0 40px rgba(139,92,246,0.12), 0 20px 60px rgba(0,0,0,0.3)" }}
+              className="nova-card-premium group flex flex-col justify-between p-7 holographic-hover sm:col-span-2 sm:p-8"
             >
               <div>
-                <div
-                  className="mb-5 flex h-11 w-11 items-center justify-center rounded-lg"
-                  style={{ backgroundColor: "rgba(139,92,246,0.08)" }}
+                <motion.div
+                  initial={{ scale: 0 }}
+                  whileInView={{ scale: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ type: "spring", stiffness: 300, damping: 20, delay: 0.2 }}
                 >
-                  <HiOutlineUserGroup className="h-5 w-5" style={{ color: "#8b5cf6" }} />
-                </div>
+                  <div
+                    className="mb-5 flex h-11 w-11 items-center justify-center rounded-lg transition-transform duration-300 group-hover:scale-110"
+                    style={{ backgroundColor: "rgba(139,92,246,0.08)" }}
+                  >
+                    <HiOutlineUserGroup className="h-5 w-5" style={{ color: "#8b5cf6" }} />
+                  </div>
+                </motion.div>
                 <h3
                   className="mb-2 font-[family-name:var(--font-inter)] text-lg font-semibold"
                   style={{ color: "#fafafa" }}
@@ -164,32 +186,39 @@ export default function SmartHomeDevices() {
                   {t("features.f2.desc")}
                 </p>
               </div>
-              {/* Decorative metric */}
+              {/* Decorative metric — animated counter */}
               <div className="mt-8 text-center">
                 <span
                   className="font-[family-name:var(--font-inter)] text-4xl font-bold"
                   style={{ color: "rgba(139,92,246,0.2)" }}
                 >
-                  99.9%
+                  <AnimatedNumber value={99.9} />%
                 </span>
               </div>
             </motion.div>
 
-            {/* Feature 3 — Small cell (2 cols) */}
+            {/* Feature 3 — Small cell (2 cols) — wave delay 0.15 (same row as F2) */}
             <motion.div
-              initial={{ opacity: 0, y: 25 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0, y: 40, rotateX: 4, scale: 0.95 }}
+              whileInView={{ opacity: 1, y: 0, rotateX: 0, scale: 1 }}
               viewport={{ once: true, margin: "-60px" }}
-              transition={{ duration: 0.6, delay: 0.2, ease }}
-              className="group rounded-xl p-7 transition-all duration-400 hover:border-violet-500/30 sm:col-span-2 sm:p-8"
-              style={{ backgroundColor: "#18181b", border: "1px solid #27272a" }}
+              transition={{ duration: 0.7, delay: 0.15, ease }}
+              whileHover={{ boxShadow: "0 0 40px rgba(139,92,246,0.12), 0 20px 60px rgba(0,0,0,0.3)" }}
+              className="nova-card-premium group p-7 holographic-hover sm:col-span-2 sm:p-8"
             >
-              <div
-                className="mb-5 flex h-11 w-11 items-center justify-center rounded-lg"
-                style={{ backgroundColor: "rgba(139,92,246,0.08)" }}
+              <motion.div
+                initial={{ scale: 0 }}
+                whileInView={{ scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ type: "spring", stiffness: 300, damping: 20, delay: 0.3 }}
               >
-                <HiOutlineChartBar className="h-5 w-5" style={{ color: "#8b5cf6" }} />
-              </div>
+                <div
+                  className="mb-5 flex h-11 w-11 items-center justify-center rounded-lg"
+                  style={{ backgroundColor: "rgba(139,92,246,0.08)" }}
+                >
+                  <HiOutlineChartBar className="h-5 w-5" style={{ color: "#8b5cf6" }} />
+                </div>
+              </motion.div>
               <h3
                 className="mb-2 font-[family-name:var(--font-inter)] text-lg font-semibold"
                 style={{ color: "#fafafa" }}
@@ -201,12 +230,12 @@ export default function SmartHomeDevices() {
               </p>
             </motion.div>
 
-            {/* Decorative metrics cell (4 cols) */}
+            {/* Decorative metrics cell (4 cols) — wave delay 0.3 */}
             <motion.div
-              initial={{ opacity: 0, y: 25 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0, y: 35, rotateX: 3, scale: 0.96 }}
+              whileInView={{ opacity: 1, y: 0, rotateX: 0, scale: 1 }}
               viewport={{ once: true, margin: "-60px" }}
-              transition={{ duration: 0.6, delay: 0.2, ease }}
+              transition={{ duration: 0.6, delay: 0.3, ease }}
               className="flex items-center justify-center rounded-xl p-8 sm:col-span-4"
               style={{ backgroundColor: "#18181b", border: "1px solid #27272a" }}
             >

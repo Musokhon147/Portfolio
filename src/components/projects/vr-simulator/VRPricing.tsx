@@ -10,6 +10,20 @@ const tiers = [
   { key: "tier3", features: ["f1", "f2", "f3", "f4", "f5"], highlighted: false },
 ];
 
+const listVariants = {
+  hidden: {},
+  visible: {
+    transition: {
+      staggerChildren: 0.06,
+    },
+  },
+};
+
+const listItemVariants = {
+  hidden: { opacity: 0, y: 12 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.35 } },
+};
+
 export default function VRPricing() {
   const t = useTranslations("IronForge");
 
@@ -44,20 +58,33 @@ export default function VRPricing() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-60px" }}
               transition={{ duration: 0.6, delay: i * 0.1 }}
-              className={`relative flex flex-col p-8 ${tier.highlighted ? "md:scale-105 md:z-10" : ""}`}
+              whileHover={
+                tier.highlighted
+                  ? { y: -8, transition: { type: "spring", stiffness: 300, damping: 20 } }
+                  : {
+                      y: -8,
+                      boxShadow: "0 0 40px rgba(249,115,22,0.25), 0 0 80px rgba(249,115,22,0.1), inset 0 1px 0 rgba(249,115,22,0.1)",
+                      transition: { type: "spring", stiffness: 300, damping: 20 },
+                    }
+              }
+              className={`gym-card-premium relative flex flex-col p-8 ember-streak-hover ${tier.highlighted ? "md:scale-105 md:z-10" : ""}`}
               style={{
-                backgroundColor: "#111111",
+                backgroundColor: "#0a0a0a",
                 border: tier.highlighted
                   ? "2px solid #f97316"
-                  : "1px solid #222222",
+                  : "1px solid #1a1a1a",
                 borderTop: tier.highlighted ? "4px solid #f97316" : undefined,
+                boxShadow: tier.highlighted ? "0 0 50px rgba(249,115,22,0.2), 0 0 100px rgba(249,115,22,0.06)" : undefined,
               }}
             >
-              {/* Badge */}
+              {/* Badge with glow pulse */}
               {tier.highlighted && (
                 <div
                   className="absolute -top-4 left-1/2 -translate-x-1/2 px-4 py-1"
-                  style={{ backgroundColor: "#f97316" }}
+                  style={{
+                    backgroundColor: "#f97316",
+                    animation: "glow-pulse-orange 2s ease-in-out infinite",
+                  }}
                 >
                   <span className="font-[family-name:var(--font-bebas)] text-xs uppercase tracking-wider text-white">
                     {t(`pricing.${tier.key}.badge`)}
@@ -73,11 +100,20 @@ export default function VRPricing() {
                 {t(`pricing.${tier.key}.name`)}
               </p>
 
-              {/* Price */}
+              {/* Price — impact slam entrance */}
               <div className="mt-4 mb-6">
-                <span className="font-[family-name:var(--font-bebas)] text-5xl tracking-wider text-white sm:text-6xl">
+                <motion.span
+                  initial={{ opacity: 0, y: -40 }}
+                  whileInView={{
+                    opacity: 1,
+                    y: [null, 3, -1, 0],
+                  }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: 0.15 + i * 0.1, ease: [0.25, 0.4, 0.25, 1] }}
+                  className="inline-block font-[family-name:var(--font-bebas)] text-5xl tracking-wider text-white sm:text-6xl"
+                >
                   {t(`pricing.${tier.key}.price`)}
-                </span>
+                </motion.span>
                 <span className="ml-2 text-sm" style={{ color: "#777" }}>
                   {t(`pricing.${tier.key}.period`)}
                 </span>
@@ -86,17 +122,35 @@ export default function VRPricing() {
               {/* Divider */}
               <div className="mb-6 h-px" style={{ backgroundColor: "#222222" }} />
 
-              {/* Features */}
-              <ul className="mb-8 flex-1 space-y-3">
+              {/* Features — staggered list */}
+              <motion.ul
+                variants={listVariants}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true }}
+                className="mb-8 flex-1 space-y-3"
+              >
                 {tier.features.map((f) => (
-                  <li key={f} className="flex items-start gap-3">
-                    <HiCheck className="mt-0.5 h-4 w-4 shrink-0" style={{ color: "#f97316" }} />
+                  <motion.li
+                    key={f}
+                    variants={listItemVariants}
+                    className="flex items-start gap-3"
+                  >
+                    <motion.span
+                      initial={{ scale: 0 }}
+                      whileInView={{ scale: 1 }}
+                      viewport={{ once: true }}
+                      transition={{ type: "spring", stiffness: 300, damping: 15 }}
+                      className="mt-0.5 inline-flex shrink-0"
+                    >
+                      <HiCheck className="h-4 w-4" style={{ color: "#f97316" }} />
+                    </motion.span>
                     <span className="text-sm" style={{ color: "#b5b5b5" }}>
                       {t(`pricing.${tier.key}.${f}`)}
                     </span>
-                  </li>
+                  </motion.li>
                 ))}
-              </ul>
+              </motion.ul>
 
               {/* CTA */}
               <button

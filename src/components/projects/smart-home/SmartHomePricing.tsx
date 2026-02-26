@@ -12,6 +12,20 @@ const tiers = [
   { key: "tier3", features: ["f1", "f2", "f3", "f4", "f5", "f6"], highlighted: false },
 ];
 
+const featureListVariants = {
+  hidden: {},
+  visible: { transition: { staggerChildren: 0.05 } },
+};
+
+const featureItemVariants = {
+  hidden: { opacity: 0, y: 10 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.4, ease },
+  },
+};
+
 export default function SmartHomePricing() {
   const t = useTranslations("NovaTech");
 
@@ -49,29 +63,37 @@ export default function SmartHomePricing() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-60px" }}
               transition={{ duration: 0.6, delay: i * 0.1, ease }}
+              whileHover={tier.highlighted ? { y: -6 } : { y: -8 }}
               className={`relative flex flex-col ${tier.highlighted ? "md:scale-105 md:z-10" : ""}`}
             >
               {/* Gradient border wrapper for Pro */}
               <div
-                className={`flex flex-1 flex-col rounded-xl p-8 ${
-                  tier.highlighted ? "nova-gradient-border" : ""
+                className={`flex flex-1 flex-col rounded-xl p-8 holographic-hover ${
+                  tier.highlighted ? "nova-gradient-border" : "nova-card-premium"
                 }`}
                 style={
                   tier.highlighted
                     ? undefined
-                    : { backgroundColor: "#18181b", border: "1px solid #27272a" }
+                    : undefined
                 }
               >
                 <div
                   className={tier.highlighted ? "flex flex-1 flex-col rounded-[11px] bg-[#09090b] p-8" : "flex flex-1 flex-col"}
                 >
-                  {/* Badge */}
+                  {/* Badge with pulse ring */}
                   {tier.highlighted && (
                     <span
-                      className="mb-4 inline-block self-start rounded-full px-3 py-1 text-xs font-medium"
+                      className="relative mb-4 inline-block self-start overflow-visible rounded-full px-3 py-1 text-xs font-medium"
                       style={{ backgroundColor: "rgba(139,92,246,0.15)", color: "#a78bfa" }}
                     >
                       {t(`pricing.${tier.key}.badge`)}
+                      <span
+                        className="pointer-events-none absolute inset-0 rounded-full"
+                        style={{
+                          border: "1px solid rgba(139,92,246,0.4)",
+                          animation: "pulse-ring 2.5s ease-out infinite",
+                        }}
+                      />
                     </span>
                   )}
 
@@ -88,16 +110,20 @@ export default function SmartHomePricing() {
                     {t(`pricing.${tier.key}.desc`)}
                   </p>
 
-                  {/* Price */}
+                  {/* Price with spring entrance */}
                   <div className="mt-5 mb-6">
-                    <span
-                      className="font-[family-name:var(--font-inter)] text-4xl font-bold sm:text-5xl"
+                    <motion.span
+                      initial={{ scale: 0.8, opacity: 0 }}
+                      whileInView={{ scale: 1, opacity: 1 }}
+                      viewport={{ once: true }}
+                      transition={{ type: "spring", stiffness: 300, damping: 20, delay: i * 0.1 + 0.2 }}
+                      className="inline-block font-[family-name:var(--font-inter)] text-4xl font-bold sm:text-5xl"
                       style={{ color: "#fafafa" }}
                     >
                       {t(`pricing.${tier.key}.price`) === "Custom"
                         ? t(`pricing.${tier.key}.price`)
                         : `$${t(`pricing.${tier.key}.price`)}`}
-                    </span>
+                    </motion.span>
                     {t(`pricing.${tier.key}.period`) && (
                       <span className="text-sm" style={{ color: "#71717a" }}>
                         {t(`pricing.${tier.key}.period`)}
@@ -108,17 +134,31 @@ export default function SmartHomePricing() {
                   {/* Divider */}
                   <div className="mb-6 h-px" style={{ backgroundColor: "#27272a" }} />
 
-                  {/* Features */}
-                  <ul className="mb-8 flex-1 space-y-3">
+                  {/* Features — staggered list */}
+                  <motion.ul
+                    variants={featureListVariants}
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true }}
+                    className="mb-8 flex-1 space-y-3"
+                  >
                     {tier.features.map((f) => (
-                      <li key={f} className="flex items-start gap-3">
-                        <HiCheck className="mt-0.5 h-4 w-4 shrink-0" style={{ color: "#8b5cf6" }} />
+                      <motion.li key={f} variants={featureItemVariants} className="flex items-start gap-3">
+                        <motion.span
+                          initial={{ scale: 0 }}
+                          whileInView={{ scale: 1 }}
+                          viewport={{ once: true }}
+                          transition={{ type: "spring", stiffness: 400, damping: 15 }}
+                          className="inline-flex"
+                        >
+                          <HiCheck className="mt-0.5 h-4 w-4 shrink-0" style={{ color: "#8b5cf6" }} />
+                        </motion.span>
                         <span className="text-sm" style={{ color: "#a1a1aa" }}>
                           {t(`pricing.${tier.key}.${f}`)}
                         </span>
-                      </li>
+                      </motion.li>
                     ))}
-                  </ul>
+                  </motion.ul>
 
                   {/* CTA */}
                   <button

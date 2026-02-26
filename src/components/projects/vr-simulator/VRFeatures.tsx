@@ -4,9 +4,9 @@ import { useTranslations } from "next-intl";
 import { motion } from "framer-motion";
 
 const featureRows = [
-  { key: "f1", num: "01", img: "/images/gym/gym-lifting.jpg", reverse: false },
-  { key: "f2", num: "02", img: "/images/gym/gym-boxing.jpg", reverse: true },
-  { key: "f3", num: "03", img: "/images/gym/gym-stretching.jpg", reverse: false },
+  { key: "f1", num: "01", img: "https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?w=1200&q=80&auto=format&fit=crop", reverse: false },
+  { key: "f2", num: "02", img: "https://images.unsplash.com/photo-1549719386-74dfcbf7dbed?w=1200&q=80&auto=format&fit=crop", reverse: true },
+  { key: "f3", num: "03", img: "https://images.unsplash.com/photo-1518611012118-696072aa579a?w=1200&q=80&auto=format&fit=crop", reverse: false },
 ];
 
 export default function VRFeatures() {
@@ -22,17 +22,18 @@ export default function VRFeatures() {
           >
             {/* Image side */}
             <motion.div
-              initial={{ opacity: 0, x: row.reverse ? 80 : -80 }}
-              whileInView={{ opacity: 1, x: 0 }}
+              initial={{ opacity: 0, x: row.reverse ? 80 : -80, scale: 0.95 }}
+              whileInView={{ opacity: 1, x: 0, scale: 1 }}
               viewport={{ once: true, margin: "-80px" }}
-              transition={{ type: "spring", stiffness: 80, damping: 20 }}
+              transition={{ type: "spring", stiffness: 70, damping: 20 }}
               className="group w-full lg:w-1/2"
             >
               <div className="relative overflow-hidden">
                 <img
                   src={row.img}
                   alt={t(`features.${row.key}.title`)}
-                  className="h-64 w-full object-cover transition-transform duration-500 group-hover:scale-105 sm:h-80 lg:h-96"
+                  className="h-72 w-full object-cover transition-transform duration-700 group-hover:scale-110 sm:h-96 lg:h-[480px]"
+                  decoding="async"
                   style={{ border: "1px solid rgba(249,115,22,0.08)" }}
                   loading="lazy"
                 />
@@ -56,40 +57,65 @@ export default function VRFeatures() {
               transition={{ type: "spring", stiffness: 80, damping: 20, delay: 0.1 }}
               className="relative flex w-full items-center px-8 py-12 sm:px-12 lg:w-1/2 lg:px-16 lg:py-0"
             >
-              {/* Large number watermark */}
-              <span
+              {/* Large number watermark — animated */}
+              <motion.span
+                initial={{ opacity: 0, x: 40 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.8, delay: 0.2 }}
                 className="pointer-events-none absolute right-4 top-1/2 -translate-y-1/2 font-[family-name:var(--font-bebas)] text-[10rem] leading-none select-none lg:text-[14rem]"
                 style={{ color: "rgba(249,115,22,0.04)" }}
               >
                 {row.num}
-              </span>
+              </motion.span>
 
               <div className="relative">
-                <h3
+                {/* Title — impact slam entrance */}
+                <motion.h3
+                  initial={{ opacity: 0, y: -60 }}
+                  whileInView={{
+                    opacity: 1,
+                    y: [null, 4, -2, 1, 0],
+                  }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.6, ease: [0.25, 0.4, 0.25, 1] }}
                   className="mb-3 font-[family-name:var(--font-bebas)] text-3xl uppercase tracking-wider text-white sm:text-4xl"
                 >
                   {t(`features.${row.key}.title`)}
-                </h3>
-                {/* Orange underline bar */}
-                <div
-                  className="mb-5 h-1 w-16"
+                </motion.h3>
+                {/* Orange underline bar — animated on scroll with stagger delay 0.1s */}
+                <motion.div
+                  initial={{ scaleX: 0 }}
+                  whileInView={{ scaleX: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.6, delay: 0.1 }}
+                  className="mb-5 h-1 w-16 origin-left"
                   style={{ backgroundColor: "#f97316" }}
                 />
-                <p
+                {/* Description with stagger delay 0.2s */}
+                <motion.p
+                  initial={{ opacity: 0, y: 15 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: 0.2 }}
                   className="max-w-sm text-base leading-relaxed"
                   style={{ color: "#b5b5b5" }}
                 >
                   {t(`features.${row.key}.desc`)}
-                </p>
+                </motion.p>
               </div>
             </motion.div>
           </div>
 
-          {/* Divider between rows */}
+          {/* Divider between rows — animated glow */}
           {i < featureRows.length - 1 && (
             <div className="mx-auto max-w-5xl px-8">
-              <div
-                className="h-px"
+              <motion.div
+                initial={{ scaleX: 0, opacity: 0 }}
+                whileInView={{ scaleX: 1, opacity: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.8 }}
+                className="h-px origin-left"
                 style={{
                   background:
                     "linear-gradient(to right, transparent, rgba(249,115,22,0.3) 50%, transparent)",

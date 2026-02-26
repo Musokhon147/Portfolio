@@ -1,36 +1,41 @@
 "use client";
 
-import { useState, useEffect, useRef } from "react";
+import { useRef } from "react";
 import { useTranslations } from "next-intl";
 import { motion, useInView } from "framer-motion";
 
 const statKeys = ["s1", "s2", "s3", "s4"] as const;
 
-function AnimatedNumber({
-  value,
-  duration = 1200,
-}: {
-  value: number;
-  duration?: number;
-}) {
-  const [current, setCurrent] = useState(0);
+/* ── Odometer-style rolling digits ── */
+function OdometerNumber({ value }: { value: string }) {
   const ref = useRef<HTMLSpanElement>(null);
   const inView = useInView(ref, { once: true, margin: "-60px" });
+  const chars = value.split("");
 
-  useEffect(() => {
-    if (!inView) return;
-    const start = performance.now();
-    function tick(now: number) {
-      const elapsed = now - start;
-      const progress = Math.min(elapsed / duration, 1);
-      const eased = 1 - Math.pow(1 - progress, 3);
-      setCurrent(Math.round(eased * value));
-      if (progress < 1) requestAnimationFrame(tick);
-    }
-    requestAnimationFrame(tick);
-  }, [inView, value, duration]);
-
-  return <span ref={ref}>{current}</span>;
+  return (
+    <span ref={ref} className="inline-flex items-baseline">
+      {chars.map((char, i) => (
+        <span
+          key={i}
+          className="relative inline-block overflow-hidden"
+          style={{ height: "1.15em", lineHeight: "1.15em" }}
+        >
+          <motion.span
+            initial={{ y: "120%" }}
+            animate={inView ? { y: "0%" } : { y: "120%" }}
+            transition={{
+              duration: 0.6,
+              delay: 0.15 + i * 0.1,
+              ease: [0.25, 0.4, 0.25, 1],
+            }}
+            className="inline-block"
+          >
+            {char}
+          </motion.span>
+        </span>
+      ))}
+    </span>
+  );
 }
 
 export default function VRStats() {
@@ -48,7 +53,6 @@ export default function VRStats() {
           className="flex flex-col items-center sm:flex-row sm:justify-between"
         >
           {statKeys.map((key, i) => {
-            const numericValue = parseFloat(t(`stats.${key}.value`));
             return (
               <div key={key} className="flex items-center">
                 <motion.div
@@ -57,14 +61,14 @@ export default function VRStats() {
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: i * 0.15 }}
                   className="flex flex-col items-center px-6 py-6 text-center sm:px-8"
-                  style={{ borderBottom: "1px solid rgba(249,115,22,0.08)" }}
+                  style={{ borderBottom: "1px solid rgba(249,115,22,0.12)" }}
                 >
                   <div className="mb-2">
                     <span
-                      className="font-[family-name:var(--font-bebas)] text-6xl tracking-wider sm:text-7xl md:text-8xl"
+                      className="font-[family-name:var(--font-bebas)] text-7xl tracking-wider sm:text-8xl md:text-9xl"
                       style={{ color: "#f97316" }}
                     >
-                      <AnimatedNumber value={numericValue} />
+                      <OdometerNumber value={t(`stats.${key}.value`)} />
                     </span>
                     <span
                       className="font-[family-name:var(--font-bebas)] text-3xl tracking-wider sm:text-4xl"
@@ -73,9 +77,36 @@ export default function VRStats() {
                       {t(`stats.${key}.suffix`)}
                     </span>
                   </div>
-                  <p className="text-xs font-bold uppercase tracking-[0.25em] text-white sm:text-sm">
+                  {/* Stat label with delayed entrance */}
+                  <motion.p
+                    initial={{ opacity: 0, y: 10 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.4, delay: i * 0.15 + 0.15 }}
+                    className="text-xs font-bold uppercase tracking-[0.25em] text-white sm:text-sm"
+                  >
                     {t(`stats.${key}.label`)}
-                  </p>
+                  </motion.p>
+
+                  {/* Strength meter bar */}
+                  <div className="mt-3 h-1.5 w-full overflow-hidden rounded-full" style={{ backgroundColor: "rgba(249,115,22,0.1)", maxWidth: 120 }}>
+                    <motion.div
+                      initial={{ width: "0%" }}
+                      whileInView={{ width: `${60 + i * 10}%` }}
+                      viewport={{ once: true }}
+                      transition={{ duration: 1, delay: 0.3 + i * 0.15, ease: [0.25, 0.4, 0.25, 1] }}
+                      className="relative h-full rounded-full"
+                      style={{ background: "linear-gradient(90deg, #f97316, #facc15)" }}
+                    >
+                      <span
+                        className="absolute right-0 top-1/2 h-2.5 w-2.5 -translate-y-1/2 translate-x-1/2 rounded-full"
+                        style={{
+                          backgroundColor: "#f97316",
+                          animation: "glow-tip-pulse 1.5s ease-in-out infinite",
+                        }}
+                      />
+                    </motion.div>
+                  </div>
                 </motion.div>
 
                 {/* Vertical orange divider */}
