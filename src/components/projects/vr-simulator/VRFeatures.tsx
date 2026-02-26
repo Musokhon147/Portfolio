@@ -4,9 +4,9 @@ import { useTranslations } from "next-intl";
 import { motion } from "framer-motion";
 
 const featureRows = [
-  { key: "f1", num: "01", img: "https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?w=1200&q=80&auto=format&fit=crop", reverse: false },
-  { key: "f2", num: "02", img: "https://images.unsplash.com/photo-1549719386-74dfcbf7dbed?w=1200&q=80&auto=format&fit=crop", reverse: true },
-  { key: "f3", num: "03", img: "https://images.unsplash.com/photo-1518611012118-696072aa579a?w=1200&q=80&auto=format&fit=crop", reverse: false },
+  { key: "f1", num: "01", img: "https://images.unsplash.com/photo-1596357395217-80de13130e92?w=1200&q=80&auto=format&fit=crop", reverse: false },
+  { key: "f2", num: "02", img: "https://images.unsplash.com/photo-1549060279-7e168fcee0c2?w=1200&q=80&auto=format&fit=crop", reverse: true },
+  { key: "f3", num: "03", img: "https://images.unsplash.com/photo-1578762560042-46ad127c95ea?w=1200&q=80&auto=format&fit=crop", reverse: false },
 ];
 
 export default function VRFeatures() {

@@ -3,22 +3,14 @@
 import { useTranslations } from "next-intl";
 import ScrollReveal from "@/components/ui/ScrollReveal";
 import SkillCard from "@/components/ui/SkillCard";
-import {
-  HiOutlineCode,
-  HiOutlineServer,
-  HiOutlineCube,
-  HiOutlineEye,
-  HiOutlineChip,
-  HiOutlineSparkles,
-} from "react-icons/hi";
 
 const skills = [
-  { key: "frontend", icon: <HiOutlineCode size={28} /> },
-  { key: "backend", icon: <HiOutlineServer size={28} /> },
-  { key: "gamedev", icon: <HiOutlineCube size={28} /> },
-  { key: "vr", icon: <HiOutlineEye size={28} /> },
-  { key: "hardware", icon: <HiOutlineChip size={28} /> },
-  { key: "more", icon: <HiOutlineSparkles size={28} /> },
+  { key: "frontend", image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=600&q=80&auto=format&fit=crop" },
+  { key: "backend", image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=600&q=80&auto=format&fit=crop" },
+  { key: "gamedev", image: "https://images.unsplash.com/photo-1556438064-2d7646166914?w=600&q=80&auto=format&fit=crop" },
+  { key: "vr", image: "https://images.unsplash.com/photo-1622979135225-d2ba269cf1ac?w=600&q=80&auto=format&fit=crop" },
+  { key: "hardware", image: "https://images.unsplash.com/photo-1553406830-ef2513450d76?w=600&q=80&auto=format&fit=crop" },
+  { key: "more", image: "https://images.unsplash.com/photo-1518770660439-4636190af475?w=600&q=80&auto=format&fit=crop" },
 ] as const;
 
 export default function Skills() {
@@ -43,10 +35,10 @@ export default function Skills() {
         </ScrollReveal>
 
         <div className="grid gap-4 sm:grid-cols-2 sm:gap-5 lg:grid-cols-3">
-          {skills.map(({ key, icon }, index) => (
+          {skills.map(({ key, image }, index) => (
             <SkillCard
               key={key}
-              icon={icon}
+              image={image}
               title={t(`${key}.title`)}
               description={t(`${key}.desc`)}
               index={index}

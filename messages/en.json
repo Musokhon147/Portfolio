@@ -41,7 +41,7 @@
       "desc": "Immersive virtual reality applications and environments."
     },
     "hardware": {
-      "title": "Hardware Projects",
+      "title": "Working with Hardware",
       "desc": "Physical computing, IoT, and embedded systems."
     },
     "more": {
@@ -64,7 +64,20 @@
     "project3": {
       "title": "NovaTech Solutions",
       "desc": "A sleek SaaS startup landing page with product features, pricing plans, and modern tech aesthetics."
-    }
+    },
+    "project4": {
+      "title": "EduAssess",
+      "desc": "A professional mock exam platform helping students prepare with confidence through universal practice tests."
+    },
+    "project5": {
+      "title": "PlayM8 Sports",
+      "desc": "A sports platform for booking venues, smart matchmaking, tournaments, and performance analytics."
+    },
+    "project6": {
+      "title": "Hikoyam",
+      "desc": "An AI-powered personalized storybook platform that transforms children's photos into custom illustrated stories."
+    },
+    "visitSite": "Visit Site"
   },
   "Contact": {
     "title": "Get In Touch",

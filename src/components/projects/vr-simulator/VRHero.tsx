@@ -73,7 +73,7 @@ export default function VRHero() {
       <div
         className="absolute inset-0"
         style={{
-          backgroundImage: "url(https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=1920&q=80&auto=format&fit=crop)",
+          backgroundImage: "url(https://images.unsplash.com/photo-1593079831268-3381b0db4a77?w=1920&q=80&auto=format&fit=crop)",
           backgroundSize: "cover",
           backgroundPosition: "center",
         }}

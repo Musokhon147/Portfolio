@@ -110,8 +110,8 @@ export default function EcommerceStory() {
           >
             <div className="overflow-hidden rounded-2xl">
               <img
-                src="https://images.unsplash.com/photo-1556217477-d325251ece38?w=1200&q=80&auto=format&fit=crop"
-                alt="Baker at work"
+                src="https://images.unsplash.com/photo-1517433670267-08bbd4be890f?w=1200&q=80&auto=format&fit=crop"
+                alt="Our bakery display"
                 className="h-72 w-full object-cover transition-transform duration-700 hover:scale-105 sm:h-96 lg:h-[500px]"
                 loading="lazy"
                 decoding="async"

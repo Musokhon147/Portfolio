@@ -87,9 +87,12 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         <script
           suppressHydrationWarning
           dangerouslySetInnerHTML={{
-            __html: `(function(){try{var t=localStorage.getItem("theme");if(t==="light"||(t!=="dark"&&window.matchMedia("(prefers-color-scheme:light)").matches)){document.documentElement.classList.add("light")}}catch(e){}})()`,
+            __html: `(function(){try{var t=localStorage.getItem("theme");if(t!=="dark"){document.documentElement.classList.add("light")}}catch(e){}})()`,
           }}
         />
+        {/* Light mode floating blobs */}
+        <div className="portfolio-blob portfolio-blob-left" />
+        <div className="portfolio-blob portfolio-blob-right" />
         {children}
       </body>
     </html>

@@ -41,7 +41,7 @@
       "desc": "Immersiv virtual reallik ilovalari va muhitlari."
     },
     "hardware": {
-      "title": "Apparat loyihalari",
+      "title": "Uskunalar bilan ishlash",
       "desc": "Fizik hisoblash, IoT va o'rnatilgan tizimlar."
     },
     "more": {
@@ -64,7 +64,20 @@
     "project3": {
       "title": "NovaTech yechimlari",
       "desc": "Mahsulot xususiyatlari, narx rejalari va zamonaviy texnologik estetikaga ega zamonaviy SaaS sahifasi."
-    }
+    },
+    "project4": {
+      "title": "EduAssess",
+      "desc": "Talabalarni ishonch bilan tayyorlashga yordam beruvchi professional sinov imtihon platformasi."
+    },
+    "project5": {
+      "title": "PlayM8 Sports",
+      "desc": "Maydonlarni band qilish, aqlli o'yinchi tanlash, turnirlar va natijalar tahlili uchun sport platformasi."
+    },
+    "project6": {
+      "title": "Hikoyam",
+      "desc": "Bolalarning suratlarini shaxsiy illustratsiyali hikoyalarga aylantiruvchi sun'iy intellektga asoslangan platforma."
+    },
+    "visitSite": "Saytga o'tish"
   },
   "Contact": {
     "title": "Bog'lanish",

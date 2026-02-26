@@ -28,7 +28,7 @@ export default function VRCTA() {
       <motion.div
         className="absolute inset-0"
         style={{
-          backgroundImage: "url(https://images.unsplash.com/photo-1526506118085-60ce8714f8c5?w=1920&q=80&auto=format&fit=crop)",
+          backgroundImage: "url(https://images.unsplash.com/photo-1576678927484-cc907957088c?w=1920&q=80&auto=format&fit=crop)",
           backgroundSize: "cover",
           backgroundPosition: "center",
           y: bgY,
