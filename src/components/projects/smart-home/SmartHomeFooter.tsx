@@ -1,7 +1,10 @@
 "use client";
 
 import { useTranslations } from "next-intl";
+import { motion } from "framer-motion";
 import { FaGithub, FaTwitter, FaLinkedinIn } from "react-icons/fa";
+
+const ease = [0.16, 1, 0.3, 1] as const;
 
 export default function SmartHomeFooter() {
   const t = useTranslations("NovaTech");
@@ -21,20 +24,33 @@ export default function SmartHomeFooter() {
     },
   ];
 
+  const socialIcons = [FaGithub, FaTwitter, FaLinkedinIn];
+
   return (
     <footer style={{ backgroundColor: "#09090b" }}>
-      {/* Gradient divider */}
-      <div
+      {/* Gradient divider — animated scaleX */}
+      <motion.div
+        initial={{ scaleX: 0 }}
+        whileInView={{ scaleX: 1 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.8, ease }}
         className="h-px"
         style={{
           background: "linear-gradient(to right, transparent, #8b5cf6 40%, #06b6d4 60%, transparent)",
+          transformOrigin: "center",
         }}
       />
 
       <div className="mx-auto max-w-6xl px-6 py-16 sm:py-20">
         <div className="grid grid-cols-2 gap-10 sm:grid-cols-3 lg:grid-cols-5 lg:gap-12">
           {/* Column 1 — Brand + Social */}
-          <div className="col-span-2 sm:col-span-3 lg:col-span-1">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-60px" }}
+            transition={{ duration: 0.6, delay: 0, ease }}
+            className="col-span-2 sm:col-span-3 lg:col-span-1"
+          >
             <p className="font-[family-name:var(--font-inter)] text-lg font-semibold text-white">
               Nova<span style={{ color: "#8b5cf6" }}>Tech</span>
             </p>
@@ -42,24 +58,35 @@ export default function SmartHomeFooter() {
               An all-in-one platform for modern teams.
             </p>
 
-            {/* Social */}
+            {/* Social — spring entrance with stagger */}
             <div className="mt-5 flex gap-3">
-              {[FaGithub, FaTwitter, FaLinkedinIn].map((Icon, i) => (
-                <a
+              {socialIcons.map((Icon, i) => (
+                <motion.a
                   key={i}
                   href="#"
+                  initial={{ scale: 0 }}
+                  whileInView={{ scale: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ type: "spring", stiffness: 300, damping: 20, delay: 0.2 + i * 0.06 }}
+                  whileHover={{ scale: 1.15, color: "#8b5cf6" }}
                   className="flex h-8 w-8 items-center justify-center rounded-lg transition-colors duration-300 hover:text-[#8b5cf6]"
                   style={{ backgroundColor: "#18181b", color: "#71717a" }}
                 >
                   <Icon className="h-3.5 w-3.5" />
-                </a>
+                </motion.a>
               ))}
             </div>
-          </div>
+          </motion.div>
 
-          {/* Link columns */}
-          {columns.map((col) => (
-            <div key={col.title}>
+          {/* Link columns — staggered */}
+          {columns.map((col, colIndex) => (
+            <motion.div
+              key={col.title}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-60px" }}
+              transition={{ duration: 0.6, delay: (colIndex + 1) * 0.08, ease }}
+            >
               <p className="mb-4 text-xs font-semibold uppercase tracking-wider" style={{ color: "#fafafa" }}>
                 {col.title}
               </p>
@@ -68,7 +95,7 @@ export default function SmartHomeFooter() {
                   <li key={link}>
                     <a
                       href="#"
-                      className="text-sm transition-colors duration-300 hover:text-[#8b5cf6]"
+                      className="footer-link-shift text-sm transition-colors duration-300 hover:text-[#8b5cf6]"
                       style={{ color: "#52525b" }}
                     >
                       {t(`footer.${link}`)}
@@ -76,11 +103,16 @@ export default function SmartHomeFooter() {
                   </li>
                 ))}
               </ul>
-            </div>
+            </motion.div>
           ))}
 
-          {/* Newsletter column */}
-          <div>
+          {/* Newsletter column — staggered */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-60px" }}
+            transition={{ duration: 0.6, delay: 4 * 0.08, ease }}
+          >
             <p className="mb-4 text-xs font-semibold uppercase tracking-wider" style={{ color: "#fafafa" }}>
               {t("footer.newsletter")}
             </p>
@@ -94,7 +126,7 @@ export default function SmartHomeFooter() {
                 {t("footer.subscribe")}
               </button>
             </div>
-          </div>
+          </motion.div>
         </div>
 
         {/* Bottom bar */}
@@ -103,14 +135,21 @@ export default function SmartHomeFooter() {
           style={{ borderColor: "#27272a" }}
         >
           <p className="text-xs" style={{ color: "#52525b" }}>
-            &copy; 2025 {t("footer.copyright")}
+            &copy; {new Date().getFullYear()} {t("footer.copyright")}
           </p>
-          <div className="flex gap-6">
+          <div className="flex items-center gap-6">
+            <span className="flex items-center gap-1.5 text-xs" style={{ color: "#52525b" }}>
+              <span
+                className="inline-block h-1.5 w-1.5 rounded-full bg-green-500"
+                style={{ animation: "status-dot-pulse 2s ease-in-out infinite" }}
+              />
+              All Systems Operational
+            </span>
             {["terms", "privacy", "security"].map((item) => (
               <a
                 key={item}
                 href="#"
-                className="text-xs transition-colors duration-300 hover:text-[#8b5cf6]"
+                className="footer-link-shift text-xs transition-colors duration-300 hover:text-[#8b5cf6]"
                 style={{ color: "#52525b" }}
               >
                 {t(`footer.${item}`)}

@@ -40,16 +40,19 @@ export default function VRNav() {
             IRON<span style={{ color: "#f97316" }}>FORGE</span>
           </a>
 
-          {/* Desktop links */}
+          {/* Desktop links — staggered entrance + gym-nav-link class */}
           <div className="hidden items-center gap-8 lg:flex">
-            {navLinks.map((link) => (
-              <a
+            {navLinks.map((link, i) => (
+              <motion.a
                 key={link}
                 href="#"
-                className="font-[family-name:var(--font-bebas)] text-sm uppercase tracking-[0.15em] text-white/70 transition-colors duration-200 hover:text-[#f97316]"
+                initial={{ opacity: 0, y: -15 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.35, delay: 0.4 + i * 0.05 }}
+                className="gym-nav-link font-[family-name:var(--font-bebas)] text-sm uppercase tracking-[0.15em] text-white/70 transition-colors duration-200 hover:text-[#f97316]"
               >
                 {t(`nav.${link}`)}
-              </a>
+              </motion.a>
             ))}
           </div>
 

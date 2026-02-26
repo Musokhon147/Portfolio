@@ -48,17 +48,20 @@ export default function SmartHomeNav() {
             Nova<span style={{ color: "#8b5cf6" }}>Tech</span>
           </a>
 
-          {/* Desktop links */}
+          {/* Desktop links — staggered entrance with animated underline */}
           <div className="hidden items-center gap-6 lg:flex">
-            {navLinks.map((link) => (
-              <a
+            {navLinks.map((link, i) => (
+              <motion.a
                 key={link}
                 href="#"
-                className="text-sm font-medium transition-colors duration-300 hover:text-[#8b5cf6]"
+                initial={{ opacity: 0, y: -10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.4, delay: 0.7 + i * 0.05, ease }}
+                className="nova-nav-link text-sm font-medium transition-colors duration-300 hover:text-[#8b5cf6]"
                 style={{ color: "#71717a" }}
               >
                 {t(`nav.${link}`)}
-              </a>
+              </motion.a>
             ))}
           </div>
 

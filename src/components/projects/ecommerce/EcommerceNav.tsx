@@ -42,17 +42,20 @@ export default function EcommerceNav() {
             Sweet Delights
           </a>
 
-          {/* Desktop links */}
+          {/* Desktop links — staggered entrance + bakery-nav-link class */}
           <div className="hidden items-center gap-8 lg:flex">
-            {navLinks.map((link) => (
-              <a
+            {navLinks.map((link, i) => (
+              <motion.a
                 key={link}
                 href="#"
-                className="relative text-sm font-medium transition-colors duration-300 hover:text-[#c2185b]"
+                initial={{ opacity: 0, y: -10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.4, delay: 0.6 + i * 0.05 }}
+                className="bakery-nav-link relative text-sm font-medium transition-colors duration-300 hover:text-[#c2185b]"
                 style={{ color: "#8b7355" }}
               >
                 {t(`nav.${link}`)}
-              </a>
+              </motion.a>
             ))}
           </div>
 

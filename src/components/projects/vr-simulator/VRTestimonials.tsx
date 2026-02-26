@@ -43,17 +43,33 @@ export default function VRTestimonials() {
           <AnimatePresence mode="wait">
             <motion.div
               key={active}
-              initial={{ opacity: 0, x: 30 }}
-              animate={{ opacity: 1, x: 0 }}
-              exit={{ opacity: 0, x: -30 }}
-              transition={{ duration: 0.4 }}
-              className="pl-6"
-              style={{ borderLeft: "4px solid #f97316" }}
+              initial={{ opacity: 0, x: 50, scale: 0.98 }}
+              animate={{ opacity: 1, x: 0, scale: 1 }}
+              exit={{ opacity: 0, x: -50, scale: 0.98 }}
+              transition={{ duration: 0.5, ease: [0.25, 0.4, 0.25, 1] }}
+              className="pl-8"
+              style={{
+                borderLeft: "4px solid #f97316",
+                borderImage: "linear-gradient(to bottom, #f97316, #ea580c) 1",
+              }}
             >
-              {/* Stars */}
+              {/* Stars — individually staggered */}
               <div className="mb-4 flex gap-1">
                 {Array.from({ length: 5 }).map((_, i) => (
-                  <HiStar key={i} className="h-5 w-5" style={{ color: "#f97316" }} />
+                  <motion.span
+                    key={i}
+                    initial={{ scale: 0 }}
+                    animate={{ scale: 1 }}
+                    transition={{
+                      type: "spring",
+                      stiffness: 300,
+                      damping: 15,
+                      delay: i * 0.06,
+                    }}
+                    className="inline-flex"
+                  >
+                    <HiStar className="h-5 w-5" style={{ color: "#f97316" }} />
+                  </motion.span>
                 ))}
               </div>
 
@@ -62,24 +78,56 @@ export default function VRTestimonials() {
                 &ldquo;{t(`testimonials.${key}.quote`)}&rdquo;
               </p>
 
-              {/* Author */}
-              <div className="mt-6">
-                <p
-                  className="font-[family-name:var(--font-bebas)] text-lg uppercase tracking-wider"
-                  style={{ color: "#f97316" }}
+              {/* Author — staggered name and role */}
+              <div className="mt-6 flex items-center gap-3">
+                <div
+                  className="flex h-10 w-10 items-center justify-center text-sm font-bold text-white"
+                  style={{ backgroundColor: "#f97316" }}
                 >
-                  {t(`testimonials.${key}.name`)}
-                </p>
-                <p className="text-sm" style={{ color: "#b5b5b5" }}>
-                  {t(`testimonials.${key}.role`)}
-                </p>
+                  {t(`testimonials.${key}.name`).charAt(0)}
+                </div>
+                <div>
+                  <motion.p
+                    initial={{ opacity: 0, x: 10 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.35, delay: 0 }}
+                    className="font-[family-name:var(--font-bebas)] text-lg uppercase tracking-wider"
+                    style={{ color: "#f97316" }}
+                  >
+                    {t(`testimonials.${key}.name`)}
+                  </motion.p>
+                  <motion.p
+                    initial={{ opacity: 0, x: 10 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.35, delay: 0.15 }}
+                    className="text-sm"
+                    style={{ color: "#b5b5b5" }}
+                  >
+                    {t(`testimonials.${key}.role`)}
+                  </motion.p>
+                </div>
               </div>
             </motion.div>
           </AnimatePresence>
         </div>
 
+        {/* Progress bar with glow */}
+        <div className="mx-auto mt-8 h-[2px] max-w-xs overflow-hidden" style={{ backgroundColor: "#222" }}>
+          <motion.div
+            key={active}
+            initial={{ scaleX: 0 }}
+            animate={{ scaleX: paused ? 0 : 1 }}
+            transition={{ duration: 5, ease: "linear" }}
+            className="h-full origin-left"
+            style={{
+              backgroundColor: "#f97316",
+              boxShadow: "0 0 10px rgba(249,115,22,0.5)",
+            }}
+          />
+        </div>
+
         {/* Dot indicators */}
-        <div className="mt-10 flex justify-center gap-3">
+        <div className="mt-6 flex justify-center gap-3">
           {testimonialKeys.map((_, i) => (
             <button
               key={i}
