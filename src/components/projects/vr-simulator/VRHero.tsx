@@ -207,8 +207,8 @@ export default function VRHero() {
             transition={{ type: "spring", stiffness: 120, damping: 20, delay: 0.5 }}
             className="mt-10 flex flex-col gap-4 sm:flex-row"
           >
-            <button className="gym-btn">{t("hero.cta")}</button>
-            <button className="gym-btn-outline">{t("hero.ctaSecondary")}</button>
+            <button className="gym-btn" onClick={() => document.getElementById("pricing")?.scrollIntoView({ behavior: "smooth" })}>{t("hero.cta")}</button>
+            <button className="gym-btn-outline" onClick={() => document.getElementById("programs")?.scrollIntoView({ behavior: "smooth" })}>{t("hero.ctaSecondary")}</button>
           </motion.div>
         </div>
       </div>

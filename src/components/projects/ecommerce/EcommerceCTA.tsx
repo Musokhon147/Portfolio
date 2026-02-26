@@ -112,6 +112,7 @@ export default function EcommerceCTA() {
               whileHover={{ scale: 1.05, y: -2 }}
               whileTap={{ scale: 0.96 }}
               transition={{ type: "spring", stiffness: 400, damping: 20 }}
+              onClick={() => document.getElementById("menu")?.scrollIntoView({ behavior: "smooth" })}
               className="bakery-btn-amber"
             >
               {t("cta.button")}
@@ -119,6 +120,7 @@ export default function EcommerceCTA() {
             <motion.button
               whileHover={{ x: 6 }}
               transition={{ type: "spring", stiffness: 300, damping: 20 }}
+              onClick={() => document.getElementById("about")?.scrollIntoView({ behavior: "smooth" })}
               className="group flex items-center gap-2 text-sm font-semibold transition-colors duration-300 hover:text-white"
               style={{ color: "rgba(255,243,224,0.7)" }}
             >

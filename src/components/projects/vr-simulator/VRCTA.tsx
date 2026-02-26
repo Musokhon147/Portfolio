@@ -132,6 +132,7 @@ export default function VRCTA() {
               whileHover={{ scale: 1.05, y: -2 }}
               whileTap={{ scale: 0.96 }}
               transition={{ type: "spring", stiffness: 400, damping: 20 }}
+              onClick={() => document.getElementById("pricing")?.scrollIntoView({ behavior: "smooth" })}
               className="gym-btn"
             >
               {t("cta.button")}
@@ -140,6 +141,7 @@ export default function VRCTA() {
               whileHover={{ scale: 1.05, y: -2 }}
               whileTap={{ scale: 0.96 }}
               transition={{ type: "spring", stiffness: 400, damping: 20 }}
+              onClick={() => document.getElementById("programs")?.scrollIntoView({ behavior: "smooth" })}
               className="gym-btn-outline"
             >
               {t("cta.buttonSecondary")}

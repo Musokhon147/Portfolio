@@ -4,12 +4,15 @@ import { useState, useEffect } from "react";
 import { useTranslations } from "next-intl";
 import { motion, AnimatePresence } from "framer-motion";
 import { HiMenu, HiX } from "react-icons/hi";
+import { useToast } from "@/components/ui/Toast";
 
 const navLinks = ["home", "features", "pricing", "docs", "blog"] as const;
+const sectionLinks = new Set(["home", "features", "pricing"]);
 const ease = [0.16, 1, 0.3, 1] as const;
 
 export default function SmartHomeNav() {
   const t = useTranslations("NovaTech");
+  const { showToast } = useToast();
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
 
@@ -42,7 +45,8 @@ export default function SmartHomeNav() {
         >
           {/* Logo */}
           <a
-            href="#"
+            href="#home"
+            onClick={(e) => { e.preventDefault(); document.getElementById("home")?.scrollIntoView({ behavior: "smooth" }); }}
             className="font-[family-name:var(--font-inter)] text-base font-semibold text-white sm:text-lg"
           >
             Nova<span style={{ color: "#8b5cf6" }}>Tech</span>
@@ -53,7 +57,15 @@ export default function SmartHomeNav() {
             {navLinks.map((link, i) => (
               <motion.a
                 key={link}
-                href="#"
+                href={`#${link}`}
+                onClick={(e) => {
+                  e.preventDefault();
+                  if (sectionLinks.has(link)) {
+                    document.getElementById(link)?.scrollIntoView({ behavior: "smooth" });
+                  } else {
+                    showToast("Coming soon!", "info");
+                  }
+                }}
                 initial={{ opacity: 0, y: -10 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.4, delay: 0.7 + i * 0.05, ease }}
@@ -66,7 +78,10 @@ export default function SmartHomeNav() {
           </div>
 
           {/* Desktop CTA */}
-          <button className="nova-btn hidden rounded-full px-5 py-2 text-xs lg:block">
+          <button
+            onClick={() => document.getElementById("pricing")?.scrollIntoView({ behavior: "smooth" })}
+            className="nova-btn hidden rounded-full px-5 py-2 text-xs lg:block"
+          >
             {t("nav.cta")}
           </button>
 
@@ -103,12 +118,20 @@ export default function SmartHomeNav() {
               {navLinks.map((link, i) => (
                 <motion.a
                   key={link}
-                  href="#"
+                  href={`#${link}`}
                   initial={{ opacity: 0, y: 15 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.1 + i * 0.06, ease }}
                   className="font-[family-name:var(--font-inter)] text-2xl font-semibold text-white transition-colors duration-300 hover:text-[#8b5cf6]"
-                  onClick={() => setMenuOpen(false)}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    setMenuOpen(false);
+                    if (sectionLinks.has(link)) {
+                      document.getElementById(link)?.scrollIntoView({ behavior: "smooth" });
+                    } else {
+                      showToast("Coming soon!", "info");
+                    }
+                  }}
                 >
                   {t(`nav.${link}`)}
                 </motion.a>
@@ -118,7 +141,7 @@ export default function SmartHomeNav() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.5, ease }}
                 className="nova-btn mt-4 px-8 py-3 text-sm"
-                onClick={() => setMenuOpen(false)}
+                onClick={() => { setMenuOpen(false); document.getElementById("pricing")?.scrollIntoView({ behavior: "smooth" }); }}
               >
                 {t("nav.cta")}
               </motion.button>

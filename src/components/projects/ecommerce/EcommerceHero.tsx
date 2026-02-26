@@ -168,6 +168,7 @@ export default function EcommerceHero() {
                 whileHover={{ scale: 1.04, y: -2 }}
                 whileTap={{ scale: 0.97 }}
                 transition={{ type: "spring", stiffness: 400, damping: 20 }}
+                onClick={() => document.getElementById("menu")?.scrollIntoView({ behavior: "smooth" })}
                 className="bakery-btn transition-shadow duration-300 hover:shadow-[0_8px_30px_rgba(194,24,91,0.4)]"
               >
                 {t("hero.cta")}
@@ -181,6 +182,7 @@ export default function EcommerceHero() {
               <motion.button
                 whileHover={{ x: 6 }}
                 transition={{ type: "spring", stiffness: 300, damping: 20 }}
+                onClick={() => document.getElementById("about")?.scrollIntoView({ behavior: "smooth" })}
                 className="group flex items-center gap-2 text-sm font-semibold transition-colors duration-300 hover:text-[#c2185b]"
                 style={{ color: "#8b7355" }}
               >

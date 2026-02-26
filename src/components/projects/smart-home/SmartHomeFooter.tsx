@@ -3,11 +3,18 @@
 import { useTranslations } from "next-intl";
 import { motion } from "framer-motion";
 import { FaGithub, FaTwitter, FaLinkedinIn } from "react-icons/fa";
+import { useToast } from "@/components/ui/Toast";
 
 const ease = [0.16, 1, 0.3, 1] as const;
 
+const footerSectionMap: Record<string, string> = {
+  features: "features",
+  pricing: "pricing",
+};
+
 export default function SmartHomeFooter() {
   const t = useTranslations("NovaTech");
+  const { showToast } = useToast();
 
   const columns = [
     {
@@ -64,6 +71,7 @@ export default function SmartHomeFooter() {
                 <motion.a
                   key={i}
                   href="#"
+                  onClick={(e) => { e.preventDefault(); showToast("Opens in new tab", "info"); }}
                   initial={{ scale: 0 }}
                   whileInView={{ scale: 1 }}
                   viewport={{ once: true }}
@@ -94,7 +102,16 @@ export default function SmartHomeFooter() {
                 {col.links.map((link) => (
                   <li key={link}>
                     <a
-                      href="#"
+                      href={footerSectionMap[link] ? `#${footerSectionMap[link]}` : "#"}
+                      onClick={(e) => {
+                        e.preventDefault();
+                        const id = footerSectionMap[link];
+                        if (id) {
+                          document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
+                        } else {
+                          showToast("Coming soon!", "info");
+                        }
+                      }}
                       className="footer-link-shift text-sm transition-colors duration-300 hover:text-[#8b5cf6]"
                       style={{ color: "#52525b" }}
                     >
@@ -122,7 +139,7 @@ export default function SmartHomeFooter() {
                 placeholder={t("footer.emailPlaceholder")}
                 className="nova-input"
               />
-              <button className="nova-btn py-2.5 text-xs">
+              <button onClick={() => showToast("Subscribed successfully!", "success")} className="nova-btn py-2.5 text-xs">
                 {t("footer.subscribe")}
               </button>
             </div>
@@ -149,6 +166,7 @@ export default function SmartHomeFooter() {
               <a
                 key={item}
                 href="#"
+                onClick={(e) => { e.preventDefault(); showToast("Coming soon!", "info"); }}
                 className="footer-link-shift text-xs transition-colors duration-300 hover:text-[#8b5cf6]"
                 style={{ color: "#52525b" }}
               >

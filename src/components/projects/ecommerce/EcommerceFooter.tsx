@@ -3,11 +3,21 @@
 import { useTranslations } from "next-intl";
 import { motion } from "framer-motion";
 import { FaInstagram, FaFacebookF, FaTelegramPlane } from "react-icons/fa";
+import { useToast } from "@/components/ui/Toast";
 
 const socialIcons = [FaInstagram, FaFacebookF, FaTelegramPlane];
 
+const sectionMap: Record<string, string> = {
+  cakes: "menu",
+  pastries: "menu",
+  custom: "menu",
+  catering: "menu",
+  about: "about",
+};
+
 export default function EcommerceFooter() {
   const t = useTranslations("SweetDelights");
+  const { showToast } = useToast();
 
   return (
     <footer style={{ backgroundColor: "#2d1b14" }}>
@@ -59,7 +69,8 @@ export default function EcommerceFooter() {
               {["cakes", "pastries", "custom", "catering"].map((item) => (
                 <li key={item}>
                   <a
-                    href="#"
+                    href="#menu"
+                    onClick={(e) => { e.preventDefault(); document.getElementById("menu")?.scrollIntoView({ behavior: "smooth" }); }}
                     className="footer-link-shift text-sm transition-colors duration-300 hover:text-[#c2185b]"
                     style={{ color: "rgba(250,245,240,0.6)" }}
                   >
@@ -84,7 +95,16 @@ export default function EcommerceFooter() {
               {["about", "delivery", "careers", "faq"].map((item) => (
                 <li key={item}>
                   <a
-                    href="#"
+                    href={sectionMap[item] ? `#${sectionMap[item]}` : "#"}
+                    onClick={(e) => {
+                      e.preventDefault();
+                      const id = sectionMap[item];
+                      if (id) {
+                        document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
+                      } else {
+                        showToast("Coming soon!", "info");
+                      }
+                    }}
                     className="footer-link-shift text-sm transition-colors duration-300 hover:text-[#c2185b]"
                     style={{ color: "rgba(250,245,240,0.6)" }}
                   >
@@ -111,7 +131,7 @@ export default function EcommerceFooter() {
                 placeholder={t("footer.emailPlaceholder")}
                 className="bakery-input flex-1"
               />
-              <button className="bakery-btn whitespace-nowrap px-5 py-2 text-xs">
+              <button onClick={() => showToast("Subscribed successfully!", "success")} className="bakery-btn whitespace-nowrap px-5 py-2 text-xs">
                 {t("footer.subscribe")}
               </button>
             </div>
@@ -122,6 +142,7 @@ export default function EcommerceFooter() {
                 <motion.a
                   key={i}
                   href="#"
+                  onClick={(e) => { e.preventDefault(); showToast("Opens in new tab", "info"); }}
                   initial={{ scale: 0 }}
                   whileInView={{ scale: 1 }}
                   viewport={{ once: true }}

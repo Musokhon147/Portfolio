@@ -3,6 +3,7 @@
 import { useRef, useState } from "react";
 import { useTranslations } from "next-intl";
 import { motion } from "framer-motion";
+import { useToast } from "@/components/ui/Toast";
 
 const products = [
   { key: "p1", img: "https://images.unsplash.com/photo-1565958011703-44f9829ba187?w=800&q=80&auto=format&fit=crop", featured: true },
@@ -65,6 +66,7 @@ function ProductCard({ children, className, delay = 0 }: { children: React.React
 
 export default function EcommerceProducts() {
   const t = useTranslations("SweetDelights");
+  const { showToast } = useToast();
 
   return (
     <section className="py-24 sm:py-32" style={{ backgroundColor: "#fff3e0" }}>
@@ -136,6 +138,7 @@ export default function EcommerceProducts() {
                 <motion.button
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
+                  onClick={() => showToast("Added to cart!", "success")}
                   className="bakery-btn px-5 py-2 text-xs"
                 >
                   {t("products.addToCart")}
@@ -269,7 +272,7 @@ export default function EcommerceProducts() {
                   <p className="text-xl font-bold" style={{ color: "#c2185b" }}>
                     {t("products.p6.price")}
                   </p>
-                  <motion.button whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="bakery-btn px-6 py-2.5 text-sm">
+                  <motion.button whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} onClick={() => showToast("Added to cart!", "success")} className="bakery-btn px-6 py-2.5 text-sm">
                     {t("products.addToCart")}
                   </motion.button>
                 </div>

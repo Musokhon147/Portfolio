@@ -3,6 +3,7 @@
 import { useTranslations } from "next-intl";
 import { motion } from "framer-motion";
 import { HiCheck } from "react-icons/hi";
+import { useToast } from "@/components/ui/Toast";
 
 const tiers = [
   { key: "tier1", features: ["f1", "f2", "f3", "f4"], highlighted: false },
@@ -26,6 +27,7 @@ const listItemVariants = {
 
 export default function VRPricing() {
   const t = useTranslations("IronForge");
+  const { showToast } = useToast();
 
   return (
     <section className="px-6 py-24 sm:py-32" style={{ backgroundColor: "#050505" }}>
@@ -154,6 +156,7 @@ export default function VRPricing() {
 
               {/* CTA */}
               <button
+                onClick={() => showToast("Plan selected!", "success")}
                 className={tier.highlighted ? "gym-btn w-full" : "gym-btn-outline w-full"}
               >
                 {t(`pricing.${tier.key}.cta`)}

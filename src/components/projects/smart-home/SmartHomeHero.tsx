@@ -188,7 +188,7 @@ export default function SmartHomeHero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.4, ease }}
           >
-            <button className="nova-btn px-8 py-3.5 text-sm font-semibold">
+            <button onClick={() => document.getElementById("pricing")?.scrollIntoView({ behavior: "smooth" })} className="nova-btn px-8 py-3.5 text-sm font-semibold">
               {t("hero.cta")}
             </button>
           </motion.div>
@@ -197,7 +197,7 @@ export default function SmartHomeHero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.5, ease }}
           >
-            <button className="nova-btn-outline px-8 py-3.5 text-sm font-semibold">
+            <button onClick={() => document.getElementById("features")?.scrollIntoView({ behavior: "smooth" })} className="nova-btn-outline px-8 py-3.5 text-sm font-semibold">
               {t("hero.ctaSecondary")}
             </button>
           </motion.div>

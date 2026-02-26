@@ -1,6 +1,7 @@
 import { setRequestLocale } from "next-intl/server";
 import type { Metadata } from "next";
 import BackToPortfolio from "@/components/projects/BackToPortfolio";
+import { ToastProvider } from "@/components/ui/Toast";
 import VRNav from "@/components/projects/vr-simulator/VRNav";
 import VRHero from "@/components/projects/vr-simulator/VRHero";
 import VRFeatures from "@/components/projects/vr-simulator/VRFeatures";
@@ -23,18 +24,20 @@ export default async function VRSimulatorPage({
   setRequestLocale(locale);
 
   return (
-    <div data-accent="orange" className="min-h-screen" style={{ backgroundColor: '#050505', color: '#a0a0a0' }}>
-      <VRNav />
-      <main>
-        <VRHero />
-        <VRFeatures />
-        <VRStats />
-        <VRPricing />
-        <VRTestimonials />
-        <VRCTA />
-      </main>
-      <VRFooter />
-      <BackToPortfolio />
-    </div>
+    <ToastProvider>
+      <div data-accent="orange" className="min-h-screen" style={{ backgroundColor: '#050505', color: '#a0a0a0' }}>
+        <VRNav />
+        <main>
+          <div id="home"><VRHero /></div>
+          <div id="programs"><VRFeatures /></div>
+          <VRStats />
+          <div id="pricing"><VRPricing /></div>
+          <div id="trainers"><VRTestimonials /></div>
+          <div id="contact"><VRCTA /></div>
+        </main>
+        <VRFooter />
+        <BackToPortfolio />
+      </div>
+    </ToastProvider>
   );
 }

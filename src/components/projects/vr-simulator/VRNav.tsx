@@ -34,7 +34,8 @@ export default function VRNav() {
         <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4 sm:px-8">
           {/* Logo */}
           <a
-            href="#"
+            href="#home"
+            onClick={(e) => { e.preventDefault(); document.getElementById("home")?.scrollIntoView({ behavior: "smooth" }); }}
             className="font-[family-name:var(--font-bebas)] text-2xl tracking-wider text-white sm:text-3xl"
           >
             IRON<span style={{ color: "#f97316" }}>FORGE</span>
@@ -45,7 +46,8 @@ export default function VRNav() {
             {navLinks.map((link, i) => (
               <motion.a
                 key={link}
-                href="#"
+                href={`#${link}`}
+                onClick={(e) => { e.preventDefault(); document.getElementById(link)?.scrollIntoView({ behavior: "smooth" }); }}
                 initial={{ opacity: 0, y: -15 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.35, delay: 0.4 + i * 0.05 }}
@@ -57,7 +59,10 @@ export default function VRNav() {
           </div>
 
           {/* Desktop CTA */}
-          <button className="gym-btn hidden px-6 py-2.5 text-xs lg:block">
+          <button
+            onClick={() => document.getElementById("pricing")?.scrollIntoView({ behavior: "smooth" })}
+            className="gym-btn hidden px-6 py-2.5 text-xs lg:block"
+          >
             {t("nav.cta")}
           </button>
 
@@ -94,12 +99,12 @@ export default function VRNav() {
               {navLinks.map((link, i) => (
                 <motion.a
                   key={link}
-                  href="#"
+                  href={`#${link}`}
                   initial={{ opacity: 0, x: 40 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: 0.1 + i * 0.06 }}
                   className="font-[family-name:var(--font-bebas)] text-4xl uppercase tracking-wider text-white transition-colors duration-200 hover:text-[#f97316]"
-                  onClick={() => setMenuOpen(false)}
+                  onClick={(e) => { e.preventDefault(); setMenuOpen(false); document.getElementById(link)?.scrollIntoView({ behavior: "smooth" }); }}
                 >
                   {t(`nav.${link}`)}
                 </motion.a>
@@ -109,7 +114,7 @@ export default function VRNav() {
                 animate={{ opacity: 1 }}
                 transition={{ delay: 0.5 }}
                 className="gym-btn mt-6 px-10 py-3"
-                onClick={() => setMenuOpen(false)}
+                onClick={() => { setMenuOpen(false); document.getElementById("pricing")?.scrollIntoView({ behavior: "smooth" }); }}
               >
                 {t("nav.cta")}
               </motion.button>

@@ -3,9 +3,11 @@
 import { useTranslations } from "next-intl";
 import { motion } from "framer-motion";
 import { FaInstagram, FaYoutube, FaTelegramPlane } from "react-icons/fa";
+import { useToast } from "@/components/ui/Toast";
 
 export default function VRFooter() {
   const t = useTranslations("IronForge");
+  const { showToast } = useToast();
 
   return (
     <footer style={{ backgroundColor: "#050505" }}>
@@ -70,7 +72,8 @@ export default function VRFooter() {
               {["strength", "cardio", "yoga", "boxing"].map((item) => (
                 <li key={item}>
                   <a
-                    href="#"
+                    href="#programs"
+                    onClick={(e) => { e.preventDefault(); document.getElementById("programs")?.scrollIntoView({ behavior: "smooth" }); }}
                     className="footer-link-shift text-sm transition-colors duration-200 hover:text-[#f97316]"
                     style={{ color: "#777" }}
                   >
@@ -99,6 +102,14 @@ export default function VRFooter() {
                 <li key={item}>
                   <a
                     href="#"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      if (item === "about") {
+                        document.getElementById("trainers")?.scrollIntoView({ behavior: "smooth" });
+                      } else {
+                        showToast("Coming soon!", "info");
+                      }
+                    }}
                     className="footer-link-shift text-sm transition-colors duration-200 hover:text-[#f97316]"
                     style={{ color: "#777" }}
                   >
@@ -128,7 +139,7 @@ export default function VRFooter() {
                 placeholder={t("footer.emailPlaceholder")}
                 className="gym-input flex-1"
               />
-              <button className="gym-btn whitespace-nowrap px-5 py-2.5 text-xs">
+              <button onClick={() => showToast("Subscribed successfully!", "success")} className="gym-btn whitespace-nowrap px-5 py-2.5 text-xs">
                 {t("footer.subscribe")}
               </button>
             </div>
@@ -139,6 +150,7 @@ export default function VRFooter() {
                 <motion.a
                   key={i}
                   href="#"
+                  onClick={(e) => { e.preventDefault(); showToast("Opens in new tab", "info"); }}
                   initial={{ scale: 0 }}
                   whileInView={{ scale: 1 }}
                   viewport={{ once: true }}

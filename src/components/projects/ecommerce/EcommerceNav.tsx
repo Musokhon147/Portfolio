@@ -34,7 +34,8 @@ export default function EcommerceNav() {
         <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4 sm:px-8">
           {/* Logo */}
           <a
-            href="#"
+            href="#home"
+            onClick={(e) => { e.preventDefault(); document.getElementById("home")?.scrollIntoView({ behavior: "smooth" }); }}
             className="font-[family-name:var(--font-playfair)] text-xl font-bold sm:text-2xl"
             style={{ color: "#2d1b14" }}
           >
@@ -47,7 +48,8 @@ export default function EcommerceNav() {
             {navLinks.map((link, i) => (
               <motion.a
                 key={link}
-                href="#"
+                href={`#${link}`}
+                onClick={(e) => { e.preventDefault(); document.getElementById(link)?.scrollIntoView({ behavior: "smooth" }); }}
                 initial={{ opacity: 0, y: -10 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.4, delay: 0.6 + i * 0.05 }}
@@ -60,7 +62,10 @@ export default function EcommerceNav() {
           </div>
 
           {/* Desktop CTA */}
-          <button className="hidden bakery-btn px-5 py-2 text-xs lg:block">
+          <button
+            onClick={() => document.getElementById("menu")?.scrollIntoView({ behavior: "smooth" })}
+            className="hidden bakery-btn px-5 py-2 text-xs lg:block"
+          >
             {t("nav.cta")}
           </button>
 
@@ -97,13 +102,13 @@ export default function EcommerceNav() {
               {navLinks.map((link, i) => (
                 <motion.a
                   key={link}
-                  href="#"
+                  href={`#${link}`}
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.1 + i * 0.07 }}
                   className="font-[family-name:var(--font-playfair)] text-2xl font-semibold transition-colors duration-300 hover:text-[#c2185b]"
                   style={{ color: "#2d1b14" }}
-                  onClick={() => setMenuOpen(false)}
+                  onClick={(e) => { e.preventDefault(); setMenuOpen(false); document.getElementById(link)?.scrollIntoView({ behavior: "smooth" }); }}
                 >
                   {t(`nav.${link}`)}
                 </motion.a>
@@ -113,7 +118,7 @@ export default function EcommerceNav() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.5 }}
                 className="bakery-btn mt-4 px-8 py-3"
-                onClick={() => setMenuOpen(false)}
+                onClick={() => { setMenuOpen(false); document.getElementById("menu")?.scrollIntoView({ behavior: "smooth" }); }}
               >
                 {t("nav.cta")}
               </motion.button>

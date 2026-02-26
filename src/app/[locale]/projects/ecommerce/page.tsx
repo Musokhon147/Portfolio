@@ -1,6 +1,7 @@
 import { setRequestLocale } from "next-intl/server";
 import type { Metadata } from "next";
 import BackToPortfolio from "@/components/projects/BackToPortfolio";
+import { ToastProvider } from "@/components/ui/Toast";
 import EcommerceNav from "@/components/projects/ecommerce/EcommerceNav";
 import EcommerceHero from "@/components/projects/ecommerce/EcommerceHero";
 import EcommerceProducts from "@/components/projects/ecommerce/EcommerceProducts";
@@ -24,19 +25,21 @@ export default async function EcommercePage({
   setRequestLocale(locale);
 
   return (
-    <div data-accent="pink" className="min-h-screen" style={{ backgroundColor: '#faf5f0', color: '#8b7355' }}>
-      <EcommerceNav />
-      <main>
-        <EcommerceHero />
-        <EcommerceProducts />
-        <EcommerceFeatures />
-        <EcommerceStory />
-        <EcommerceGallery />
-        <EcommerceTestimonials />
-        <EcommerceCTA />
-      </main>
-      <EcommerceFooter />
-      <BackToPortfolio />
-    </div>
+    <ToastProvider>
+      <div data-accent="pink" className="min-h-screen" style={{ backgroundColor: '#faf5f0', color: '#8b7355' }}>
+        <EcommerceNav />
+        <main>
+          <div id="home"><EcommerceHero /></div>
+          <div id="menu"><EcommerceProducts /></div>
+          <EcommerceFeatures />
+          <div id="about"><EcommerceStory /></div>
+          <div id="gallery"><EcommerceGallery /></div>
+          <EcommerceTestimonials />
+          <div id="contact"><EcommerceCTA /></div>
+        </main>
+        <EcommerceFooter />
+        <BackToPortfolio />
+      </div>
+    </ToastProvider>
   );
 }

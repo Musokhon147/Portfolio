@@ -3,6 +3,7 @@
 import { useTranslations } from "next-intl";
 import { motion } from "framer-motion";
 import { HiCheck } from "react-icons/hi";
+import { useToast } from "@/components/ui/Toast";
 
 const ease = [0.16, 1, 0.3, 1] as const;
 
@@ -28,6 +29,7 @@ const featureItemVariants = {
 
 export default function SmartHomePricing() {
   const t = useTranslations("NovaTech");
+  const { showToast } = useToast();
 
   return (
     <section className="px-6 py-24 sm:py-32" style={{ backgroundColor: "#09090b" }}>
@@ -162,6 +164,7 @@ export default function SmartHomePricing() {
 
                   {/* CTA */}
                   <button
+                    onClick={() => showToast("Plan selected!", "success")}
                     className={`w-full ${tier.highlighted ? "nova-btn py-3" : "nova-btn-outline py-3"}`}
                   >
                     {t(`pricing.${tier.key}.cta`)}

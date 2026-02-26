@@ -142,6 +142,7 @@ export default function SmartHomeCTA() {
               <MagneticWrap strength={0.3}>
                 <motion.button
                   whileHover={{ boxShadow: "0 0 20px rgba(139,92,246,0.3)" }}
+                  onClick={() => document.getElementById("pricing")?.scrollIntoView({ behavior: "smooth" })}
                   className="nova-btn px-8 py-3.5 text-sm font-semibold"
                 >
                   {t("cta.button")}
@@ -150,6 +151,7 @@ export default function SmartHomeCTA() {
               <MagneticWrap strength={0.25}>
                 <motion.button
                   whileHover={{ boxShadow: "0 0 20px rgba(139,92,246,0.3)" }}
+                  onClick={() => document.getElementById("features")?.scrollIntoView({ behavior: "smooth" })}
                   className="nova-btn-outline px-8 py-3.5 text-sm font-semibold"
                 >
                   {t("cta.buttonSecondary")}
