@@ -42,7 +42,7 @@ export default function Navbar() {
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.6, ease: [0.25, 0.4, 0.25, 1] }}
-      className={`fixed top-0 z-50 w-full transition-all duration-500 ${
+      className={`fixed top-0 z-50 w-full max-w-[100vw] transition-all duration-500 ${
         scrolled
           ? "border-b border-border/30 bg-base/80 backdrop-blur-xl shadow-[var(--navbar-shadow)]"
           : "bg-transparent"
@@ -73,7 +73,7 @@ export default function Navbar() {
               <span
                 className={`absolute bottom-0.5 left-1/2 h-px -translate-x-1/2 bg-gradient-to-r from-cyan to-amber transition-all duration-300 ${
                   activeSection === key
-                    ? "w-3/4 shadow-[0_0_8px_rgba(6,182,212,0.4)]"
+                    ? "w-3/4 shadow-[0_0_8px_rgba(37,99,235,0.4)]"
                     : "w-0 group-hover:w-3/4"
                 }`}
               />
@@ -86,7 +86,7 @@ export default function Navbar() {
         </div>
 
         {/* Mobile */}
-        <div className="flex items-center gap-2 md:hidden">
+        <div className="flex items-center gap-1.5 md:hidden">
           <ThemeToggle />
           <LanguageSwitcher />
           <button

@@ -4,6 +4,7 @@ import { useTranslations } from "next-intl";
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import ScrollReveal from "@/components/ui/ScrollReveal";
+import TextReveal from "@/components/ui/TextReveal";
 import { HiChevronLeft, HiChevronRight } from "react-icons/hi";
 
 const testimonialKeys = ["t1", "t2", "t3"] as const;
@@ -24,11 +25,9 @@ export default function Testimonials() {
       <div className="pointer-events-none absolute left-1/2 top-1/2 h-[250px] w-[250px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-amber/5 blur-[80px] sm:h-[400px] sm:w-[400px] sm:blur-[120px]" />
 
       <div className="relative mx-auto max-w-4xl px-4 pt-16 sm:px-5 sm:pt-20 md:px-8 md:pt-24">
-        <ScrollReveal>
-          <h2 className="mb-4 text-center font-[family-name:var(--font-syne)] text-2xl font-bold tracking-tight sm:text-3xl md:text-5xl">
-            <span className="gradient-text">{t("title")}</span>
-          </h2>
-        </ScrollReveal>
+        <h2 className="mb-4 text-center font-[family-name:var(--font-syne)] text-2xl font-bold tracking-tight sm:text-3xl md:text-5xl">
+          <TextReveal text={t("title")} className="gradient-text" />
+        </h2>
 
         <ScrollReveal delay={0.1}>
           <div className="mx-auto mb-8 h-1 w-12 rounded-full bg-gradient-to-r from-cyan to-amber sm:mb-12 md:mb-16" />
@@ -87,7 +86,7 @@ export default function Testimonials() {
                   onClick={() => setCurrent(i)}
                   className={`h-2 rounded-full transition-all duration-300 ${
                     i === current
-                      ? "w-8 bg-cyan shadow-[0_0_10px_rgba(6,182,212,0.4)]"
+                      ? "w-8 bg-cyan shadow-[0_0_10px_rgba(37,99,235,0.4)]"
                       : "w-2 bg-border hover:bg-text-muted"
                   }`}
                 />

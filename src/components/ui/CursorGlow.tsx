@@ -45,6 +45,7 @@ export default function CursorGlow() {
         y,
         translateX: "-50%",
         translateY: "-50%",
+        willChange: "transform",
         background:
           "radial-gradient(circle, var(--cursor-glow-inner) 0%, var(--cursor-glow-outer) 30%, transparent 70%)",
       }}

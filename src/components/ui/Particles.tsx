@@ -127,6 +127,7 @@ export default function Particles({ count = 60 }: { count?: number }) {
     <canvas
       ref={canvasRef}
       className="pointer-events-none absolute inset-0 h-full w-full"
+      style={{ willChange: "auto", contain: "strict" }}
     />
   );
 }

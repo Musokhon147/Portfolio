@@ -2,6 +2,7 @@
 
 import { useTranslations } from "next-intl";
 import ScrollReveal from "@/components/ui/ScrollReveal";
+import TextReveal from "@/components/ui/TextReveal";
 
 export default function About() {
   const t = useTranslations("About");
@@ -11,11 +12,9 @@ export default function About() {
       <div className="section-divider mx-auto max-w-4xl" />
 
       <div className="mx-auto max-w-4xl px-4 pt-16 sm:px-5 sm:pt-20 md:px-8 md:pt-24">
-        <ScrollReveal>
-          <h2 className="mb-4 text-center font-[family-name:var(--font-syne)] text-2xl font-bold tracking-tight sm:text-3xl md:text-5xl">
-            <span className="gradient-text">{t("title")}</span>
-          </h2>
-        </ScrollReveal>
+        <h2 className="mb-4 text-center font-[family-name:var(--font-syne)] text-2xl font-bold tracking-tight sm:text-3xl md:text-5xl">
+          <TextReveal text={t("title")} className="gradient-text" />
+        </h2>
 
         <ScrollReveal delay={0.1}>
           <div className="mx-auto mb-8 h-1 w-12 rounded-full bg-gradient-to-r from-cyan to-amber md:mb-12" />

@@ -6,6 +6,7 @@ import { HiOutlineArrowRight, HiOutlineExternalLink } from "react-icons/hi";
 import { Link } from "@/i18n/navigation";
 import { useRef, useState, useEffect } from "react";
 import ScrollReveal from "@/components/ui/ScrollReveal";
+import TextReveal from "@/components/ui/TextReveal";
 
 type InternalProject = {
   titleKey: string;
@@ -60,15 +61,6 @@ const projects: Project[] = [
     screenshot: "/images/projects/eduassess.png",
   },
   {
-    titleKey: "project5.title",
-    descKey: "project5.desc",
-    tags: ["React", "Node.js", "MongoDB", "Tailwind"],
-    domain: "playm8sports.com",
-    external: true,
-    externalUrl: "https://playm8sports.com",
-    screenshot: "/images/projects/playm8sports.png",
-  },
-  {
     titleKey: "project6.title",
     descKey: "project6.desc",
     tags: ["Next.js", "TypeScript", "AI", "Supabase"],
@@ -76,6 +68,15 @@ const projects: Project[] = [
     external: true,
     externalUrl: "https://hikoyam.uz",
     screenshot: "/images/projects/hikoyam.png",
+  },
+  {
+    titleKey: "project5.title",
+    descKey: "project5.desc",
+    tags: ["React", "Node.js", "MongoDB", "Tailwind"],
+    domain: "playm8sports.com",
+    external: true,
+    externalUrl: "https://playm8sports.com",
+    screenshot: "/images/projects/playm8sports.png",
   },
 ];
 
@@ -120,7 +121,7 @@ function InternalPreview({
       }}
       className="group"
     >
-      <div className="glass overflow-hidden rounded-2xl border border-border/50 transition-all duration-500 group-hover:border-cyan/30 group-hover:shadow-[0_0_40px_rgba(6,182,212,0.1)]">
+      <div className="glass overflow-hidden rounded-2xl border border-border/50 transition-all duration-500 group-hover:border-cyan/30 group-hover:shadow-[0_0_40px_rgba(37,99,235,0.1)]">
         <BrowserChrome domain={project.domain} />
         <Link href={project.href} className="relative block">
           <div
@@ -172,7 +173,7 @@ function ExternalPreview({
       }}
       className="group"
     >
-      <div className="glass overflow-hidden rounded-2xl border border-border/50 transition-all duration-500 group-hover:border-cyan/30 group-hover:shadow-[0_0_40px_rgba(6,182,212,0.1)]">
+      <div className="glass overflow-hidden rounded-2xl border border-border/50 transition-all duration-500 group-hover:border-cyan/30 group-hover:shadow-[0_0_40px_rgba(37,99,235,0.1)]">
         <BrowserChrome domain={project.domain} />
         <a
           href={project.externalUrl}
@@ -297,11 +298,9 @@ export default function Projects() {
       <div className="pointer-events-none absolute left-0 top-1/3 h-[250px] w-[250px] -translate-x-1/2 rounded-full bg-cyan/5 blur-[80px] sm:h-[400px] sm:w-[400px] sm:blur-[120px]" />
 
       <div className="relative mx-auto max-w-7xl px-4 pt-16 sm:px-5 sm:pt-20 md:px-8 md:pt-24">
-        <ScrollReveal>
-          <h2 className="mb-4 text-center font-[family-name:var(--font-syne)] text-2xl font-bold tracking-tight sm:text-3xl md:text-5xl">
-            <span className="gradient-text">{t("title")}</span>
-          </h2>
-        </ScrollReveal>
+        <h2 className="mb-4 text-center font-[family-name:var(--font-syne)] text-2xl font-bold tracking-tight sm:text-3xl md:text-5xl">
+          <TextReveal text={t("title")} className="gradient-text" />
+        </h2>
 
         <ScrollReveal delay={0.1}>
           <div className="mx-auto mb-8 h-1 w-12 rounded-full bg-gradient-to-r from-cyan to-amber sm:mb-12 md:mb-16" />

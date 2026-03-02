@@ -4,6 +4,7 @@ import { useTranslations } from "next-intl";
 import { useState } from "react";
 import { motion } from "framer-motion";
 import ScrollReveal from "@/components/ui/ScrollReveal";
+import TextReveal from "@/components/ui/TextReveal";
 import { HiCheck } from "react-icons/hi";
 
 export default function Contact() {
@@ -42,11 +43,9 @@ export default function Contact() {
       <div className="pointer-events-none absolute bottom-0 right-1/4 h-[200px] w-[200px] rounded-full bg-amber/5 blur-[80px] sm:h-[300px] sm:w-[300px] sm:blur-[100px]" />
 
       <div className="relative mx-auto max-w-2xl px-4 pt-16 sm:px-5 sm:pt-20 md:px-8 md:pt-24">
-        <ScrollReveal>
-          <h2 className="mb-4 text-center font-[family-name:var(--font-syne)] text-2xl font-bold tracking-tight sm:text-3xl md:text-5xl">
-            <span className="gradient-text">{t("title")}</span>
-          </h2>
-        </ScrollReveal>
+        <h2 className="mb-4 text-center font-[family-name:var(--font-syne)] text-2xl font-bold tracking-tight sm:text-3xl md:text-5xl">
+          <TextReveal text={t("title")} className="gradient-text" />
+        </h2>
 
         <ScrollReveal delay={0.1}>
           <p className="mb-4 text-center text-sm text-text-dim sm:text-base">{t("description")}</p>

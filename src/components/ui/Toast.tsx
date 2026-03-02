@@ -48,7 +48,7 @@ export function ToastProvider({ children }: { children: React.ReactNode }) {
               transition={{ duration: 0.25 }}
               className="rounded-lg px-4 py-3 text-sm font-medium text-white shadow-lg"
               style={{
-                backgroundColor: toast.type === "success" ? "#16a34a" : "#7c3aed",
+                backgroundColor: toast.type === "success" ? "#16a34a" : "#2563eb",
               }}
             >
               {toast.message}

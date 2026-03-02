@@ -1,12 +1,11 @@
 "use client";
 
 import { useTranslations } from "next-intl";
-import { FaGithub, FaTelegram, FaLinkedin } from "react-icons/fa";
+import { FaTelegram, FaInstagram } from "react-icons/fa";
 
 const socials = [
-  { icon: FaGithub, href: "https://github.com", label: "GitHub" },
-  { icon: FaTelegram, href: "https://t.me", label: "Telegram" },
-  { icon: FaLinkedin, href: "https://linkedin.com", label: "LinkedIn" },
+  { icon: FaTelegram, href: "https://t.me/Musokhonn", label: "Telegram" },
+  { icon: FaInstagram, href: "https://www.instagram.com/musokhon__147/", label: "Instagram" },
 ];
 
 export default function Footer() {

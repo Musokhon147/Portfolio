@@ -2,15 +2,16 @@
 
 import { useTranslations } from "next-intl";
 import ScrollReveal from "@/components/ui/ScrollReveal";
+import TextReveal from "@/components/ui/TextReveal";
 import SkillCard from "@/components/ui/SkillCard";
 
 const skills = [
-  { key: "frontend", image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=600&q=80&auto=format&fit=crop" },
-  { key: "backend", image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=600&q=80&auto=format&fit=crop" },
-  { key: "gamedev", image: "https://images.unsplash.com/photo-1556438064-2d7646166914?w=600&q=80&auto=format&fit=crop" },
-  { key: "vr", image: "https://images.unsplash.com/photo-1622979135225-d2ba269cf1ac?w=600&q=80&auto=format&fit=crop" },
-  { key: "hardware", image: "https://images.unsplash.com/photo-1553406830-ef2513450d76?w=600&q=80&auto=format&fit=crop" },
-  { key: "more", image: "https://images.unsplash.com/photo-1518770660439-4636190af475?w=600&q=80&auto=format&fit=crop" },
+  { key: "frontend", image: "https://images.unsplash.com/photo-1633356122544-f134324a6cee?w=600&q=80&auto=format&fit=crop", techs: ["React", "Next.js", "TypeScript", "Tailwind", "Framer Motion"] },
+  { key: "backend", image: "https://images.unsplash.com/photo-1607799279861-4dd421887fb3?w=600&q=80&auto=format&fit=crop", techs: ["Node.js", "Python", "PostgreSQL", "REST", "Docker"] },
+  { key: "gamedev", image: "https://images.unsplash.com/photo-1556438064-2d7646166914?w=600&q=80&auto=format&fit=crop", techs: ["Unity", "C#", "Blender", "Shader Graph"] },
+  { key: "vr", image: "https://images.unsplash.com/photo-1617802690992-15d93263d3a9?w=600&q=80&auto=format&fit=crop", techs: ["Unity XR", "OpenXR", "Meta Quest", "3D Modeling"] },
+  { key: "hardware", image: "https://images.unsplash.com/photo-1555664424-778a1e5e1b48?w=600&q=80&auto=format&fit=crop", techs: ["Arduino", "Raspberry Pi", "IoT", "Sensors"] },
+  { key: "more", image: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=600&q=80&auto=format&fit=crop", techs: ["Figma", "Git", "CI/CD", "Mobile", "Automation"] },
 ] as const;
 
 export default function Skills() {
@@ -24,24 +25,23 @@ export default function Skills() {
       <div className="pointer-events-none absolute right-0 top-1/2 h-[250px] w-[250px] -translate-y-1/2 translate-x-1/2 rounded-full bg-amber/5 blur-[80px] sm:h-[400px] sm:w-[400px] sm:blur-[120px]" />
 
       <div className="relative mx-auto max-w-6xl px-4 pt-16 sm:px-5 sm:pt-20 md:px-8 md:pt-24">
-        <ScrollReveal>
-          <h2 className="mb-4 text-center font-[family-name:var(--font-syne)] text-2xl font-bold tracking-tight sm:text-3xl md:text-5xl">
-            <span className="gradient-text">{t("title")}</span>
-          </h2>
-        </ScrollReveal>
+        <h2 className="mb-4 text-center font-[family-name:var(--font-syne)] text-2xl font-bold tracking-tight sm:text-3xl md:text-5xl">
+          <TextReveal text={t("title")} className="gradient-text" />
+        </h2>
 
         <ScrollReveal delay={0.1}>
           <div className="mx-auto mb-8 h-1 w-12 rounded-full bg-gradient-to-r from-cyan to-amber sm:mb-12 md:mb-16" />
         </ScrollReveal>
 
         <div className="grid gap-4 sm:grid-cols-2 sm:gap-5 lg:grid-cols-3">
-          {skills.map(({ key, image }, index) => (
+          {skills.map(({ key, image, techs }, index) => (
             <SkillCard
               key={key}
               image={image}
               title={t(`${key}.title`)}
               description={t(`${key}.desc`)}
               index={index}
+              techs={techs as unknown as string[]}
             />
           ))}
         </div>

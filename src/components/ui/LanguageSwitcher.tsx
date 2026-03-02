@@ -24,9 +24,9 @@ export default function LanguageSwitcher() {
         <button
           key={code}
           onClick={() => switchLocale(code)}
-          className={`relative rounded-md px-2.5 py-1 text-xs font-semibold tracking-wider transition-all duration-300 ${
+          className={`relative rounded-md px-1.5 py-1 text-[10px] font-semibold tracking-wider transition-all duration-300 sm:px-2.5 sm:text-xs ${
             currentLocale === code
-              ? "liquid-glass text-text shadow-[0_0_12px_rgba(6,182,212,0.15)]"
+              ? "liquid-glass text-text shadow-[0_0_12px_rgba(37,99,235,0.15)]"
               : "text-text-muted hover:text-text"
           }`}
         >

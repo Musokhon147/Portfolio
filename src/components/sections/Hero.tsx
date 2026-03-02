@@ -1,9 +1,17 @@
 "use client";
 
 import { useTranslations } from "next-intl";
+import dynamic from "next/dynamic";
 import { motion } from "framer-motion";
 import Particles from "@/components/ui/Particles";
+import FloatingShapes from "@/components/ui/FloatingShapes";
+import MagneticButton from "@/components/ui/MagneticButton";
 import Typewriter from "@/components/ui/Typewriter";
+
+const Scene3D = dynamic(() => import("@/components/ui/Scene3D"), {
+  ssr: false,
+  loading: () => null,
+});
 
 export default function Hero() {
   const t = useTranslations("Hero");
@@ -18,30 +26,43 @@ export default function Hero() {
 
   return (
     <section className="relative flex min-h-screen items-center justify-center overflow-x-clip px-4">
+      {/* 3D wireframe background */}
+      <Scene3D />
       {/* Particles background */}
       <Particles count={70} />
+      <FloatingShapes count={12} />
 
-      {/* Animated gradient orbs - responsive sizes */}
+      {/* Central cosmic nebula glow */}
       <div className="pointer-events-none absolute inset-0">
+        {/* Primary top-center blue glow — the hero's "light source" */}
         <div
-          className="absolute left-[10%] top-[20%] h-[250px] w-[250px] rounded-full opacity-30 blur-[80px] sm:h-[350px] sm:w-[350px] sm:blur-[100px] md:h-[500px] md:w-[500px] md:blur-[120px]"
+          className="absolute left-1/2 top-0 h-[500px] w-[900px] -translate-x-1/2 rounded-full opacity-60 blur-[120px] sm:h-[600px] sm:w-[1100px] sm:blur-[150px] md:h-[700px] md:w-[1400px]"
+          style={{
+            background: "radial-gradient(ellipse, rgba(37,99,235,0.55) 0%, rgba(59,130,246,0.3) 35%, rgba(99,102,241,0.15) 60%, transparent 80%)",
+          }}
+        />
+        {/* Cyan accent — left side */}
+        <div
+          className="absolute left-[5%] top-[30%] h-[300px] w-[300px] rounded-full opacity-35 blur-[100px] sm:h-[400px] sm:w-[400px] sm:blur-[120px] md:h-[500px] md:w-[500px]"
           style={{
             background: "var(--orb-cyan)",
-            animation: "float 12s ease-in-out infinite",
+            animation: "float 14s ease-in-out infinite",
           }}
         />
+        {/* Purple accent — right side */}
         <div
-          className="absolute bottom-[10%] right-[5%] h-[200px] w-[200px] rounded-full opacity-25 blur-[60px] sm:h-[300px] sm:w-[300px] sm:blur-[80px] md:h-[400px] md:w-[400px] md:blur-[100px]"
-          style={{
-            background: "var(--orb-amber)",
-            animation: "float-slow 15s ease-in-out infinite",
-          }}
-        />
-        <div
-          className="absolute left-[60%] top-[60%] hidden h-[300px] w-[300px] rounded-full opacity-20 blur-[80px] sm:block"
+          className="absolute bottom-[15%] right-[5%] h-[250px] w-[250px] rounded-full opacity-30 blur-[80px] sm:h-[350px] sm:w-[350px] sm:blur-[100px] md:h-[450px] md:w-[450px]"
           style={{
             background: "var(--orb-purple)",
-            animation: "float 18s ease-in-out infinite reverse",
+            animation: "float-slow 16s ease-in-out infinite",
+          }}
+        />
+        {/* Deep blue fill — center-bottom */}
+        <div
+          className="absolute left-[40%] top-[55%] hidden h-[350px] w-[350px] rounded-full opacity-25 blur-[100px] sm:block"
+          style={{
+            background: "radial-gradient(circle, rgba(30,64,175,0.4) 0%, transparent 70%)",
+            animation: "float 20s ease-in-out infinite reverse",
           }}
         />
       </div>
@@ -64,7 +85,7 @@ export default function Hero() {
           className="mb-4 inline-flex items-center gap-2 rounded-full border border-cyan/20 bg-cyan-glow px-3 py-1 sm:mb-6 sm:px-4 sm:py-1.5"
         >
           <span
-            className="h-1.5 w-1.5 rounded-full bg-cyan shadow-[0_0_8px_rgba(6,182,212,0.6)] sm:h-2 sm:w-2"
+            className="h-1.5 w-1.5 rounded-full bg-cyan shadow-[0_0_8px_rgba(37,99,235,0.6)] sm:h-2 sm:w-2"
             style={{ animation: "pulse-glow 2s ease-in-out infinite" }}
           />
           <span className="text-xs font-medium text-cyan-light sm:text-sm">
@@ -103,35 +124,39 @@ export default function Hero() {
           transition={{ duration: 0.6, delay: 0.8 }}
           className="flex flex-col items-center gap-3 sm:flex-row sm:justify-center sm:gap-4"
         >
-          <motion.a
-            href="#projects"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.97 }}
-            className="liquid-glass inline-flex items-center gap-2 rounded-full px-6 py-3 text-xs font-bold text-text transition-all sm:px-8 sm:py-3.5 sm:text-sm"
-          >
-            <span className="relative z-10">{t("cta")}</span>
-            <svg
-              className="relative z-10 h-3.5 w-3.5 transition-transform group-hover:translate-y-0.5 sm:h-4 sm:w-4"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-              strokeWidth={2.5}
+          <MagneticButton>
+            <motion.a
+              href="#projects"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.97 }}
+              className="liquid-glass inline-flex items-center gap-2 rounded-full px-6 py-3 text-xs font-bold text-text transition-all sm:px-8 sm:py-3.5 sm:text-sm"
             >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="M19 9l-7 7-7-7"
-              />
-            </svg>
-          </motion.a>
-          <motion.a
-            href="#about"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.97 }}
-            className="liquid-glass-subtle inline-flex items-center gap-2 rounded-full px-6 py-3 text-xs font-semibold text-text-dim transition-all sm:px-8 sm:py-3.5 sm:text-sm"
-          >
-            {t("greeting")}
-          </motion.a>
+              <span className="relative z-10">{t("cta")}</span>
+              <svg
+                className="relative z-10 h-3.5 w-3.5 transition-transform group-hover:translate-y-0.5 sm:h-4 sm:w-4"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                strokeWidth={2.5}
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M19 9l-7 7-7-7"
+                />
+              </svg>
+            </motion.a>
+          </MagneticButton>
+          <MagneticButton>
+            <motion.a
+              href="#about"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.97 }}
+              className="liquid-glass-subtle inline-flex items-center gap-2 rounded-full px-6 py-3 text-xs font-semibold text-text-dim transition-all sm:px-8 sm:py-3.5 sm:text-sm"
+            >
+              {t("greeting")}
+            </motion.a>
+          </MagneticButton>
         </motion.div>
       </div>
 

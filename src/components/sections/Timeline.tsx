@@ -3,6 +3,7 @@
 import { useTranslations } from "next-intl";
 import { motion } from "framer-motion";
 import ScrollReveal from "@/components/ui/ScrollReveal";
+import TextReveal from "@/components/ui/TextReveal";
 
 const timelineKeys = ["e1", "e2", "e3", "e4"] as const;
 
@@ -16,11 +17,9 @@ export default function Timeline() {
       <div className="pointer-events-none absolute right-0 top-1/3 h-[250px] w-[250px] translate-x-1/2 rounded-full bg-cyan/5 blur-[80px] sm:h-[400px] sm:w-[400px] sm:blur-[120px]" />
 
       <div className="relative mx-auto max-w-4xl px-4 pt-16 sm:px-5 sm:pt-20 md:px-8 md:pt-24">
-        <ScrollReveal>
-          <h2 className="mb-4 text-center font-[family-name:var(--font-syne)] text-2xl font-bold tracking-tight sm:text-3xl md:text-5xl">
-            <span className="gradient-text">{t("title")}</span>
-          </h2>
-        </ScrollReveal>
+        <h2 className="mb-4 text-center font-[family-name:var(--font-syne)] text-2xl font-bold tracking-tight sm:text-3xl md:text-5xl">
+          <TextReveal text={t("title")} className="gradient-text" />
+        </h2>
 
         <ScrollReveal delay={0.1}>
           <div className="mx-auto mb-8 h-1 w-12 rounded-full bg-gradient-to-r from-cyan to-amber sm:mb-12 md:mb-16" />
@@ -49,7 +48,7 @@ export default function Timeline() {
               {/* Dot on line */}
               <div className="absolute left-4 top-1 z-10 -translate-x-1/2 sm:left-6 md:left-1/2">
                 <div className="relative">
-                  <div className="h-2.5 w-2.5 rounded-full bg-cyan shadow-[0_0_12px_rgba(6,182,212,0.5)] sm:h-3 sm:w-3" />
+                  <div className="h-2.5 w-2.5 rounded-full bg-cyan shadow-[0_0_12px_rgba(37,99,235,0.5)] sm:h-3 sm:w-3" />
                   <div className="absolute inset-0 animate-ping rounded-full bg-cyan/30" />
                 </div>
               </div>
