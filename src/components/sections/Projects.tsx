@@ -1,12 +1,15 @@
 "use client";
 
 import { useTranslations, useLocale } from "next-intl";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { HiOutlineArrowRight, HiOutlineExternalLink } from "react-icons/hi";
 import { Link } from "@/i18n/navigation";
-import { useRef, useState, useEffect } from "react";
+import Image from "next/image";
+import { useRef, useState, useEffect, useCallback } from "react";
 import ScrollReveal from "@/components/ui/ScrollReveal";
 import TextReveal from "@/components/ui/TextReveal";
+
+type Category = "all" | "web" | "game-vr" | "live";
 
 type InternalProject = {
   titleKey: string;
@@ -14,6 +17,7 @@ type InternalProject = {
   tags: string[];
   href: string;
   domain: string;
+  category: Category;
   external?: false;
 };
 
@@ -22,12 +26,20 @@ type ExternalProject = {
   descKey: string;
   tags: string[];
   domain: string;
+  category: Category;
   external: true;
   externalUrl: string;
   screenshot: string;
 };
 
 type Project = InternalProject | ExternalProject;
+
+const filters: { key: Category; label: string }[] = [
+  { key: "all", label: "All" },
+  { key: "web", label: "Web" },
+  { key: "game-vr", label: "Game & VR" },
+  { key: "live", label: "Live Sites" },
+];
 
 const projects: Project[] = [
   {
@@ -36,6 +48,7 @@ const projects: Project[] = [
     tags: ["Next.js", "TypeScript", "Stripe", "Tailwind"],
     href: "/projects/ecommerce",
     domain: "sweetdelights.com",
+    category: "web",
   },
   {
     titleKey: "project2.title",
@@ -43,6 +56,7 @@ const projects: Project[] = [
     tags: ["React", "Node.js", "MongoDB", "Stripe"],
     href: "/projects/vr-simulator",
     domain: "ironforge.fit",
+    category: "web",
   },
   {
     titleKey: "project3.title",
@@ -50,8 +64,9 @@ const projects: Project[] = [
     tags: ["Next.js", "TypeScript", "AI", "PostgreSQL"],
     href: "/projects/smart-home",
     domain: "novatech.io",
+    category: "game-vr",
   },
-{
+  {
     titleKey: "project4.title",
     descKey: "project4.desc",
     tags: ["Next.js", "TypeScript", "PostgreSQL", "Tailwind"],
@@ -59,6 +74,7 @@ const projects: Project[] = [
     external: true,
     externalUrl: "https://eduassess.uz",
     screenshot: "/images/projects/eduassess.png",
+    category: "live",
   },
   {
     titleKey: "project6.title",
@@ -68,6 +84,7 @@ const projects: Project[] = [
     external: true,
     externalUrl: "https://hikoyam.uz",
     screenshot: "/images/projects/hikoyam.png",
+    category: "live",
   },
   {
     titleKey: "project5.title",
@@ -77,6 +94,7 @@ const projects: Project[] = [
     external: true,
     externalUrl: "https://playm8sports.com",
     screenshot: "/images/projects/playm8sports.png",
+    category: "live",
   },
 ];
 
@@ -182,12 +200,14 @@ function ExternalPreview({
           className="relative block"
         >
           <div className="relative w-full overflow-hidden">
-            <img
+            <div className="absolute inset-0 animate-pulse bg-elevated/50" />
+            <Image
               src={project.screenshot}
               alt={t(project.titleKey)}
-              className="h-auto w-full object-cover object-top"
-              loading="lazy"
-              decoding="async"
+              width={800}
+              height={500}
+              sizes="(max-width: 1024px) 100vw, 33vw"
+              className="relative h-auto w-full object-cover object-top"
             />
             <HoverOverlay label={t("visitSite")} external />
           </div>
@@ -288,6 +308,7 @@ function ProjectInfo({
 
 export default function Projects() {
   const t = useTranslations("Projects");
+  const [activeFilter, setActiveFilter] = useState<Category>("all");
   const locale = useLocale();
 
   return (
@@ -303,27 +324,66 @@ export default function Projects() {
         </h2>
 
         <ScrollReveal delay={0.1}>
-          <div className="mx-auto mb-8 h-1 w-12 rounded-full bg-gradient-to-r from-cyan to-amber sm:mb-12 md:mb-16" />
+          <div className="mx-auto mb-4 h-1 w-12 rounded-full bg-gradient-to-r from-cyan to-amber sm:mb-6" />
         </ScrollReveal>
 
-        <div className="grid gap-8 md:gap-10 lg:grid-cols-3">
-          {projects.map((project, index) =>
-            project.external ? (
-              <ExternalPreview
-                key={project.titleKey}
-                project={project}
-                index={index}
-              />
-            ) : (
-              <InternalPreview
-                key={project.titleKey}
-                project={project}
-                index={index}
-                locale={locale}
-              />
-            )
-          )}
+        {/* Filter tabs */}
+        <div className="mb-8 flex flex-wrap justify-center gap-2 sm:mb-12 md:mb-16" role="tablist">
+          {filters.map(({ key, label }) => (
+            <button
+              key={key}
+              role="tab"
+              aria-selected={activeFilter === key}
+              onClick={() => setActiveFilter(key)}
+              className={`rounded-full px-4 py-1.5 text-xs font-semibold transition-all sm:px-5 sm:py-2 sm:text-sm ${
+                activeFilter === key
+                  ? "liquid-glass text-text shadow-[0_0_12px_rgba(37,99,235,0.15)]"
+                  : "text-text-muted hover:text-text"
+              }`}
+            >
+              {label}
+            </button>
+          ))}
         </div>
+
+        <motion.div layout className="grid gap-8 md:gap-10 lg:grid-cols-3">
+          <AnimatePresence mode="popLayout">
+            {projects
+              .filter((p) => activeFilter === "all" || p.category === activeFilter)
+              .map((project, index) =>
+                project.external ? (
+                  <motion.div
+                    key={project.titleKey}
+                    layout
+                    initial={{ opacity: 0, scale: 0.9 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    exit={{ opacity: 0, scale: 0.9 }}
+                    transition={{ duration: 0.3 }}
+                  >
+                    <ExternalPreview
+                      project={project}
+                      index={index}
+                    />
+                  </motion.div>
+                ) : (
+                  <motion.div
+                    key={project.titleKey}
+                    layout
+                    initial={{ opacity: 0, scale: 0.9 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    exit={{ opacity: 0, scale: 0.9 }}
+                    transition={{ duration: 0.3 }}
+                  >
+                    <InternalPreview
+                      project={project}
+                      index={index}
+                      locale={locale}
+                    />
+                  </motion.div>
+                )
+              )}
+          </AnimatePresence>
+        </motion.div>
       </div>
     </section>
   );

@@ -93,6 +93,8 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         {/* Light mode floating blobs */}
         <div className="portfolio-blob portfolio-blob-left" />
         <div className="portfolio-blob portfolio-blob-right" />
+        <link rel="manifest" href="/manifest.json" />
+        <meta name="theme-color" content="#2563eb" />
         {children}
       </body>
     </html>

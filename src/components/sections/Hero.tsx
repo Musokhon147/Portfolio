@@ -2,7 +2,7 @@
 
 import { useTranslations } from "next-intl";
 import dynamic from "next/dynamic";
-import { motion } from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
 import Particles from "@/components/ui/Particles";
 import FloatingShapes from "@/components/ui/FloatingShapes";
 import MagneticButton from "@/components/ui/MagneticButton";
@@ -15,6 +15,10 @@ const Scene3D = dynamic(() => import("@/components/ui/Scene3D"), {
 
 export default function Hero() {
   const t = useTranslations("Hero");
+  const { scrollY } = useScroll();
+  const glowY = useTransform(scrollY, [0, 600], [0, 120]);
+  const orbLeftY = useTransform(scrollY, [0, 600], [0, 80]);
+  const orbRightY = useTransform(scrollY, [0, 600], [0, 60]);
 
   const typewriterWords = [
     t("typewriter1"),
@@ -35,24 +39,27 @@ export default function Hero() {
       {/* Central cosmic nebula glow */}
       <div className="pointer-events-none absolute inset-0">
         {/* Primary top-center blue glow — the hero's "light source" */}
-        <div
+        <motion.div
           className="absolute left-1/2 top-0 h-[500px] w-[900px] -translate-x-1/2 rounded-full opacity-60 blur-[120px] sm:h-[600px] sm:w-[1100px] sm:blur-[150px] md:h-[700px] md:w-[1400px]"
           style={{
+            y: glowY,
             background: "radial-gradient(ellipse, rgba(37,99,235,0.55) 0%, rgba(59,130,246,0.3) 35%, rgba(99,102,241,0.15) 60%, transparent 80%)",
           }}
         />
         {/* Cyan accent — left side */}
-        <div
+        <motion.div
           className="absolute left-[5%] top-[30%] h-[300px] w-[300px] rounded-full opacity-35 blur-[100px] sm:h-[400px] sm:w-[400px] sm:blur-[120px] md:h-[500px] md:w-[500px]"
           style={{
+            y: orbLeftY,
             background: "var(--orb-cyan)",
             animation: "float 14s ease-in-out infinite",
           }}
         />
         {/* Purple accent — right side */}
-        <div
+        <motion.div
           className="absolute bottom-[15%] right-[5%] h-[250px] w-[250px] rounded-full opacity-30 blur-[80px] sm:h-[350px] sm:w-[350px] sm:blur-[100px] md:h-[450px] md:w-[450px]"
           style={{
+            y: orbRightY,
             background: "var(--orb-purple)",
             animation: "float-slow 16s ease-in-out infinite",
           }}

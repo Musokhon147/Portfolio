@@ -3,6 +3,7 @@
     "about": "About",
     "skills": "Skills",
     "projects": "Projects",
+    "blog": "Blog",
     "contact": "Contact"
   },
   "Hero": {
@@ -77,7 +78,11 @@
       "title": "Hikoyam",
       "desc": "An AI-powered personalized storybook platform that transforms children's photos into custom illustrated stories."
     },
-    "visitSite": "Visit Site"
+    "visitSite": "Visit Site",
+    "filterAll": "All",
+    "filterWeb": "Web",
+    "filterGameVr": "Game & VR",
+    "filterLive": "Live Sites"
   },
   "Contact": {
     "title": "Get In Touch",
@@ -431,6 +436,32 @@
       "terms": "Terms",
       "privacy": "Privacy",
       "security": "Security"
+    }
+  },
+  "Blog": {
+    "title": "Blog",
+    "subtitle": "Thoughts, tutorials, and insights from our development journey.",
+    "readMore": "Read More",
+    "a1": {
+      "title": "Building Immersive VR Experiences with Unity",
+      "excerpt": "A deep dive into creating compelling virtual reality applications — from scene setup and interaction design to performance optimization on standalone headsets.",
+      "category": "Game Dev",
+      "date": "Feb 2026",
+      "readTime": "8 min read"
+    },
+    "a2": {
+      "title": "Why We Switched to Next.js App Router",
+      "excerpt": "Our migration story from Pages Router to App Router — the wins, the gotchas, and how server components changed the way we think about data fetching.",
+      "category": "Web Dev",
+      "date": "Jan 2026",
+      "readTime": "6 min read"
+    },
+    "a3": {
+      "title": "Using AI to Generate Personalized Children's Stories",
+      "excerpt": "How we built Hikoyam — an AI-powered platform that transforms kids' photos into custom illustrated storybooks using generative models and smart prompting.",
+      "category": "AI",
+      "date": "Dec 2025",
+      "readTime": "10 min read"
     }
   }
 }

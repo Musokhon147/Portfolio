@@ -7,7 +7,7 @@ import LanguageSwitcher from "@/components/ui/LanguageSwitcher";
 import ThemeToggle from "@/components/ui/ThemeToggle";
 import { HiMenu, HiX } from "react-icons/hi";
 
-const navLinks = ["about", "skills", "projects", "contact"] as const;
+const navLinks = ["about", "skills", "projects", "blog", "contact"] as const;
 
 export default function Navbar() {
   const t = useTranslations("Navbar");
@@ -99,36 +99,46 @@ export default function Navbar() {
         </div>
       </nav>
 
-      {/* Mobile menu */}
+      {/* Mobile menu backdrop + panel */}
       <AnimatePresence>
         {mobileOpen && (
-          <motion.div
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: "auto" }}
-            exit={{ opacity: 0, height: 0 }}
-            transition={{ duration: 0.3 }}
-            className="overflow-hidden border-t border-border/30 bg-base/95 backdrop-blur-xl md:hidden"
-          >
-            <div className="px-4 py-2 sm:px-5 sm:py-3">
-              {navLinks.map((key, i) => (
-                <motion.a
-                  key={key}
-                  href={`#${key}`}
-                  onClick={() => setMobileOpen(false)}
-                  initial={{ opacity: 0, x: -20 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ delay: i * 0.05 }}
-                  className={`block py-3 text-sm font-medium transition-colors ${
-                    activeSection === key
-                      ? "text-cyan"
-                      : "text-text-dim hover:text-cyan"
-                  }`}
-                >
-                  {t(key)}
-                </motion.a>
-              ))}
-            </div>
-          </motion.div>
+          <>
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.2 }}
+              className="fixed inset-0 top-14 z-40 bg-base/60 backdrop-blur-sm md:hidden"
+              onClick={() => setMobileOpen(false)}
+            />
+            <motion.div
+              initial={{ opacity: 0, height: 0 }}
+              animate={{ opacity: 1, height: "auto" }}
+              exit={{ opacity: 0, height: 0 }}
+              transition={{ duration: 0.3 }}
+              className="relative z-50 overflow-hidden border-t border-border/30 bg-base/95 backdrop-blur-xl md:hidden"
+            >
+              <div className="px-4 py-2 sm:px-5 sm:py-3">
+                {navLinks.map((key, i) => (
+                  <motion.a
+                    key={key}
+                    href={`#${key}`}
+                    onClick={() => setMobileOpen(false)}
+                    initial={{ opacity: 0, x: -20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ delay: i * 0.05 }}
+                    className={`block py-3 text-sm font-medium transition-colors ${
+                      activeSection === key
+                        ? "text-cyan"
+                        : "text-text-dim hover:text-cyan"
+                    }`}
+                  >
+                    {t(key)}
+                  </motion.a>
+                ))}
+              </div>
+            </motion.div>
+          </>
         )}
       </AnimatePresence>
     </motion.header>

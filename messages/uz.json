@@ -3,6 +3,7 @@
     "about": "Biz haqimizda",
     "skills": "Ko'nikmalar",
     "projects": "Loyihalar",
+    "blog": "Blog",
     "contact": "Aloqa"
   },
   "Hero": {
@@ -77,7 +78,11 @@
       "title": "Hikoyam",
       "desc": "Bolalarning suratlarini shaxsiy illustratsiyali hikoyalarga aylantiruvchi sun'iy intellektga asoslangan platforma."
     },
-    "visitSite": "Saytga o'tish"
+    "visitSite": "Saytga o'tish",
+    "filterAll": "Hammasi",
+    "filterWeb": "Veb",
+    "filterGameVr": "O'yin va VR",
+    "filterLive": "Jonli saytlar"
   },
   "Contact": {
     "title": "Bog'lanish",
@@ -431,6 +436,32 @@
       "terms": "Shartlar",
       "privacy": "Maxfiylik",
       "security": "Xavfsizlik"
+    }
+  },
+  "Blog": {
+    "title": "Blog",
+    "subtitle": "Dasturlash sayohatimizdan fikrlar, darsliklar va tushunchalar.",
+    "readMore": "Batafsil",
+    "a1": {
+      "title": "Unity bilan immersiv VR tajribalarini yaratish",
+      "excerpt": "Jozibali virtual reallik ilovalarini yaratishga chuqur kirish — sahna sozlash va o'zaro ta'sir dizaynidan mustaqil garnituralar uchun ishlash optimizatsiyasigacha.",
+      "category": "Game Dev",
+      "date": "Fev 2026",
+      "readTime": "8 daqiqa"
+    },
+    "a2": {
+      "title": "Nima uchun Next.js App Router ga o'tdik",
+      "excerpt": "Pages Router dan App Router ga o'tish hikoyamiz — yutuqlar, qiyinchiliklar va server komponentlari ma'lumotlarni olish haqidagi fikrimizni qanday o'zgartirdi.",
+      "category": "Web Dev",
+      "date": "Yan 2026",
+      "readTime": "6 daqiqa"
+    },
+    "a3": {
+      "title": "Bolalar uchun shaxsiy hikoyalar yaratishda AI",
+      "excerpt": "Hikoyam qanday yaratildi — bolalar suratlarini generativ modellar va aqlli promptlar yordamida maxsus illustratsiyali hikoya kitoblariga aylantiruvchi AI platforma.",
+      "category": "AI",
+      "date": "Dek 2025",
+      "readTime": "10 daqiqa"
     }
   }
 }
